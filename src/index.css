@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'mr-eaves-xl-sans';
+  src: url('https://use.typekit.net/af/b6ac71/00000000000000007735b319/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/b6ac71/00000000000000007735b319/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/b6ac71/00000000000000007735b319/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'heebo';
+  src: url('https://use.typekit.net/af/6d5979/00000000000000007735b83d/30/l?subset_id=2&fvd=n4&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/6d5979/00000000000000007735b83d/30/d?subset_id=2&fvd=n4&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/6d5979/00000000000000007735b83d/30/a?subset_id=2&fvd=n4&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'heebo';
+  src: url('https://use.typekit.net/af/3bd527/00000000000000007735b844/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/3bd527/00000000000000007735b844/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/3bd527/00000000000000007735b844/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+body {
+  font-family: 'mr-eaves-xl-sans', sans-serif;
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #c7e7ff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+}
