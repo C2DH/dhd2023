@@ -1,7 +1,15 @@
 // import './Header.css'
 
-const ViewConferece = ({ availableWidth, availableHeight }) => {
-  return <section></section>
-}
+const { Container, Row, Col } = require("react-bootstrap");
 
-export default ViewConferece
+const ViewConferece = ({ availableWidth, availableHeight }) => {
+  return (
+    <Container>
+      <Row>
+        <Col>CIAO</Col>
+      </Row>
+    </Container>
+  );
+};
+
+export default ViewConferece;
