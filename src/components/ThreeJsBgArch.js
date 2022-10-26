@@ -1,34 +1,53 @@
-import React, { useRef, useEffect } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, useGLTF, useTexture, Environment } from '@react-three/drei'
-import { BufferAttribute } from 'three'
-import * as THREE from 'three'
-import './ThreeJsBgArch.css'
-
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-
-console.log('en', Environment)
+import React, { useRef, useEffect } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Environment } from "@react-three/drei";
+import "./ThreeJsBgArch.css";
+import { useSpring, config } from "@react-spring/core";
+import { a } from "@react-spring/three";
+import Arch from "./Arch";
 
 const SceneSteps = [
   {
+    scale: 0.12,
+    position: 1.8,
+    rotation: -1,
+    color: "#73a5e3",
+  },
+  {
+    scale: 0.14,
+    position: -1.8,
+    rotation: 0.4,
+    color: "#000000",
+  },
+  {
     scale: 0.15,
+    color: "#73a5e3",
   },
   {
-    scale: 0.35,
+    scale: 0.05,
+    color: "#73a5e3",
   },
-  {
-    scale: 0.5,
-  },
-  {
-    scale: 0.15,
-  },
-]
+];
 
-const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
-  console.debug('[ThreeJsBgArch] stepIndex', stepIndex)
+const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex }) => {
+  console.debug("[ThreeJsBgArch] stepIndex", stepIndex);
+  const scene = SceneSteps[stepIndex ?? 0];
+  const [styles, api] = useSpring(() => ({
+    scale: 0,
+    rotation: 0,
+    position: 0,
+    color: "#73a5e3",
+    config: config.slow,
+  }));
 
-  const scene = SceneSteps[stepIndex ?? 0]
-
+  useEffect(() => {
+    api.start({
+      scale: scene.scale,
+      rotation: scene.rotation ?? 0,
+      position: scene.position ?? 0,
+      color: scene.color,
+    });
+  }, [stepIndex, scene, api]);
   return (
     <div
       id="canvas-container"
@@ -36,12 +55,15 @@ const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
       className="position-fixed top-0"
       // {...props}
     >
-      <Canvas shadows camera={{ position: [8, 1.5, 8], fov: 25 }}>
-        <Arch
-          position={[0, -1.5, 0]}
-          scale={scene.scale}
-          // material={baubleMaterial}
-        ></Arch>
+      <Canvas shadows camera={{ position: [-4, 1.5, 8], fov: 25 }}>
+        <a.group
+          // position={[2, -1.2, 0]}
+          scale={styles.scale}
+          rotation={styles.rotation.to((y) => [0, y, 0])}
+          position={styles.position.to((x) => [x, -1.3, 0])}
+        >
+          <Arch color={scene.color}></Arch>
+        </a.group>
         <ambientLight intensity={0.5} />
         {/* <directionalLight intensity={0.5} position={[5, 10, 10]} color="#d2e9fe" /> */}
         <spotLight
@@ -57,58 +79,9 @@ const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
         <Environment rotation={[Math.PI / 2, 0, 5]} preset="sunset" />
       </Canvas>
     </div>
-  )
-}
+  );
+};
 
-console.log('en', Environment)
+console.log("en", Environment);
 
-function Arch(props) {
-  const terrainTextures = useTexture({
-    map: '/textures/tex-diff.jpeg',
-    normalMap: '/textures/tex-nor.jpeg',
-    aoMap: '/textures/tex-arm.jpeg',
-    roughnessMap: '/textures/tex-rough.jpeg',
-    // displacementMap: '/texture/rocks_disp.jpeg',
-    // metalnessMap: "/textures/aerial_rocks_02_arm_4k_metalness_edited.jpg",
-    // alphaMap: "/textures/alpha.png",
-  })
-  terrainTextures.wrapS = terrainTextures.wrapT = THREE.RepeatWrapping
-
-  const mesh = useRef(null)
-  useEffect(() => {
-    mesh.current.geometry.setAttribute(
-      'uv2',
-      new BufferAttribute(mesh.current.geometry.attributes.uv.array, 2),
-    )
-  })
-
-  const { nodes } = useGLTF('/Arch.gltf')
-  const baubleMaterial = new THREE.MeshStandardMaterial({
-    color: '#73a5e3',
-    roughness: terrainTextures.roughnessMap,
-    envMapIntensity: 1,
-    emissive: '#370037',
-    map: terrainTextures.map,
-    normalMap: terrainTextures.normalMap,
-    metalness: 0.2,
-    aoMap: terrainTextures.aoMap,
-  })
-
-  console.log('tex', mesh)
-
-  return (
-    <group {...props} dispose={null}>
-      <mesh
-        ref={mesh}
-        castShadow
-        receiveShadow
-        geometry={nodes.Null.geometry}
-        material={baubleMaterial}
-      />
-    </group>
-  )
-}
-
-useGLTF.preload('/Arch.gltf')
-
-export default ThreeJsBgArch
+export default ThreeJsBgArch;
