@@ -4,7 +4,8 @@ import { useCurrentWindowDimensions } from "../hooks/viewport";
 import IntroHomePage from "../components/sections/IntroHomePage";
 import ViewConfereceHomePage from "../components/sections/ViewConfereceHomePage";
 import { Scrollama, Step } from "react-scrollama";
-import Menu from "../components/Menu";
+import Menu from "../components/menu/Menu";
+import MenuFixed from "../components/menu/MenuFixed";
 
 const AvailableSteps = [
   "first section",
@@ -27,7 +28,8 @@ const Home = ({ isMobile }) => {
   return (
     <>
       <div className="Home">
-        <Menu></Menu>
+        <MenuFixed />
+        <Menu />
         <Scrollama offset={0.5} onStepEnter={onStepEnter} debug>
           {AvailableSteps.map((text, stepIndex) => (
             <Step data={stepIndex} key={stepIndex}>

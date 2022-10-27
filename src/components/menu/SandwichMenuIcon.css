@@ -1,0 +1,22 @@
+.menu-icon-wrapper {
+  height: 26px;
+  width: 34px;
+  margin: 0 1.6rem;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.menu-icon-wrapper span {
+  display: block;
+  height: 2px;
+  width: 26px;
+  background-color: var(--black);
+}
+
+.menu-icon-wrapper span:nth-child(1) {
+  transform: translateX(-4px);
+}
+
+.menu-icon-wrapper span:nth-child(3) {
+  transform: translateX(4px);
+}

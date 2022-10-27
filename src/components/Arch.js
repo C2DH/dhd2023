@@ -26,7 +26,7 @@ const Arch = ({ color = "#73a5e3", ...props }) => {
 
   useEffect(() => {
     api.start({ color });
-  }, [color]);
+  }, [color, api]);
 
   useEffect(() => {
     if (meshRef.current) {
@@ -52,11 +52,11 @@ const Arch = ({ color = "#73a5e3", ...props }) => {
           color={styles.color}
           roughness={acrhTextures.roughnessMap}
           envMapIntensity={1}
-          emissive={"#370037"}
+          // emissive={"#370037"}
           map={acrhTextures.map}
           normalMap={acrhTextures.normalMap}
           metalness={0.2}
-          aoMap={acrhTextures.aoMap}
+          // aoMap={acrhTextures.aoMap}
         />
       </mesh>
     </group>

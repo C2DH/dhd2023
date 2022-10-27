@@ -1,0 +1,32 @@
+.menu-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: absolute;
+  top: 4rem;
+  padding: 0rem 8rem;
+  z-index: 2;
+}
+.menu-wrapper ul {
+  display: flex;
+  margin: 0;
+  align-self: center;
+}
+
+.menu-wrapper ul li {
+  list-style-type: none;
+  display: flex;
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.menu-wrapper ul li .icon-plus {
+  transform: translateY(1px);
+  margin-left: 3px;
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.6px;
+}

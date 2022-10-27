@@ -9,10 +9,10 @@ const ViewConfereceHomePage = ({ availableWidth, availableHeight }) => {
         <Container>
           <Row>
             <Col className=" col-7 align-self-end offset-5">
-              <h1 className="text-end">
+              <h2 className="text-end">
                 A unique experience of inspiration, meeting and networking for
                 the ANY WORD industry
-              </h1>
+              </h2>
             </Col>
           </Row>
         </Container>

@@ -1,0 +1,18 @@
+.menu-full-screen {
+  background-color: var(--black);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  transform-origin: right;
+}
+
+.full-screen-menu-wrapper nav ul li {
+  color: var(--white);
+}
+
+.full-screen-menu-wrapper nav i span {
+  background-color: var(--white);
+}

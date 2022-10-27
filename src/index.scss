@@ -67,14 +67,22 @@ h4 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 4.4rem;
   line-height: 3.8rem;
   text-transform: uppercase;
   color: var(--black);
 }
 
+h2 {
+  font-size: 3.8rem;
+  line-height: 3.6rem;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
 span,
-p {
+p,
+li {
   font-family: "heebo", sans-serif;
   color: var(--black);
 }
@@ -92,4 +100,5 @@ p {
 :root {
   --primary: #1da7e0;
   --black: #2c393e;
+  --white: #eef1f2;
 }

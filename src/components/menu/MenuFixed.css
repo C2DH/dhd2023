@@ -1,0 +1,28 @@
+.dhd-logo-wrapper {
+  display: flex;
+  position: fixed;
+  top: 2rem;
+  left: 4rem;
+  z-index: 4;
+}
+
+.dhd-logo-wrapper svg path {
+  transition: all 0.3s;
+}
+
+/* .dhd-logo-wrapper.active svg path {
+  fill: red;
+  transition: all 0.3s;
+} */
+
+.menu-icon-wrapper {
+  display: flex;
+  position: fixed;
+  top: 3.8rem;
+  right: 3rem;
+  z-index: 4;
+}
+
+.menu-icon-wrapper span {
+  background-color: var(--white);
+}

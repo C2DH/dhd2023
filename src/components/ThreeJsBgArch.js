@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import "./ThreeJsBgArch.css";
@@ -29,7 +29,7 @@ const SceneSteps = [
   },
 ];
 
-const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex }) => {
+const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
   console.debug("[ThreeJsBgArch] stepIndex", stepIndex);
   const scene = SceneSteps[stepIndex ?? 0];
   const [styles, api] = useSpring(() => ({
