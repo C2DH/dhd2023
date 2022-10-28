@@ -6,17 +6,46 @@
   cursor: pointer;
 }
 
+.menu-icon-wrapper:hover span:nth-child(1) {
+  transform: translateX(0px);
+}
+
+.menu-icon-wrapper:hover span:nth-child(3) {
+  transform: translateX(0px);
+}
+
+.active .menu-icon-wrapper {
+  justify-content: center;
+}
+
 .menu-icon-wrapper span {
   display: block;
   height: 2px;
   width: 26px;
   background-color: var(--black);
+  transition: transform 0.2s ease-in-out;
 }
 
 .menu-icon-wrapper span:nth-child(1) {
   transform: translateX(-4px);
 }
 
+.menu-icon-wrapper span:nth-child(2) {
+  transform: scaleY(1);
+}
+
 .menu-icon-wrapper span:nth-child(3) {
   transform: translateX(4px);
+}
+
+.active .menu-icon-wrapper span:nth-child(1) {
+  transform: translateY(0px) translateY(2px) rotateZ(45deg);
+}
+
+.active .menu-icon-wrapper span:nth-child(2) {
+  transform: scaleX(0);
+}
+
+.active .menu-icon-wrapper span:nth-child(3) {
+  transform: translateX(0px) translateY(-2px) rotateZ(-45deg);
 }

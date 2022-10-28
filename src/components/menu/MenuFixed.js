@@ -13,6 +13,7 @@ const MenuFixed = () => {
       <Dhd2023Logo menuStatus={menuStatus} />
 
       <div
+        className={`sandwich-menu ${menuStatus === MenuOpen ? "active" : ""} `}
         onClick={() => {
           setMenuStatus(menuStatus === MenuOpen ? MenuClosed : MenuOpen);
         }}

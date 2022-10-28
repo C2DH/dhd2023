@@ -9,7 +9,7 @@ import { useCurrentWindowDimensions } from "../../hooks/viewport";
 const MenuFullScreen = ({ isMobile }) => {
   const setMenuStatus = useMenuStore((state) => state.setMenuStatus);
   const menuStatus = useMenuStore((state) => state.menuStatus);
-  const { width, height } = useCurrentWindowDimensions(isMobile);
+  const { width } = useCurrentWindowDimensions(isMobile);
   const [styles, api] = useSpring(() => ({
     x: width,
   }));
@@ -19,7 +19,7 @@ const MenuFullScreen = ({ isMobile }) => {
     api.start({
       x: menuStatus === MenuClosed ? width : 0,
     });
-  }, [menuStatus, api]);
+  }, [menuStatus, api, width]);
   return (
     <a.section style={styles} className="menu-full-screen flex-center">
       <Container>

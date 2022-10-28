@@ -6,6 +6,7 @@ import ViewConfereceHomePage from "../components/sections/ViewConfereceHomePage"
 import { Scrollama, Step } from "react-scrollama";
 import Menu from "../components/menu/Menu";
 import MenuFixed from "../components/menu/MenuFixed";
+// import { MenuClosed, useMenuStore } from "../../store";
 
 const AvailableSteps = [
   "first section",
@@ -24,6 +25,21 @@ const Home = ({ isMobile }) => {
     console.debug("[Home] @onStepEnter", data);
     setCurrentStepIndex(data);
   };
+
+  // useEffect(() => {
+  //   // 👇 add class to body element
+  //   document.body.classList.add("bg-salmon");
+
+  //   // 👇️ set style on body element
+  //   document.body.style.backgroundColor = "salmon";
+
+  //   return () => {
+  //     // 👇️ optionally remove styles when component unmounts
+  //     document.body.style.backgroundColor = null;
+
+  //     document.body.classList.remove("bg-salmon");
+  //   };
+  // }, []);
 
   return (
     <>
