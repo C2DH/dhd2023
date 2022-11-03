@@ -16,3 +16,55 @@
 .full-screen-menu-wrapper nav i span {
   background-color: var(--white);
 }
+
+.full-screen-menu-wrapper a {
+  color: var(--white);
+}
+
+.full-screen-menu-wrapper .menu-wrapper {
+  justify-content: flex-start;
+  position: relative;
+  padding: 0;
+  top: 0;
+}
+
+.full-screen-menu-wrapper .dropdown-menu {
+  flex-direction: row;
+}
+
+.full-screen-menu-wrapper ul {
+  flex-direction: column;
+  position: relative;
+  top: 0;
+}
+
+.full-screen-menu-wrapper > .menu-wrapper > ul {
+  padding-left: 0;
+}
+
+.full-screen-menu-wrapper > .menu-wrapper > ul li {
+  margin: 0;
+}
+
+.full-screen-menu-wrapper .menu-wrapper > ul > li {
+  font-size: 2.5rem;
+  height: auto;
+  padding: 0.5rem 0;
+}
+
+.full-screen-menu-wrapper .menu-wrapper > ul > li.active:nth-child(1) {
+  height: 255px;
+}
+
+.full-screen-menu-wrapper .menu-wrapper > ul > li:nth-child(1) {
+  height: 76px;
+  transition: height 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.full-screen-menu-wrapper .menu-wrapper > ul > li:nth-child(1) > a {
+  height: 76px;
+}
+
+.full-screen-menu-wrapper .menu-wrapper ul li a .icon-plus {
+  transform: translateY(-4px);
+}

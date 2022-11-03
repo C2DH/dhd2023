@@ -2,7 +2,7 @@ import { MenuOpen } from "../../store";
 import { a, useSpring } from "react-spring";
 import { useEffect } from "react";
 
-const Dhd2023Logo = ({ menuStatus }) => {
+const Dhd2023Logo = ({ menuStatus, currentStepIndex }) => {
   const PrimaryColor = "var(--primary)";
   const BlackColor = "var(--black)";
   const WhiteColor = "var(--white)";
@@ -11,15 +11,24 @@ const Dhd2023Logo = ({ menuStatus }) => {
   const [WhiteColorStyle, apiTwo] = useSpring(() => ({}));
 
   useEffect(() => {
-    // console.debug("[MenuFullScreen] @useEffect menuStatus:", width);
     api.start({
-      fill: menuStatus === MenuOpen ? WhiteColor : PrimaryColor,
+      fill:
+        menuStatus === MenuOpen ||
+        currentStepIndex === 1 ||
+        currentStepIndex === 3
+          ? WhiteColor
+          : BlackColor,
     });
 
     apiTwo.start({
-      fill: menuStatus === MenuOpen ? WhiteColor : BlackColor,
+      fill:
+        menuStatus === MenuOpen ||
+        currentStepIndex === 1 ||
+        currentStepIndex === 3
+          ? WhiteColor
+          : PrimaryColor,
     });
-  }, [menuStatus, apiTwo, api]);
+  }, [menuStatus, currentStepIndex, apiTwo, api]);
 
   return (
     <div className="MenuFixed dhd-logo-wrapper">

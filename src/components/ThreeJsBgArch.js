@@ -9,33 +9,42 @@ import Arch from "./Arch";
 const SceneSteps = [
   {
     scale: 0.12,
-    position: 1.8,
-    rotation: -1,
+    position: [1.8, -1.5],
+    rotation: [0, -1, 0],
     color: "#73a5e3",
   },
   {
     scale: 0.14,
-    position: -1.8,
-    rotation: 0.4,
+    position: [-1.8, 0],
+    rotation: [0, -0.4, 0],
     color: "#000000",
   },
   {
-    scale: 0.15,
+    scale: 0.5,
     color: "#73a5e3",
+    position: [-0.2, -10],
+    rotation: [-0.6, -0.35, -0.25],
   },
   {
-    scale: 0.05,
+    scale: 0.14,
+    position: [-1.8, 0],
+    rotation: [0, -0.4, 0],
+    color: "#000000",
+  },
+  {
+    scale: 0.18,
+    position: [1.8, -1.5],
+    rotation: [0, -1, 0],
     color: "#73a5e3",
   },
 ];
 
 const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
-  console.debug("[ThreeJsBgArch] stepIndex", stepIndex);
   const scene = SceneSteps[stepIndex ?? 0];
   const [styles, api] = useSpring(() => ({
     scale: 0,
-    rotation: 0,
-    position: 0,
+    rotation: [0, 0, 0],
+    position: [0, 0],
     color: "#73a5e3",
     config: config.slow,
   }));
@@ -59,11 +68,33 @@ const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
         <a.group
           // position={[2, -1.2, 0]}
           scale={styles.scale}
-          rotation={styles.rotation.to((y) => [0, y, 0])}
-          position={styles.position.to((x) => [x, -1.3, 0])}
+          rotation={styles.rotation.to((x, y, z) => [x, y, z])}
+          position={styles.position.to((x, y) => [x, y, 0])}
         >
           <Arch color={scene.color}></Arch>
         </a.group>
+
+        <a.group
+          // position={[2, -1.2, 0]}
+          scale={styles.scale}
+          rotation={styles.rotation.to((x, y, z) => [x, y, z])}
+          position={styles.position.to((x, y) => [x, y, 0])}
+        >
+          <Arch color={scene.color}></Arch>
+        </a.group>
+
+        {stepIndex === 2 ? (
+          <a.group scale={0.2} rotation={[0, 0, 0]} position={[0, 0, 0]}>
+            <Arch color={scene.color}></Arch>
+          </a.group>
+        ) : null}
+
+        {stepIndex === 2 ? (
+          <a.group scale={0.12} rotation={[0.4, 0, 0]} position={[0, 0, 0]}>
+            <Arch color={scene.color}></Arch>
+          </a.group>
+        ) : null}
+
         <ambientLight intensity={0.5} />
         {/* <directionalLight intensity={0.5} position={[5, 10, 10]} color="#d2e9fe" /> */}
         <spotLight
