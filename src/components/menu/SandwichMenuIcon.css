@@ -5,7 +5,7 @@
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  background-color: transparent !important;
   border: 0;
 }
 

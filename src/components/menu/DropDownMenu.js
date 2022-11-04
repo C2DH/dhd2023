@@ -19,7 +19,7 @@ const DropDownMenu = () => {
           );
         })}
       </div>
-      <div lassName="dropdown-menu-row-two">
+      <div className="dropdown-menu-row-two">
         {dataDropdown.slice(4, 7).map((dataDropdown, index) => {
           return (
             <li key={dataDropdown.title}>

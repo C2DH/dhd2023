@@ -8,9 +8,14 @@ export const dataDropdown = [
   { title: "FAQ", link: "#/" },
 ];
 
-export const dataSecondaryMeny = [
+export const dataSecondaryMenu = [
   { title: "Postersession", link: "#/" },
   { title: "Behind the Scenes", link: "#/" },
   { title: "BLOG", link: "#/" },
   { title: "Kontakt", link: "#/" },
+];
+
+export const dataFooterMenu = [
+  { title: "Impressum", link: "#/" },
+  { title: "Datenschutz", link: "#/" },
 ];

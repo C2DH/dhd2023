@@ -117,6 +117,8 @@ h2 {
 
 a {
   color: var(--black);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 span,
@@ -128,6 +130,7 @@ li {
 
 li {
   position: relative;
+  list-style-type: none;
 }
 
 .flex-center {
@@ -153,9 +156,27 @@ li {
   background-color: var(--body-light-bg) !important;
 }
 
+//Button styles
+*button {
+  font-family: "mr-eaves-xl-sans", sans-serif !important;
+  border-radius: 0 !important;
+  padding: 0.8rem 1.8rem !important;
+  position: relative;
+  z-index: 2;
+  font-size: 1.4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  background-color: var(--primary) !important;
+  border-color: transparent !important;
+}
+
+*button svg {
+  margin-left: 0.4rem;
+}
+
 :root {
   --primary: #1da7e0;
-  --black: #2c393e;
+  --black: #172429;
   --white: #eef1f2;
   --body-light-bg: #b4defe;
 }

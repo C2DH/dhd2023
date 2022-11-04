@@ -59,6 +59,7 @@
 .full-screen-menu-wrapper .menu-wrapper > ul > li:nth-child(1) {
   height: 76px;
   transition: height 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  overflow: hidden;
 }
 
 .full-screen-menu-wrapper .menu-wrapper > ul > li:nth-child(1) > a {

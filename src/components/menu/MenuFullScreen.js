@@ -8,6 +8,8 @@ import Menu from "../menu/Menu.js";
 import Arch from "../Arch.js";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
+import SecondaryMenu from "./SecondaryMenu";
+import MenuFooter from "./MenuFooter";
 
 const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
   // const setMenuStatus = useMenuStore((state) => state.setMenuStatus);
@@ -25,17 +27,25 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
   }, [menuStatus, api, width]);
   return (
     <a.section style={styles} className="menu-full-screen flex-center">
-      <Container>
+      <Container
+        className="h-100 d-flex flex-column justify-content-center
+}"
+      >
         <Row>
-          <Col className="col-7">
+          <Col className="col-md-7 col-xs-12">
             <div className="full-screen-menu-wrapper">
               <Menu />
-              <Button variant="secondary">Register</Button>{" "}
             </div>
           </Col>
-          <Col className="col-5"></Col>
+          <Col className="col-md-5 col-xs-12">
+            <SecondaryMenu />
+          </Col>
         </Row>
+        <Button variant="secondary" className="align-self-start">
+          Register
+        </Button>{" "}
       </Container>
+      <MenuFooter />
       <div
         id="menu-canvas-container"
         style={{ width: availableWidth, height: availableHeight, zIndex: 0 }}

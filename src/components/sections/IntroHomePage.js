@@ -1,6 +1,7 @@
 import "./IntroHomePage.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 const Intro = ({ availableWidth, availableHeight }) => {
   const [click, setClick] = useState(true);
@@ -21,6 +22,8 @@ const Intro = ({ availableWidth, availableHeight }) => {
               </h1>
               <Button onClick={setClickStatus} variant="primary" size="lg">
                 {click === false ? "Register" : "Registed"}
+
+                <ArrowRight />
               </Button>{" "}
             </Col>
           </Row>

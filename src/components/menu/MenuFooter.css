@@ -1,0 +1,26 @@
+.footer-menu-wrapper {
+  z-index: 2;
+  margin-bottom: 2rem;
+}
+
+.footer-menu-wrapper ul {
+  justify-content: flex-end;
+  margin: 0 4rem 0 0;
+}
+
+.footer-menu-wrapper ul li a {
+  color: var(--white);
+  font-size: 0.8rem;
+}
+
+.footer-menu-wrapper ul li:nth-child(2) {
+  margin-left: 1rem;
+}
+
+.footer-line {
+  display: flex;
+  height: 2px;
+  width: 100%;
+  background-color: var(--white);
+  margin-left: 4rem;
+}
