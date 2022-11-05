@@ -1,11 +1,15 @@
 .footer-menu-wrapper {
   z-index: 2;
-  margin-bottom: 2rem;
+  margin: 0 4rem 2rem 4rem;
+}
+
+footer .footer-menu-wrapper {
+  margin: 0;
 }
 
 .footer-menu-wrapper ul {
   justify-content: flex-end;
-  margin: 0 4rem 0 0;
+  margin: 0;
 }
 
 .footer-menu-wrapper ul li a {
@@ -19,8 +23,7 @@
 
 .footer-line {
   display: flex;
-  height: 2px;
+  height: 1px;
   width: 100%;
   background-color: var(--white);
-  margin-left: 4rem;
 }

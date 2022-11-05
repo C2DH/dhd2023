@@ -1,7 +1,7 @@
 import { dataFooterMenu } from "../../Data";
 import "./MenuFooter.css";
 
-const menuFooter = () => {
+const MenuFooter = () => {
   return (
     <div className="footer-menu-wrapper d-flex align-items-center">
       <span className="footer-line"></span>
@@ -18,4 +18,4 @@ const menuFooter = () => {
   );
 };
 
-export default menuFooter;
+export default MenuFooter;

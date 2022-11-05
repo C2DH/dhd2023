@@ -12,13 +12,17 @@ const Menu = () => {
     setDropdown(!dropdown);
   };
 
+  if (menuStatus === MenuOpen) {
+    document.body.style.overflow = "hidden";
+  }
+
+  if (menuStatus === MenuClosed) {
+    document.body.style.overflow = "auto";
+  }
+
   return (
     <nav className="menu-wrapper">
-      <ul
-        className={
-          menuStatus === MenuClosed ? `d-none d-sm-none d-md-flex` : null
-        }
-      >
+      <ul className={menuStatus === MenuOpen ? "d-none" : "z-index-4"}>
         <li
           className={dropdown === false ? `active` : null}
           onClick={toggleMenu}

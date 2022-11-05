@@ -1,11 +1,12 @@
 .menu-wrapper {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
   position: absolute;
-  top: 3rem;
-  padding: 1rem 8rem;
-  z-index: 2;
+  top: 2.8rem;
+  right: 0;
+  padding: 1rem 0;
+  z-index: 4;
+  margin-right: calc(var(--main-container-padding) + 4rem);
 }
 .menu-wrapper ul {
   display: flex;
@@ -33,4 +34,10 @@
 
 .menu-wrapper ul li a {
   text-decoration: none;
+}
+
+@media (max-width: 868px) {
+  .menu-wrapper ul {
+    display: none;
+  }
 }

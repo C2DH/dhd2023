@@ -8,14 +8,16 @@ const ViewConfereceHomePage = ({ availableWidth, availableHeight }) => {
       <div className="iview-conference-content-wrapper">
         <Container>
           <Row>
-            <Col className=" col-7 align-self-end offset-5 text-end">
-              <h2 className="text-end">
-                A unique experience of inspiration, meeting and networking for
-                the ANY WORD industry
-              </h2>
-              <Button variant="primary" size="lg">
-                Register
-              </Button>{" "}
+            <Col className=" col-7 offset-5">
+              <div className="d-flex flex-column align-items-end">
+                <h2 className="text-end">
+                  A unique experience of inspiration, meeting and networking for
+                  the ANY WORD industry
+                </h2>
+                <Button className="mt-4" variant="primary" size="lg">
+                  Register
+                </Button>
+              </div>
             </Col>
           </Row>
         </Container>

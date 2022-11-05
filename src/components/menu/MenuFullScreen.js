@@ -26,9 +26,9 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
     });
   }, [menuStatus, api, width]);
   return (
-    <a.section style={styles} className="menu-full-screen flex-center">
+    <a.div style={styles} className="menu-full-screen p-4 flex-center">
       <Container
-        className="h-100 d-flex flex-column justify-content-center
+        className="h-100 position-relative p-0 d-flex flex-column justify-content-center
 }"
       >
         <Row>
@@ -44,8 +44,8 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
         <Button variant="secondary" className="align-self-start">
           Register
         </Button>{" "}
+        <MenuFooter />
       </Container>
-      <MenuFooter />
       <div
         id="menu-canvas-container"
         style={{ width: availableWidth, height: availableHeight, zIndex: 0 }}
@@ -76,7 +76,7 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
           <Environment rotation={[Math.PI / 2, 0, 5]} preset="sunset" />
         </Canvas>
       </div>
-    </a.section>
+    </a.div>
   );
 };
 

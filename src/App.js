@@ -7,8 +7,10 @@ function App({ isMobile }) {
   const { width, height } = useCurrentWindowDimensions(isMobile);
   return (
     <div className="App">
-      <MenuFullScreen availableWidth={width} availableHeight={height} />
-      <Home availableWidth={width} availableHeight={height}></Home>
+      <main>
+        <MenuFullScreen availableWidth={width} availableHeight={height} />
+        <Home availableWidth={width} availableHeight={height}></Home>
+      </main>
     </div>
   );
 }

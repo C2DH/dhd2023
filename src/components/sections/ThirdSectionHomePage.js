@@ -8,7 +8,7 @@ const ThirdSection = ({ availableWidth, availableHeight }) => {
       <div className="iview-conference-content-wrapper">
         <Container>
           <Row>
-            <Col className=" col-7 align-self-start text-end">
+            <Col className=" col-7 align-self-start">
               <h2>
                 A unique experience of inspiration, meeting and networking for
                 the ANY WORD industry

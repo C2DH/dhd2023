@@ -20,7 +20,12 @@ const Intro = ({ availableWidth, availableHeight }) => {
                 A unique experience of inspiration, meeting and networking for
                 the ANY WORD industry
               </h1>
-              <Button onClick={setClickStatus} variant="primary" size="lg">
+              <Button
+                className="mt-4"
+                onClick={setClickStatus}
+                variant="primary"
+                size="lg"
+              >
                 {click === false ? "Register" : "Registed"}
 
                 <ArrowRight />

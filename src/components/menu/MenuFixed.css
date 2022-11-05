@@ -1,28 +1,30 @@
+.menu-fixed {
+  position: fixed;
+  width: calc(100% - var(--fixed-menu-rm));
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+}
+
 .dhd-logo-wrapper {
   display: flex;
-  position: fixed;
-  top: 2rem;
-  left: 4rem;
-  z-index: 4;
+  width: 10rem;
+  cursor: pointer;
 }
 
 .dhd-logo-wrapper svg path {
   transition: all 0.3s;
 }
 
-/* .dhd-logo-wrapper.active svg path {
-  fill: red;
-  transition: all 0.3s;
-} */
-
 .menu-icon-wrapper {
   display: flex;
-  position: fixed;
-  top: 3.8rem;
-  right: 3rem;
-  z-index: 4;
 }
 
 .menu-icon-wrapper span {
   background-color: var(--white);
+}
+
+.sandwich-menu {
+  display: flex;
+  align-items: center;
 }

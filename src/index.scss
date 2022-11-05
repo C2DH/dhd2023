@@ -83,6 +83,11 @@ body {
   );
 }
 
+main {
+  position: relative;
+  padding: 2rem var(--main-container-padding);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -90,8 +95,8 @@ code {
 
 section {
   position: relative;
-  z-index: 1;
   height: 100vh;
+  z-index: 1;
 }
 
 h1,
@@ -179,4 +184,20 @@ li {
   --black: #172429;
   --white: #eef1f2;
   --body-light-bg: #b4defe;
+  --fixed-menu-rm: 8rem;
+  --main-container-padding: 4rem;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --fixed-menu-rm: 4rem;
+    --main-container-padding: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  :root {
+    --fixed-menu-rm: 2rem;
+    --main-container-padding: 1rem;
+  }
 }

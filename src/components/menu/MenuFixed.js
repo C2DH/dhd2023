@@ -9,7 +9,7 @@ const MenuFixed = ({ currentStepIndex }) => {
   const setMenuStatus = useMenuStore((state) => state.setMenuStatus);
 
   return (
-    <header className="MenuFixed">
+    <header className="menu-fixed">
       <Dhd2023Logo
         currentStepIndex={currentStepIndex}
         menuStatus={menuStatus}

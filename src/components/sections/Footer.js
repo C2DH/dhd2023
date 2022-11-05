@@ -1,11 +1,11 @@
-// import './Header.css'
+import MenuFooter from "../menu/MenuFooter";
 
 const { Container, Row, Col } = require("react-bootstrap");
 
 const Footer = ({ availableWidth, availableHeight }) => {
   return (
-    <section className="view-conference flex-center">
-      <div className="iview-conference-content-wrapper">
+    <footer className="footer h-100 flex-center">
+      <div className="footer-content-wrapper flex-grow-1">
         <Container>
           <Row>
             <Col className=" col-7 align-self-start">
@@ -17,7 +17,8 @@ const Footer = ({ availableWidth, availableHeight }) => {
           </Row>
         </Container>
       </div>
-    </section>
+      <MenuFooter />
+    </footer>
   );
 };
 

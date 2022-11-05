@@ -1,18 +1,18 @@
 .menu-icon-wrapper {
+  border: 0;
+  background-color: transparent !important;
   height: 26px;
   width: 34px;
-  margin: 0 1.6rem;
-  cursor: pointer;
   align-items: center;
   justify-content: center;
-  background-color: transparent !important;
-  border: 0;
+  z-index: 4;
+  cursor: pointer;
+  position: relative;
 }
 
 .menu-icon-wrapper i {
   height: inherit;
   min-width: inherit;
-  margin: 0 1.6rem;
   justify-content: space-around;
 }
 
@@ -34,6 +34,7 @@
   width: 27px;
   background-color: var(--black);
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .menu-icon-wrapper span:nth-child(1) {
