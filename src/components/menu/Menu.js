@@ -22,7 +22,7 @@ const Menu = () => {
   }
 
   return (
-    <nav className='menu-wrapper'>
+    <nav className="menu-wrapper">
       <ul className={menuStatus === MenuOpen ? 'd-none' : 'z-index-4'}>
         <li
           className={dropdown === false ? `active` : null}
@@ -30,23 +30,19 @@ const Menu = () => {
           onMouseOver={(event) => setDropdown(false)}
           onMouseOut={(event) => setDropdown(true)}
         >
-          <a className='programm-events' href='/#' tabIndex={1}>
+          <a className="programm-events" href="/#" tabIndex={1}>
             Programm & Events
-            {dropdown === false ? (
-              <Minus className='icon-plus' />
-            ) : (
-              <Plus className='icon-plus' />
-            )}
+            {dropdown === false ? <Minus className="icon-plus" /> : <Plus className="icon-plus" />}
             <DropDownMenu />
           </a>
         </li>
         <li>
-          <Link to='/' tabIndex={1}>
+          <Link to="/team" tabIndex={1}>
             Komitee & team
           </Link>
         </li>
         <li>
-          <Link to='/cfp' tabIndex={1}>
+          <Link to="/cfp" tabIndex={1}>
             Call for Papers
           </Link>
         </li>

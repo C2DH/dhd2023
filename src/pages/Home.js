@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import ThreeJsBgArch from '../components/ThreeJsBgArch'
 import IntroHomePage from '../components/sections/IntroHomePage'
 import ViewConfereceHomePage from '../components/sections/ViewConfereceHomePage'
@@ -30,6 +30,16 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
     setCurrentStepIndex(data)
   }
 
+  useLayoutEffect(() => {
+    console.debug('[Home] @useLayoutEffect location.pathname:', location.pathname)
+    if (location.pathname === '/team') {
+      const el = document.getElementById('section-team')
+      if (el) {
+        el.scrollIntoView()
+      }
+      // document.elementFromPoint. section-team
+    }
+  }, [location.pathname])
   return (
     <div
       className={`Home ${isHidden ? 'position-fixed' : ''}`}
@@ -44,6 +54,7 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
                   // margin: "50vh 0",
                   // borderTop: "4px solid gray",
                   // borderBottom: "4px solid red",
+                  transition: 'opacity .5s ease-in-out',
                   opacity: currentStepIndex === stepIndex ? 1 : 0,
                 }}
               >

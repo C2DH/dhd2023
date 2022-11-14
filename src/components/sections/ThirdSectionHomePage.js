@@ -1,6 +1,6 @@
 // import './Header.css'
 
-const { Container, Row, Col, Button } = require("react-bootstrap");
+const { Container, Row, Col, Button } = require('react-bootstrap')
 
 const ThirdSection = ({ availableWidth, availableHeight }) => {
   return (
@@ -9,19 +9,19 @@ const ThirdSection = ({ availableWidth, availableHeight }) => {
         <Container>
           <Row>
             <Col className=" col-7 align-self-start">
+              <a id="section-team"></a>
               <h2>
-                A unique experience of inspiration, meeting and networking for
-                the ANY WORD industry
+                A unique experience of inspiration, meeting and networking for the ANY WORD industry
               </h2>
               <Button variant="primary" size="lg">
                 Register
-              </Button>{" "}
+              </Button>{' '}
             </Col>
           </Row>
         </Container>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ThirdSection;
+export default ThirdSection
