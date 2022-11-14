@@ -13,7 +13,7 @@ footer .footer-menu-wrapper {
 }
 
 .footer-menu-wrapper ul li a {
-  color: var(--white);
+  color: var(--black);
   font-size: 0.8rem;
 }
 
@@ -25,5 +25,13 @@ footer .footer-menu-wrapper {
   display: flex;
   height: 1px;
   width: 100%;
+  background-color: var(--black);
+}
+
+.menu-full-screen .footer-line {
   background-color: var(--white);
+}
+
+.menu-full-screen .footer-menu-wrapper ul li a {
+  color: var(--white);
 }

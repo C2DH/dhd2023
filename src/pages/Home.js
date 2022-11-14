@@ -54,14 +54,14 @@ const Home = ({ availableWidth, availableHeight }) => {
       <div className="Home">
         <MenuFixed currentStepIndex={currentStepIndex} />
         <Menu />
-        <Scrollama offset={0.5} onStepEnter={onStepEnter} debug>
+        <Scrollama offset={0.5} onStepEnter={onStepEnter}>
           {AvailableSteps.map((text, stepIndex) => (
             <Step data={stepIndex} key={stepIndex}>
               <section
                 style={{
                   // margin: "50vh 0",
-                  borderTop: "4px solid gray",
-                  borderBottom: "4px solid red",
+                  // borderTop: "4px solid gray",
+                  // borderBottom: "4px solid red",
                   opacity: currentStepIndex === stepIndex ? 1 : 0,
                 }}
               >

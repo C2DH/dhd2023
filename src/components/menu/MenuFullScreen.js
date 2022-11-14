@@ -7,12 +7,11 @@ import { useCurrentWindowDimensions } from "../../hooks/viewport";
 import Menu from "../menu/Menu.js";
 import Arch from "../Arch.js";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import SecondaryMenu from "./SecondaryMenu";
 import MenuFooter from "./MenuFooter";
 
 const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
-  // const setMenuStatus = useMenuStore((state) => state.setMenuStatus);
   const menuStatus = useMenuStore((state) => state.menuStatus);
   const { width } = useCurrentWindowDimensions(isMobile);
   const [styles, api] = useSpring(() => ({
@@ -25,6 +24,7 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
       x: menuStatus === MenuClosed ? width : 0,
     });
   }, [menuStatus, api, width]);
+
   return (
     <a.div style={styles} className="menu-full-screen p-4 flex-center">
       <Container
@@ -56,9 +56,13 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
           <group
             scale={0.15}
             rotation={[0, 1.8, -0.02]}
-            position={[1, -1.7, 0]}
+            position={[1, -3.2, 0]}
           >
-            <Arch color={"#000000"}></Arch>
+            <Arch
+              menuStatus={menuStatus}
+              color={"var(--primary)"}
+              wireframe
+            ></Arch>
           </group>
           <fog attach="fog" args={["#312a24", 0.01, 0]} />
           <ambientLight intensity={0.5} />
@@ -73,7 +77,6 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
           />
           {/* <spotLight position={[0, 3, -3]} angle={0.2} penumbra={1} intensity={1} /> */}
           <OrbitControls autoRotate={false} enableZoom={false} />
-          <Environment rotation={[Math.PI / 2, 0, 5]} preset="sunset" />
         </Canvas>
       </div>
     </a.div>

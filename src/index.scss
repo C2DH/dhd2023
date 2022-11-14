@@ -61,8 +61,25 @@ body {
   opacity: 0.5;
   background: radial-gradient(
     circle,
-    rgba(91, 41, 140, 1) 0%,
-    rgba(91, 41, 140, 0) 70%
+    rgba(29, 167, 224, 1) 0%,
+    rgba(29, 167, 224, 0) 70%
+  );
+}
+
+.bg-light::after {
+  content: "";
+  box-sizing: content-box;
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 1800px;
+  height: 1800px;
+  border-radius: 100%;
+  opacity: 0.5;
+  background: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 0%,
+    rgba(255, 255, 255, 0) 70%
   );
 }
 
@@ -70,7 +87,8 @@ body {
   content: "";
   box-sizing: content-box;
   position: fixed;
-  bottom: -50%;
+  z-index: 1;
+  bottom: 0;
   right: 50%;
   width: 1800px;
   height: 1800px;
@@ -78,8 +96,26 @@ body {
   opacity: 0.4;
   background: radial-gradient(
     circle,
-    rgba(29, 167, 224, 1) 0%,
-    rgba(29, 167, 224, 0) 70%
+    rgba(91, 41, 140, 1) 0%,
+    rgba(91, 41, 140, 0) 70%
+  );
+}
+
+.bg-light::before {
+  content: "";
+  box-sizing: content-box;
+  position: fixed;
+  z-index: 0;
+  bottom: -50%;
+  right: -50%;
+  width: 1800px;
+  height: 1800px;
+  border-radius: 100%;
+  opacity: 0.2;
+  background: radial-gradient(
+    circle,
+    rgb(88, 124, 255) 0%,
+    rgba(124, 182, 253, 0) 70%
   );
 }
 
@@ -97,6 +133,7 @@ section {
   position: relative;
   height: 100vh;
   z-index: 1;
+  // pointer-events: none;
 }
 
 h1,
@@ -183,7 +220,7 @@ li {
   --primary: #1da7e0;
   --black: #172429;
   --white: #eef1f2;
-  --body-light-bg: #b4defe;
+  --body-light-bg: #dceefc;
   --fixed-menu-rm: 8rem;
   --main-container-padding: 4rem;
 }

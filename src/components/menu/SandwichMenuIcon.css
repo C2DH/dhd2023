@@ -26,6 +26,7 @@
 
 .active .menu-icon-wrapper {
   justify-content: center;
+  transform: translateX(-1rem);
 }
 
 .menu-icon-wrapper span {
