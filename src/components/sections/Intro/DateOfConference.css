@@ -1,0 +1,21 @@
+.date-of-conference-wrapper {
+  display: flex;
+}
+
+.date-of-conference-wrapper .box {
+  background-color: var(--primaryx);
+  text-align: center;
+  padding: 1.5rem 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.date-of-conference-wrapper .box:nth-child(1) {
+  margin-right: 1rem;
+}
+
+.date-of-conference-wrapper h3 {
+  margin: 0;
+  font-size: 2.6rem;
+  line-height: 2.2rem;
+}
