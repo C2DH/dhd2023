@@ -30,11 +30,11 @@ const Menu = () => {
           onMouseOver={(event) => setDropdown(false)}
           onMouseOut={(event) => setDropdown(true)}
         >
-          <a className="programm-events" href="/#" tabIndex={1}>
+          <div className="programm-events" href="/#" tabIndex={1}>
             Programm & Events
             {dropdown === false ? <Minus className="icon-plus" /> : <Plus className="icon-plus" />}
             <DropDownMenu />
-          </a>
+          </div>
         </li>
         <li>
           <Link to="/team" tabIndex={1}>
