@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 import ThreeJsBgArch from '../components/ThreeJsBgArch'
-import IntroHomePage from '../components/sections/IntroHomePage'
+import IntroHomePage from '../components/sections/Intro/IntroHomePage'
 import ViewConfereceHomePage from '../components/sections/ViewConfereceHomePage'
 import { Scrollama, Step } from 'react-scrollama'
-import Menu from '../components/menu/Menu'
-import MenuFixed from '../components/menu/MenuFixed'
 import ThirdSection from '../components/sections/ThirdSectionHomePage'
 import FourthSection from '../components/sections/FourthSectionHomePage'
 import Footer from '../components/sections/Footer'
@@ -30,6 +28,7 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
     setCurrentStepIndex(data)
   }
 
+  //Scroll to section
   useLayoutEffect(() => {
     console.debug('[Home] @useLayoutEffect location.pathname:', location.pathname)
     if (location.pathname === '/team') {

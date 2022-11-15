@@ -1,66 +1,64 @@
-import { useRef, useEffect } from "react";
-import { useGLTF, useTexture } from "@react-three/drei";
-import { BufferAttribute } from "three";
-import * as THREE from "three";
-import { useSpring, config } from "@react-spring/core";
-import { a } from "@react-spring/three";
-import { useFrame } from "@react-three/fiber";
+import { useRef, useEffect } from 'react'
+import { useGLTF, useTexture } from '@react-three/drei'
+import { BufferAttribute } from 'three'
+import * as THREE from 'three'
+import { useSpring, config } from '@react-spring/core'
+import { a } from '@react-spring/three'
+import { useFrame } from '@react-three/fiber'
 
-const Arch = ({ color = "#b5d6ff", menuStatus, wireframe, ...props }) => {
-  const meshRef = useRef(null);
+const Arch = ({ color = '#b5d6ff', menuStatus, wireframe, ...props }) => {
+  const meshRef = useRef(null)
 
-  const { nodes } = useGLTF("/Arch.glb");
+  const { nodes } = useGLTF('/Arch.glb')
   const [styles, api] = useSpring(() => ({
     color,
     config: config.slow,
-  }));
-
-  console.log("Arch", nodes);
+  }))
 
   const acrhTextures = useTexture({
-    map: "/textures/tex-diff.jpeg",
+    map: '/textures/tex-diff.jpeg',
     // map: "/textures/checkerboard.png",
-    normalMap: "/textures/tex-nor.jpeg",
-    roughnessMap: "/textures/tex-rough.jpeg",
+    normalMap: '/textures/tex-nor.jpeg',
+    roughnessMap: '/textures/tex-rough.jpeg',
     // aoMap: "/textures/tex-arm.jpeg",
     // displacementMap: '/texture/rocks_disp.jpeg',
     // metalnessMap: "/textures/aerial_rocks_02_arm_4k_metalness_edited.jpg",
     // alphaMap: "/textures/alpha.png",
-  });
-  acrhTextures.map.wrapS = THREE.RepeatWrapping;
-  acrhTextures.map.wrapT = THREE.RepeatWrapping;
+  })
+  acrhTextures.map.wrapS = THREE.RepeatWrapping
+  acrhTextures.map.wrapT = THREE.RepeatWrapping
 
-  acrhTextures.map.repeat.x = 2.3;
-  acrhTextures.map.repeat.y = 2.3;
+  acrhTextures.map.repeat.x = 2.3
+  acrhTextures.map.repeat.y = 2.3
 
-  acrhTextures.normalMap.wrapS = THREE.RepeatWrapping;
-  acrhTextures.normalMap.wrapT = THREE.RepeatWrapping;
+  acrhTextures.normalMap.wrapS = THREE.RepeatWrapping
+  acrhTextures.normalMap.wrapT = THREE.RepeatWrapping
 
-  acrhTextures.normalMap.repeat.x = 2.3;
-  acrhTextures.normalMap.repeat.y = 2.3;
+  acrhTextures.normalMap.repeat.x = 2.3
+  acrhTextures.normalMap.repeat.y = 2.3
 
-  acrhTextures.roughnessMap.wrapS = THREE.RepeatWrapping;
-  acrhTextures.roughnessMap.wrapT = THREE.RepeatWrapping;
+  acrhTextures.roughnessMap.wrapS = THREE.RepeatWrapping
+  acrhTextures.roughnessMap.wrapT = THREE.RepeatWrapping
 
-  acrhTextures.roughnessMap.repeat.x = 2.3;
-  acrhTextures.roughnessMap.repeat.y = 2.3;
+  acrhTextures.roughnessMap.repeat.x = 2.3
+  acrhTextures.roughnessMap.repeat.y = 2.3
 
-  console.log("HELLO", nodes.Arch.geometry);
-
-  useEffect(() => {
-    api.start({ color });
-  }, [color, api]);
+  console.log('HELLO', nodes.Arch.geometry)
 
   useEffect(() => {
-    acrhTextures.needsUpdate = true;
-    nodes.Arch.geometry.needsUpdate = true;
+    api.start({ color })
+  }, [color, api])
+
+  useEffect(() => {
+    acrhTextures.needsUpdate = true
+    nodes.Arch.geometry.needsUpdate = true
     if (meshRef.current) {
       meshRef.current.geometry.setAttribute(
-        "uv2",
-        new BufferAttribute(meshRef.current.geometry.attributes.uv.array, 2)
-      );
+        'uv2',
+        new BufferAttribute(meshRef.current.geometry.attributes.uv.array, 2),
+      )
     }
-  });
+  })
 
   // const wireColor = () => {
   //   if (menuStatus === "open") {
@@ -70,15 +68,15 @@ const Arch = ({ color = "#b5d6ff", menuStatus, wireframe, ...props }) => {
   //   }
   // };
 
-  console.log("menuStatus", menuStatus);
+  console.log('menuStatus', menuStatus)
 
   useFrame(() => {
-    if (menuStatus === "open") {
-      meshRef.current.rotation.y += 0.001;
+    if (menuStatus === 'open') {
+      meshRef.current.rotation.y += 0.001
     }
-  });
+  })
 
-  console.log("color", color);
+  console.log('color', color)
 
   return (
     <group {...props} dispose={null}>
@@ -103,9 +101,9 @@ const Arch = ({ color = "#b5d6ff", menuStatus, wireframe, ...props }) => {
         />
       </mesh>
     </group>
-  );
-};
+  )
+}
 
-useGLTF.preload("/Arch.gltf");
+useGLTF.preload('/Arch.gltf')
 
-export default Arch;
+export default Arch
