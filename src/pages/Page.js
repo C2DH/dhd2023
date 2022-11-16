@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import StaticPageLoader from '../components/StaticPageLoader'
+import { StaticPageRoutePrefix, StaticPagesRoutes } from '../constants'
 
 const PageContent = ({ data }) => {
   if (!data) {
@@ -17,20 +18,15 @@ const PageContent = ({ data }) => {
 
 const Page = ({}) => {
   const location = useLocation()
+  const currentRoute = StaticPagesRoutes.find((d) => d.to === location.pathname)
+  const isHidden = !currentRoute
 
-  console.debug('[Page]', location.pathname)
+  // const pageUrl = isHidden ? null : location.pathname.split(StaticPageRoutePrefix).join('')
+  console.debug('[Page]', location.pathname, isHidden, currentRoute)
 
   return (
-    <div
-      className="Page position-absolute"
-      style={{ marginTop: 200, opacity: location.pathname === '/cfp' ? 1 : 0 }}
-    >
-      {location.pathname === '/cfp' && (
-        <StaticPageLoader
-          url={[process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_CFP_URL].join('')}
-          Component={PageContent}
-        />
-      )}
+    <div className="Page position-absolute" style={{ marginTop: 200, opacity: isHidden ? 0 : 1 }}>
+      {!isHidden && <StaticPageLoader url={currentRoute.contentUrl} Component={PageContent} />}
     </div>
   )
 }

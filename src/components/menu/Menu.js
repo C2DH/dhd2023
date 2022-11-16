@@ -4,6 +4,7 @@ import { Plus, Minus } from 'lucide-react'
 import DropDownMenu from './DropDownMenu'
 import { MenuOpen, MenuClosed, useMenuStore } from '../../store'
 import { Link } from 'react-router-dom'
+import { CfpRoute } from '../../constants'
 
 const Menu = () => {
   const [dropdown, setDropdown] = useState(true)
@@ -42,8 +43,8 @@ const Menu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/cfp" tabIndex={1}>
-            Call for Papers
+          <Link to={CfpRoute.to} tabIndex={1}>
+            {CfpRoute.label}
           </Link>
         </li>
       </ul>
