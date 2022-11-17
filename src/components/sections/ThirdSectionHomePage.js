@@ -12,7 +12,7 @@ const ThirdSection = ({ availableWidth, availableHeight }) => {
               <h2>
                 A unique experience of inspiration, meeting and networking for the ANY WORD industry
               </h2>
-              <Button variant="primary" size="lg">
+              <Button variant="secondary" size="lg">
                 Register
               </Button>{' '}
             </Col>

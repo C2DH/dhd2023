@@ -32,7 +32,7 @@ const Menu = () => {
         >
           <div className="programm-events" href="/#" tabIndex={1}>
             Programm & Events
-            {dropdown === false ? <Minus className="icon-plus" /> : <Plus className="icon-plus" />}
+            {dropdown === false ? <Minus className="icon" /> : <Plus className="icon" />}
             <DropDownMenu />
           </div>
         </li>

@@ -120,7 +120,7 @@ const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
 
         {/* <spotLight position={[0, 3, -3]} angle={0.2} penumbra={1} intensity={1} /> */}
         <OrbitControls autoRotate={false} enableZoom={false} makeDefault />
-        <Environment rotation={[Math.PI / 2, 0, 5]} preset="city" />
+        <Environment rotation={[Math.PI / 2, 0, 5]} preset="sunset" />
       </Canvas>
     </div>
   )

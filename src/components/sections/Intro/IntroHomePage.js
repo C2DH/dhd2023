@@ -1,31 +1,31 @@
 import './IntroHomePage.css'
-import { Container, Row, Col, Button } from 'react-bootstrap'
-import { useState } from 'react'
-import { ArrowRight } from 'lucide-react'
+import { Container, Row, Col } from 'react-bootstrap'
 import DateOfConference from './DateOfConference'
+import ButtonDhd from '../../ui/ButtonDhd.js'
 
 const Intro = ({ availableWidth, availableHeight }) => {
-  const [click, setClick] = useState(true)
-  console.log(click)
-  const setClickStatus = () => {
-    setClick(!click)
-  }
-
+  // const [click, setClick] = useState(true)
+  // console.log(click)
+  // const setClickStatus = () => {
+  //   setClick(!click)
+  // }
+  console.log('title', ButtonDhd)
   return (
     <section className="intro flex-center">
       <div className="intro-content-wrapper">
         <Container>
           <Row>
-            <Col className="col-7">
+            <Col className="col col-sm-12 col-md-9 col-lg-7">
               <h1>
                 A unique experience of inspiration, meeting and networking for the ANY WORD industry
               </h1>
               <DateOfConference />
-              <Button className="mt-4" onClick={setClickStatus} variant="primary" size="lg">
-                {click === false ? 'Register' : 'Registed'}
-
-                <ArrowRight />
-              </Button>{' '}
+              <ButtonDhd
+                className={'mt-0 mt-sm-4'}
+                variant={'primary'}
+                title={'Register'}
+                icon={true}
+              />
             </Col>
           </Row>
         </Container>
