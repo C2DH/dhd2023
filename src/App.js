@@ -6,6 +6,7 @@ import Header from './components/menu/Header'
 import Page from './pages/Page'
 import Background from './components/Background'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { StaticPagesRoutesPathnames } from './constants'
 
 // Create a client
 const queryClient = new QueryClient({
@@ -36,7 +37,11 @@ function App({ isMobile }) {
           <Header></Header>
           <Page></Page>
 
-          <Home hideWhenPathIs={['/cfp']} availableWidth={width} availableHeight={height}></Home>
+          <Home
+            hideWhenPathIs={StaticPagesRoutesPathnames}
+            availableWidth={width}
+            availableHeight={height}
+          ></Home>
         </main>
       </QueryClientProvider>
     </div>

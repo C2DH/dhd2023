@@ -4,6 +4,12 @@ import { useSpring, a, config } from '@react-spring/web'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
+export const axiosInstance = axios.create({
+  baseURL: '',
+  timeout: 15000,
+  contentType: 'application/json',
+})
+
 const StaticPageLoader = ({ url, delay = 0, Component, fakeData, raw = false, ...rest }) => {
   const [animatedLine, apiAnimatedLine] = useSpring(() => ({
     width: 0,
@@ -11,11 +17,9 @@ const StaticPageLoader = ({ url, delay = 0, Component, fakeData, raw = false, ..
     config: config.slow,
   }))
 
-  const { data, error, status } = useQuery([url], () =>
-    axios.get(url, {
-      baseUrl: process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROXY : '',
-    }),
-  )
+  const { data, error, status } = useQuery([url], () => {
+    return axiosInstance.get(url)
+  })
   // const { data, error, status } = useGetJSON({
   //   url,
   //   delay,
