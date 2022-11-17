@@ -2,7 +2,7 @@ import './App.css'
 import Home from './pages/Home'
 import MenuFullScreen from './components/menu/MenuFullScreen'
 import { useCurrentWindowDimensions } from './hooks/viewport'
-import Header from './components/Header'
+import Header from './components/menu/Header'
 import Page from './pages/Page'
 import Background from './components/Background'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -21,7 +21,7 @@ const queryClient = new QueryClient({
       staleTime: Infinity,
       retry: false,
       suspense: false,
-      keepPreviousData: true,
+      keepPreviousData: false,
     },
   },
 })

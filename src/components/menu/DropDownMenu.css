@@ -8,10 +8,10 @@
   flex-direction: column;
   opacity: 0;
   transform: translateX(-1rem);
-  transition: all 0.3s ease-in-out;
   pointer-events: none;
   background-color: var(--black);
   flex-direction: row;
+  transition: all 0.3s ease-in-out;
 }
 
 .dropdown-menu a {
@@ -50,4 +50,23 @@ li.active .dropdown-menu {
 
 .full-screen-menu-wrapper .dropdown-menu {
   background-color: transparent;
+  position: absolute;
+}
+
+.full-screen-menu-wrapper .active .dropdown-menu {
+  position: relative;
+  padding: 0;
+}
+
+.full-screen-menu-wrapper .dropdown-menu {
+  transition: none;
+}
+
+@media (max-width: 540px) {
+  .dropdown-menu .dropdown-menu-row-one {
+    padding-right: 0.2rem;
+  }
+  .dropdown-menu a {
+    font-size: 0.8rem;
+  }
 }

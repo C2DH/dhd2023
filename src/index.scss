@@ -35,11 +35,14 @@ $grid-gutter-width: 24px;
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import '../node_modules/bootstrap/scss/utilities/api';
-@import '../node_modules/bootstrap/scss/buttons';
 // 8. Add additional custom code here
+@import '../src/components/ui/ButtonDhd.css';
+
+html {
+  font-family: 'Mona Sans';
+}
 
 body {
-  font-family: 'mr-eaves-xl-sans' sans-serif;
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */
@@ -50,7 +53,7 @@ body {
 
 main {
   position: relative;
-  padding: 2rem var(--main-container-padding);
+  padding: 1.5rem var(--main-container-padding);
 }
 
 code {
@@ -68,21 +71,27 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'mr-eaves-xl-sans', sans-serif;
+  font-weight: 900;
+  font-stretch: 83%;
+  font-variation-settings: 'ital' 10, 'wdth' 100;
 }
 
 h1 {
-  font-size: 4.4rem;
-  line-height: 3.8rem;
+  font-size: min(10vw, 4rem);
+  line-height: min(8.55vw, 3.8rem);
   text-transform: uppercase;
   color: var(--black);
 }
 
 h2 {
-  font-size: 3.8rem;
-  line-height: 3.6rem;
+  font-size: min(9vw, 3.6rem);
+  line-height: min(8.55vw, 3.4rem);
   text-transform: uppercase;
   color: var(--black);
+}
+
+.bg-dark ~ main h2 {
+  color: var(--white) !important;
 }
 
 a {
@@ -109,10 +118,6 @@ li {
   justify-content: center;
 }
 
-.btn {
-  text-transform: uppercase;
-}
-
 .bg-dark {
   background-color: var(--black);
 }
@@ -126,26 +131,9 @@ li {
   background-color: var(--body-light-bg) !important;
 }
 
-//Button styles
-*button {
-  font-family: 'mr-eaves-xl-sans', sans-serif !important;
-  border-radius: 0 !important;
-  padding: 0.8rem 1.8rem !important;
-  position: relative;
-  z-index: 2;
-  font-size: 1.4rem !important;
-  display: flex !important;
-  align-items: center !important;
-  background-color: var(--primary) !important;
-  border-color: transparent !important;
-}
-
-*button svg {
-  margin-left: 0.4rem;
-}
-
 :root {
-  --primary: #1da7e0;
+  --primary-with-opacity: 29, 167, 224;
+  --primary: rgb(29, 167, 224);
   --black: #172429;
   --white: #eef1f2;
   --body-light-bg: #dceefc;
@@ -164,5 +152,8 @@ li {
   :root {
     --fixed-menu-rm: 2rem;
     --main-container-padding: 1rem;
+  }
+  main {
+    padding: 0.5rem var(--main-container-padding);
   }
 }

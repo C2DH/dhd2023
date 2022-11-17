@@ -1,6 +1,6 @@
-import MenuFixed from './menu/MenuFixed'
-import Menu from './menu/Menu'
-import { useMenuStore } from '../store'
+import MenuFixed from './MenuFixed'
+import Menu from './Menu'
+import { useMenuStore } from '../../store'
 
 const Header = () => {
   const currentStepIndex = useMenuStore((state) => state.currentStepIndex)

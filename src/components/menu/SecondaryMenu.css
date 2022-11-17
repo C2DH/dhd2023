@@ -4,7 +4,6 @@
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
-  padding-left: 3rem;
   padding-top: 0.8rem;
 }
 
@@ -15,4 +14,18 @@
 .secondery-menu a {
   color: var(--white);
   text-decoration: none;
+}
+
+@media (max-width: 540px) {
+  .secondery-menu a {
+    font-size: 1rem;
+  }
+  .secondery-menu {
+    padding-top: 0rem;
+    padding-left: 0rem;
+    margin: 1rem 0;
+  }
+  .secondery-menu li {
+    padding: 0;
+  }
 }

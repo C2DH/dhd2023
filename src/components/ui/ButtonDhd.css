@@ -1,0 +1,27 @@
+.btn {
+  font-family: 'mr-eaves-xl-sans', sans-serif !important;
+  border-radius: 0 !important;
+  padding: 1rem 2rem !important;
+  position: relative;
+  z-index: 2;
+  font-size: 1.4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  text-transform: uppercase !important;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: transparent !important;
+  color: var(--white);
+}
+
+.btn-secondary {
+  background-color: transparent !important;
+  border: 3px var(--primary) solid !important;
+  color: var(--primary);
+}
+
+.btn svg {
+  margin-left: 0.4rem;
+}

@@ -26,9 +26,7 @@ const Background = () => {
     <div
       className={`Background position-fixed w-100 h-100 ${classColor}`}
       style={{ backgroundColor: 'red' }}
-    >
-      {currentStepIndex}
-    </div>
+    />
   )
 }
 

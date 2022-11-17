@@ -3,11 +3,12 @@
 }
 
 .date-of-conference-wrapper .box {
-  background-color: var(--primaryx);
+  background-color: rgba(var(--primary-with-opacity), 0.2);
   text-align: center;
   padding: 1.5rem 4rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  white-space: nowrap;
 }
 
 .date-of-conference-wrapper .box:nth-child(1) {
@@ -16,6 +17,12 @@
 
 .date-of-conference-wrapper h3 {
   margin: 0;
-  font-size: 2.6rem;
-  line-height: 2.2rem;
+  font-size: min(6.55vw, 2.6rem);
+  line-height: auto;
+}
+
+@media (max-width: 540px) {
+  .date-of-conference-wrapper .box {
+    padding: 1rem 1.7rem;
+  }
 }
