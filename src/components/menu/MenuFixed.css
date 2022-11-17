@@ -26,5 +26,13 @@
 
 .sandwich-menu {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  align-content: center;
+}
+
+@media (max-width: 720px) {
+  .dhd-logo-wrapper {
+    width: 8rem;
+  }
 }
