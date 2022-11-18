@@ -4,6 +4,11 @@ export const CfpRoute = {
   label: 'Call for Papers',
   contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_CFP_URL].join(''),
 }
+export const TeamRoute = {
+  to: `${StaticPageRoutePrefix}/team`,
+  label: 'Team',
+  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_TEAM_URL].join(''),
+}
 
 export const StaticPagesRoutes = [CfpRoute]
 export const StaticPagesRoutesPathnames = StaticPagesRoutes.map((route) => route.to)

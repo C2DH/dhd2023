@@ -25,7 +25,7 @@ const Background = () => {
   return (
     <div
       className={`Background position-fixed w-100 h-100 ${classColor}`}
-      style={{ backgroundColor: 'red' }}
+      // style={{ backgroundColor: 'red' }}
     />
   )
 }

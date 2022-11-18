@@ -62,7 +62,7 @@ code {
 
 section {
   position: relative;
-  height: 100vh;
+  // height: 100vh;
   z-index: 1;
   // pointer-events: none;
 }
@@ -71,9 +71,9 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 900;
-  font-stretch: 83%;
-  font-variation-settings: 'ital' 10, 'wdth' 100;
+  font-weight: 400;
+  font-stretch: 85%;
+  font-variation-settings: 'ital' 10, 'wdth' 114;
 }
 
 h1 {
@@ -103,7 +103,7 @@ a {
 span,
 p,
 li {
-  font-family: 'heebo', sans-serif;
+  font-variation-settings: 'ital' 10, 'wdth' 84;
   color: var(--black);
 }
 

@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import DateOfConference from './DateOfConference'
 import ButtonDhd from '../../ui/ButtonDhd.js'
 
-const Intro = ({ availableWidth, availableHeight }) => {
+const Intro = () => {
   // const [click, setClick] = useState(true)
   // console.log(click)
   // const setClickStatus = () => {
@@ -11,7 +11,7 @@ const Intro = ({ availableWidth, availableHeight }) => {
   // }
   console.log('title', ButtonDhd)
   return (
-    <section className="intro flex-center">
+    <section className="intro flex-center h-100">
       <div className="intro-content-wrapper">
         <Container>
           <Row>

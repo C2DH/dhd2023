@@ -6,8 +6,8 @@ const PageContent = ({ data }) => {
   if (!data) {
     return null
   }
-  const title = data.data.title?.rendered
-  const content = data.data.content?.rendered
+  const title = data.title?.rendered
+  const content = data.content?.rendered
   return (
     <div>
       <h1>{title}</h1>
@@ -25,7 +25,7 @@ const Page = ({}) => {
   console.debug('[Page]', location.pathname, isHidden, currentRoute)
 
   return (
-    <div className="Page position-absolute" style={{ marginTop: 200, opacity: isHidden ? 0 : 1 }}>
+    <div className="Page" style={{ opacity: isHidden ? 0 : 1 }}>
       {!isHidden && <StaticPageLoader url={currentRoute.contentUrl} Component={PageContent} />}
     </div>
   )

@@ -18,7 +18,7 @@ const StaticPageLoader = ({ url, delay = 0, Component, fakeData, raw = false, ..
   }))
 
   const { data, error, status } = useQuery([url], () => {
-    return axiosInstance.get(url)
+    return axiosInstance.get(url).then(({ data }) => data)
   })
   // const { data, error, status } = useGetJSON({
   //   url,

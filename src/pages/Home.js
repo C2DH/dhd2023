@@ -3,7 +3,7 @@ import ThreeJsBgArch from '../components/ThreeJsBgArch'
 import IntroHomePage from '../components/sections/Intro/IntroHomePage'
 import ViewConfereceHomePage from '../components/sections/ViewConfereceHomePage'
 import { Scrollama, Step } from 'react-scrollama'
-import ThirdSection from '../components/sections/ThirdSectionHomePage'
+import TeamSection from '../components/sections/TeamSection'
 import FourthSection from '../components/sections/FourthSectionHomePage'
 import Footer from '../components/sections/Footer'
 import { useMenuStore } from '../store'
@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom'
 const AvailableSteps = [
   'first section',
   'second section',
-  'third section',
+  'team section',
   'fourth section',
   'footer',
 ]
@@ -45,16 +45,18 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
       style={{ opacity: isHidden ? 0 : 1 }}
     >
       <div>
-        <Scrollama offset={0.5} onStepEnter={onStepEnter}>
+        <Scrollama offset={0.75} onStepEnter={onStepEnter}>
           {AvailableSteps.map((text, stepIndex) => (
             <Step data={stepIndex} key={stepIndex}>
               <section
                 style={{
-                  // margin: "50vh 0",
+                  display: 'flex',
+                  margin: text === 'first section' ? '0 0 50vh' : '50vh 0',
                   // borderTop: "4px solid gray",
                   // borderBottom: "4px solid red",
+                  height: text === 'first section' ? availableHeight : 'auto',
                   transition: 'opacity .5s ease-in-out',
-                  opacity: currentStepIndex === stepIndex ? 1 : 0,
+                  opacity: currentStepIndex === stepIndex ? 1 : 0.5,
                 }}
               >
                 {text === 'first section' && (
@@ -69,12 +71,7 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
                     availableHeight={availableHeight}
                   ></ViewConfereceHomePage>
                 )}
-                {text === 'third section' && (
-                  <ThirdSection
-                    availableWidth={availableWidth}
-                    availableHeight={availableHeight}
-                  ></ThirdSection>
-                )}
+                {text === 'team section' && <TeamSection></TeamSection>}
                 {text === 'fourth section' && (
                   <FourthSection
                     availableWidth={availableWidth}
