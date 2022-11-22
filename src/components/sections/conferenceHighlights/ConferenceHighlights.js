@@ -1,7 +1,11 @@
-import ButtonDhd from '../ui/ButtonDhd.js'
+import ButtonDhd from '../../ui/ButtonDhd.js'
+import ConferenceHighlightsBlocks from '../conferenceHighlights/ConferenceHighlightsBlocks.js'
+import StaticPageLoader from '../../StaticPageLoader.js'
+import { ConferenceHighlightsRoute } from '../../../constants.js'
+
 const { Container, Row, Col } = require('react-bootstrap')
 
-const ViewConfereceHomePage = () => {
+const ConferenceHighlights = () => {
   return (
     <section className="view-conference flex-center">
       <div className="iview-conference-content-wrapper">
@@ -13,19 +17,20 @@ const ViewConfereceHomePage = () => {
                   A unique experience of inspiration, meeting and networking for the ANY WORD
                   industry
                 </h2>
-                <ButtonDhd
-                  className={'mt-4'}
-                  variant={'primary'}
-                  title={'VIEW CONFERENCE'}
-                  icon={true}
-                />
               </div>
             </Col>
           </Row>
+        </Container>
+        <Container className="mt-5">
+          <StaticPageLoader
+            url={ConferenceHighlightsRoute.contentUrl}
+            Component={ConferenceHighlightsBlocks}
+          ></StaticPageLoader>
+          <ButtonDhd className={'mt-4'} variant={'primary'} title={'Register'} icon={true} />
         </Container>
       </div>
     </section>
   )
 }
 
-export default ViewConfereceHomePage
+export default ConferenceHighlights

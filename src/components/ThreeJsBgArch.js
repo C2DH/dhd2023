@@ -5,6 +5,7 @@ import './ThreeJsBgArch.css'
 import { useSpring, config } from '@react-spring/core'
 import { a } from '@react-spring/three'
 import Arch from './Arch'
+import { useMenuStore } from '../store'
 
 const SceneSteps = [
   {
@@ -32,6 +33,12 @@ const SceneSteps = [
     color: '#000000',
   },
   {
+    scale: 0.13,
+    position: [-2, -2.8],
+    rotation: [-0.2, -0.25, -0.08],
+    color: '#000000',
+  },
+  {
     scale: 0.12,
     position: [-0.1, -4.5],
     rotation: [-0.1, -0.45, -0.058],
@@ -39,8 +46,9 @@ const SceneSteps = [
   },
 ]
 
-const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
-  const scene = SceneSteps[stepIndex ?? 0]
+const ThreeJsBgArch = ({ availableWidth = 100, availableHeight = 100 }) => {
+  const currentStepIndex = useMenuStore((state) => state.currentStepIndex)
+  const scene = SceneSteps[currentStepIndex ?? 0]
   const [styles, api] = useSpring(() => ({
     scale: 0,
     rotation: [0, 0, 0],
@@ -56,7 +64,7 @@ const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
       position: scene.position ?? 0,
       color: scene.color,
     })
-  }, [stepIndex, scene, api])
+  }, [scene, api])
   return (
     <div
       id="canvas-container"
@@ -65,8 +73,9 @@ const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
       // {...props}
     >
       <Canvas flat shadows camera={{ position: [-4, 1.5, 8], fov: 25 }}>
-        {stepIndex === 2 ? <fog attach="fog" args={['#e5f4ff', -15, 40]} /> : null}
-        {stepIndex === 3 ? <fog attach="fog" args={['#4e4a54', -15, 35]} /> : null}
+        {currentStepIndex === 2 ? <fog attach="fog" args={['#e5f4ff', -15, 40]} /> : null}
+        {currentStepIndex === 3 ? <fog attach="fog" args={['#4e4a54', -15, 35]} /> : null}
+        {currentStepIndex === 4 ? <fog attach="fog" args={['#4e4a54', -0, 30]} /> : null}
 
         <a.group
           // position={[2, -1.2, 0]}
@@ -76,20 +85,27 @@ const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
         >
           <Float floatIntensity={0.35} rotationIntensity={0.35}>
             <Arch color={scene.color}></Arch>
-            {stepIndex === 2 ? (
+            {currentStepIndex === 2 ? (
               <>
                 <Arch position={[0.7, 0, -20]} color={scene.color}></Arch>
                 <Arch position={[1.5, 0, -50]} color={scene.color}></Arch>
               </>
             ) : null}
-            {stepIndex === 3 ? (
+            {currentStepIndex === 3 ? (
               <>
                 <Arch position={[16.2, 0, 0]} color={scene.color}></Arch>
                 <Arch position={[-16.2, 0, 0]} color={scene.color}></Arch>
               </>
             ) : null}
 
-            {stepIndex === 4 ? (
+            {currentStepIndex === 4 ? (
+              <>
+                <Arch position={[-2, 0, -40]} color={scene.color}></Arch>
+                <Arch position={[-1, 0, -20]} color={scene.color}></Arch>
+              </>
+            ) : null}
+
+            {currentStepIndex === 5 ? (
               <>
                 <Arch position={[16.2, 0, 0]} color={scene.color}></Arch>
                 <Arch position={[-16.2, 0, 0]} color={scene.color}></Arch>
@@ -125,7 +141,5 @@ const ThreeJsBgArch = ({ availableWidth, availableHeight, stepIndex = 0 }) => {
     </div>
   )
 }
-
-console.log('en', Environment)
 
 export default ThreeJsBgArch

@@ -1,10 +1,12 @@
 import React from 'react'
-import { TeamRoute } from '../../constants'
-import StaticPageLoader from '../StaticPageLoader'
-import ImageGrid from '../ui/ImageGrid.js'
-import ButtonDhd from '../ui/ButtonDhd.js'
+import { TeamRoute } from '../../../constants'
+import StaticPageLoader from '../../StaticPageLoader'
+import ImageGrid from './ImageGrid.js'
+import ButtonDhd from '../../ui/ButtonDhd.js'
 
 const { Container, Row, Col } = require('react-bootstrap')
+
+console.log('StaticPageLoader XXX', TeamRoute.contentUrl)
 
 const TeamSection = () => {
   return (

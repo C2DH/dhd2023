@@ -1,5 +1,5 @@
 // Custom.scss
-
+@import '../src/components/ui/ButtonDhd.css';
 // Option B: Include parts of Bootstrap
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import '../node_modules/bootstrap/scss/functions';
@@ -32,11 +32,10 @@ $grid-gutter-width: 24px;
 @import '../node_modules/bootstrap/scss/containers';
 @import '../node_modules/bootstrap/scss/grid';
 @import '../node_modules/bootstrap/scss/helpers';
-
+@import '../node_modules/bootstrap/scss/transitions';
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import '../node_modules/bootstrap/scss/utilities/api';
 // 8. Add additional custom code here
-@import '../src/components/ui/ButtonDhd.css';
 
 html {
   font-family: 'Mona Sans';
@@ -51,6 +50,15 @@ body {
   background-color: var(--body-light-bg);
 }
 
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
 main {
   position: relative;
   padding: 1.5rem var(--main-container-padding);
@@ -62,10 +70,12 @@ code {
 
 section {
   position: relative;
-  // height: 100vh;
   z-index: 1;
-  // pointer-events: none;
 }
+
+// .step-index-section {
+//   transition: translateY 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+// }
 
 h1,
 h2,

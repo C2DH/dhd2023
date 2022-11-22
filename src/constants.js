@@ -10,5 +10,13 @@ export const TeamRoute = {
   contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_TEAM_URL].join(''),
 }
 
+export const ConferenceHighlightsRoute = {
+  to: `${StaticPageRoutePrefix}/conf_highlights`,
+  label: 'Conference Highlights',
+  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_CONFHIGLIGHTS_URL].join(
+    '',
+  ),
+}
+
 export const StaticPagesRoutes = [CfpRoute]
 export const StaticPagesRoutesPathnames = StaticPagesRoutes.map((route) => route.to)

@@ -1,5 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap'
-import '../ui/ImageGrid.scss'
+import './ImageGrid.scss'
 
 const SrcSetRegexp = new RegExp('srcset="([^"]+)"', 'i')
 
@@ -9,7 +9,7 @@ const Tags = {
 }
 
 const ImageGrid = ({ data }) => {
-  console.debug('[ImageGrid]', data)
+  console.debug('ImageGrid', data)
 
   if (!Array.isArray(data)) {
     return null
