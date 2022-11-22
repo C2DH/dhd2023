@@ -6,21 +6,25 @@ import './Background.css'
 const Background = () => {
   const currentStepIndex = useMenuStore((state) => state.currentStepIndex)
   const location = useLocation()
+  // const [locationState, location] = useState(true)
 
-  let classColor = 'bg-white'
+  let classColor = 'bg-light'
 
-  if (location.pathname === '/cfp') {
-    classColor = 'bg-primary'
-  } else {
-    if ([0, 2, 4].includes(currentStepIndex)) {
+  if (location.pathname === '/') {
+    if ([0, 2].includes(currentStepIndex)) {
       classColor = 'bg-light'
     }
-    if ([1, 3].includes(currentStepIndex)) {
+    if ([1, 3, 4].includes(currentStepIndex)) {
       classColor = 'bg-dark'
     }
+    if ([5].includes(currentStepIndex)) {
+      classColor = 'bg-blue'
+    }
+  } else {
+    classColor = 'bg-light'
   }
 
-  console.debug('[Background] classColor:', classColor)
+  // console.debug('[Background] classColor:', classColor)
 
   return (
     <div

@@ -29,13 +29,17 @@
   transform: translateX(-1rem);
 }
 
-.menu-icon-wrapper span {
+.menu-icon-wrapper i span {
   display: block;
   height: 2px;
   width: 27px;
   background-color: var(--black);
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
+}
+
+.menu-icon-wrapper i.menu-white-color span {
+  background-color: var(--white);
 }
 
 .menu-icon-wrapper span:nth-child(1) {

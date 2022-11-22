@@ -1,32 +1,31 @@
-import "./SandwichMenuIcon.css";
-import { a, useSpring } from "react-spring";
-import { useEffect } from "react";
-import { MenuOpen } from "../../store";
-import { Button } from "react-bootstrap";
+import './SandwichMenuIcon.css'
+// import { a, useSpring } from 'react-spring'
+import { MenuOpen } from '../../store'
+import { Button } from 'react-bootstrap'
+import { useLocation } from 'react-router-dom'
 
 const SandwichMenuIcon = ({ menuStatus, currentStepIndex }) => {
-  const [styles, api] = useSpring(() => ({}));
+  const location = useLocation()
 
-  useEffect(() => {
-    console.debug("Menu-Cross", currentStepIndex);
-    api.start({
-      backgroundColor:
-        menuStatus === MenuOpen ||
-        currentStepIndex === 1 ||
-        currentStepIndex === 3
-          ? "var(--white)"
-          : "var(--black)",
-    });
-  }, [menuStatus, currentStepIndex, api]);
+  let classColor = ''
+
+  if (location.pathname === '/' || menuStatus === 'open') {
+    if ([1, 3, 4, 5].includes(currentStepIndex) || menuStatus === 'open') {
+      classColor = 'menu-white-color'
+    } else {
+      classColor = ''
+    }
+  }
+
   return (
     <Button tabIndex={0} className="menu-icon-wrapper">
-      <i className="flex-center">
-        <a.span style={styles}></a.span>
-        <a.span style={styles}></a.span>
-        <a.span style={styles}></a.span>
+      <i className={`flex-center ${classColor}`}>
+        <span></span>
+        <span></span>
+        <span></span>
       </i>
     </Button>
-  );
-};
+  )
+}
 
-export default SandwichMenuIcon;
+export default SandwichMenuIcon
