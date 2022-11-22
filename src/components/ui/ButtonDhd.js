@@ -1,9 +1,16 @@
 import { Button } from 'react-bootstrap'
 import { ArrowRight } from 'lucide-react'
 
-const ButtonDhd = ({ title, icon, className, variant }) => {
+const ButtonDhd = ({ title, icon, className, variant, ariaControls, ariaExpanded, onClick }) => {
   return (
-    <Button className={className} variant={variant} size="lg">
+    <Button
+      onClick={onClick}
+      className={className}
+      variant={variant}
+      size="lg"
+      aria-controls={ariaControls}
+      aria-expanded={ariaExpanded}
+    >
       {title}
       {icon === true ? <ArrowRight /> : null}
     </Button>

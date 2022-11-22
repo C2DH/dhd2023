@@ -25,3 +25,7 @@
 .btn svg {
   margin-left: 0.4rem;
 }
+
+.download.btn svg {
+  transform: rotate(90deg);
+}
