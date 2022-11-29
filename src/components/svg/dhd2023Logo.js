@@ -1,6 +1,3 @@
-import { MenuOpen } from '../../store'
-import { a, useSpring } from 'react-spring'
-import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 const Dhd2023Logo = ({ menuStatus, currentStepIndex }) => {
@@ -13,7 +10,12 @@ const Dhd2023Logo = ({ menuStatus, currentStepIndex }) => {
   let primaryColor = PrimaryColor
   let secondatyColor = BlackColor
 
-  if (location.pathname === '/' || menuStatus === 'open') {
+  if (
+    location.pathname === '/' ||
+    location.pathname === '/page/cfp' ||
+    location.pathname === '/team' ||
+    menuStatus === 'open'
+  ) {
     if ([1, 3, 4, 5].includes(currentStepIndex) || menuStatus === 'open') {
       primaryColor = secondatyColor = WhiteColor
     } else {

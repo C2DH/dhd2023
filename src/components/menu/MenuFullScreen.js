@@ -59,7 +59,7 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
           </group>
           <fog attach="fog" args={['#312a24', 0.01, 0]} />
           <ambientLight intensity={0.5} />
-          {/* <directionalLight intensity={0.5} position={[5, 10, 10]} color="#d2e9fe" /> */}
+
           <spotLight
             intensity={1}
             position={[5, 10, 15]}
@@ -68,7 +68,7 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
             shadow-mapSize={[512, 512]}
             castShadow
           />
-          {/* <spotLight position={[0, 3, -3]} angle={0.2} penumbra={1} intensity={1} /> */}
+
           <OrbitControls autoRotate={false} enableZoom={false} />
         </Canvas>
       </div>

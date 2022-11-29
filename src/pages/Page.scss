@@ -1,7 +1,15 @@
-.genric-page-ntro {
+.genric-page-intro {
   position: relative;
   z-index: 1;
   height: 100vh;
   align-items: center;
   margin-top: -1.7rem;
+}
+
+.KomiteeAndTeam section:nth-child(3) {
+  margin-top: 20rem;
+}
+
+.Zeitschiene section:nth-child(2) {
+  margin-bottom: 20rem;
 }

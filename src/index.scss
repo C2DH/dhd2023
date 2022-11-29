@@ -64,6 +64,10 @@ main {
   padding: 1.5rem var(--main-container-padding);
 }
 
+canvas {
+  z-index: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
@@ -94,7 +98,7 @@ h1 {
 }
 
 h2 {
-  font-size: min(9vw, 3.6rem);
+  font-size: min(6.5vw, 3.6rem);
   line-height: min(8.55vw, 3.4rem);
   text-transform: uppercase;
   color: var(--black);

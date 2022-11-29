@@ -2,16 +2,23 @@ import { useLayoutEffect } from 'react'
 import { useOnScreen } from '../../hooks/viewport'
 import { useMenuStore } from '../../store'
 import MenuFooter from '../menu/MenuFooter'
+import { useLocation } from 'react-router-dom'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
 const Footer = ({ availableWidth, availableHeight }) => {
   const setCurrentStepIndex = useMenuStore((state) => state.setCurrentStepIndex)
+  const location = useLocation()
+
   const [{ isIntersecting = false } = {}, ref] = useOnScreen()
   useLayoutEffect(() => {
     console.debug('[Footer] isIntersecting:', isIntersecting)
     if (isIntersecting) {
       setCurrentStepIndex(5)
+    } else {
+      if (location.pathname !== '/') {
+        setCurrentStepIndex(0)
+      }
     }
   }, [isIntersecting])
   return (

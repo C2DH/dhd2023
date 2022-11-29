@@ -9,8 +9,6 @@ const Tags = {
 }
 
 const ImageGrid = ({ data }) => {
-  console.debug('ImageGrid', data)
-
   if (!Array.isArray(data)) {
     return null
   }
@@ -23,6 +21,8 @@ const ImageGrid = ({ data }) => {
     acc[tag] = (acc[tag] ?? []).concat([d])
     return acc
   }, {})
+
+  console.debug('ImageGrid', data)
 
   // console.debug('[ImageGrid] groups', groups)
   return (

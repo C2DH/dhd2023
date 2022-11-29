@@ -1,8 +1,9 @@
 // import { useLocation } from 'react-router-dom'
 import { useLayoutEffect } from 'react'
 import StaticPageLoader from '../components/StaticPageLoader'
-// import { StaticPagesRoutes } from '../constants'
+import { Scrollama, Step } from 'react-scrollama'
 import PageContent from './PageContent'
+import React, { useState } from 'react'
 
 // const Page = ({ className = '' }) => {
 //   const location = useLocation()
@@ -24,14 +25,26 @@ import PageContent from './PageContent'
 //   )
 // }
 
-const Page = ({ url }) => {
+const Page = ({ url, ref }) => {
+  const [currentStepIndex, setCurrentStepIndex] = useState(null)
+
+  // This callback fires when a Step hits the offset threshold. It receives the
+  // data prop of the step, which in this demo stores the index of the step.
+  const onStepProgress = (step) => {
+    setCurrentStepIndex(step)
+  }
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   }, [])
   return (
-    <div className="Page">
+    // <Scrollama progress onStepProgress={onStepProgress}>
+    //   <Step data={1}>
+    <div className="Page" ref={ref}>
       <StaticPageLoader url={url} Component={PageContent} />
     </div>
+    //   {/* </Step>
+    // </Scrollama> */}
   )
 }
 export default Page

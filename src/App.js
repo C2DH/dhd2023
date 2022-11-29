@@ -9,6 +9,7 @@ import Footer from './components/sections/Footer'
 import ThreeJsBgArch from './components/ThreeJsBgArch'
 import React from 'react'
 import { CfpRoute } from './constants'
+import { KomiteeAndTeamRoute, ZeitschieneRoute } from './constants'
 import ScrollToTop from './components/ScrollToTop'
 
 // Create a client
@@ -51,6 +52,22 @@ function App({ isMobile }) {
               }
             />
             <Route
+              path="/page/komitee_and_team"
+              element={
+                <React.Suspense fallback={'loading....'}>
+                  <Page url={KomiteeAndTeamRoute.contentUrl} />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/page/zeitschiene"
+              element={
+                <React.Suspense fallback={'loading....'}>
+                  <Page url={ZeitschieneRoute.contentUrl} />
+                </React.Suspense>
+              }
+            />
+            <Route
               path="*"
               element={
                 <React.Suspense fallback={'loading....'}>
@@ -62,6 +79,7 @@ function App({ isMobile }) {
         </main>
         <ThreeJsBgArch availableWidth={width} availableHeight={height} />
         <Footer />
+        <ScrollToTop />
       </QueryClientProvider>
     </div>
   )

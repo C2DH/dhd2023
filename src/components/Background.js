@@ -10,7 +10,11 @@ const Background = () => {
 
   let classColor = 'bg-light'
 
-  if (location.pathname === '/') {
+  if (
+    location.pathname === '/' ||
+    location.pathname === '/team' ||
+    location.pathname === '/page/cfp'
+  ) {
     if ([0, 2].includes(currentStepIndex)) {
       classColor = 'bg-light'
     }

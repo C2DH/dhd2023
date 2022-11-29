@@ -1,21 +1,23 @@
+import { ZeitschieneRoute } from './constants'
 export const dataDropdown = [
-  { title: "Zeitschiene", link: "#/" },
-  { title: "Opening Keynote", link: "#/" },
-  { title: "Programmübersicht", link: "#/" },
-  { title: "Closing Keynote", link: "#/" },
-  { title: "Anmeldung Conftool", link: "#/" },
-  { title: "Teilnahmegebühren", link: "#/" },
-  { title: "FAQ", link: "#/" },
-];
+  { title: 'About', link: ZeitschieneRoute.to },
+  { title: 'Zeitschiene', link: ZeitschieneRoute.to },
+  { title: 'Opening Keynote', link: '#/' },
+  { title: 'Programmübersicht', link: '#/' },
+  { title: 'Closing Keynote', link: '#/' },
+  { title: 'Anmeldung Conftool', link: '#/' },
+  { title: 'Teilnahmegebühren', link: '#/' },
+  { title: 'FAQ', link: '#/' },
+]
 
 export const dataSecondaryMenu = [
-  { title: "Postersession", link: "#/" },
-  { title: "Behind the Scenes", link: "#/" },
-  { title: "BLOG", link: "#/" },
-  { title: "Kontakt", link: "#/" },
-];
+  { title: 'Postersession', link: '#/' },
+  { title: 'Behind the Scenes', link: '#/' },
+  { title: 'BLOG', link: '#/' },
+  { title: 'Kontakt', link: '#/' },
+]
 
 export const dataFooterMenu = [
-  { title: "Impressum", link: "#/" },
-  { title: "Datenschutz", link: "#/" },
-];
+  { title: 'Impressum', link: '#/' },
+  { title: 'Datenschutz', link: '#/' },
+]

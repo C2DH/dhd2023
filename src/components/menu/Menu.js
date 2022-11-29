@@ -4,11 +4,12 @@ import { Plus, Minus } from 'lucide-react'
 import DropDownMenu from './DropDownMenu'
 import { MenuOpen, MenuClosed, useMenuStore } from '../../store'
 import { Link } from 'react-router-dom'
-import { CfpRoute } from '../../constants'
+import { CfpRoute, KomiteeAndTeamRoute } from '../../constants'
 
 const Menu = () => {
   const [dropdown, setDropdown] = useState(true)
   const menuStatus = useMenuStore((state) => state.menuStatus)
+  const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
   console.log('menustus', MenuOpen)
   const toggleMenu = () => {
     setDropdown(!dropdown)
@@ -20,6 +21,12 @@ const Menu = () => {
 
   if (menuStatus === MenuClosed) {
     document.body.style.overflow = 'auto'
+  }
+
+  const menuClickEvent = () => {
+    if (menuStatus === MenuOpen) {
+      setMenuStatus(menuStatus === MenuOpen ? MenuClosed : MenuOpen)
+    }
   }
 
   return (
@@ -38,12 +45,25 @@ const Menu = () => {
           </div>
         </li>
         <li>
-          <Link to="/team" tabIndex={1}>
+          <Link
+            // to="/team"
+            to={KomiteeAndTeamRoute.to}
+            tabIndex={1}
+            onClick={() => {
+              menuClickEvent()
+            }}
+          >
             Komitee & team
           </Link>
         </li>
         <li>
-          <Link to={CfpRoute.to} tabIndex={1}>
+          <Link
+            to={CfpRoute.to}
+            tabIndex={1}
+            onClick={() => {
+              menuClickEvent()
+            }}
+          >
             {CfpRoute.label}
           </Link>
         </li>

@@ -9,7 +9,12 @@ const SandwichMenuIcon = ({ menuStatus, currentStepIndex }) => {
 
   let classColor = ''
 
-  if (location.pathname === '/' || menuStatus === 'open') {
+  if (
+    location.pathname === '/' ||
+    location.pathname === '/page/cfp' ||
+    location.pathname === '/team' ||
+    menuStatus === 'open'
+  ) {
     if ([1, 3, 4, 5].includes(currentStepIndex) || menuStatus === 'open') {
       classColor = 'menu-white-color'
     } else {

@@ -6,6 +6,8 @@ const ScrollToTop = () => {
   console.info('ScrollToTop pathname', pathname, 'hash', hash)
   useEffect(() => {
     let timer
+    if (pathname.indexOf('/page') == -1) {
+    }
     if (hash === '') {
       window.scrollTo(0, 0)
       // } else if(hash.indexOf('#p') === 0) {
