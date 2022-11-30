@@ -9,7 +9,7 @@ const { Container, Row, Col } = require('react-bootstrap')
 
 const Footer = ({ availableWidth, availableHeight }) => {
   const setCurrentStepIndex = useMenuStore((state) => state.setCurrentStepIndex)
-  const location = useLocation()
+  const { pathname } = useLocation()
 
   const [{ isIntersecting = false } = {}, ref] = useOnScreen()
   useLayoutEffect(() => {
@@ -18,11 +18,12 @@ const Footer = ({ availableWidth, availableHeight }) => {
     if (ref.current && isIntersecting) {
       setCurrentStepIndex(5)
     } else {
-      if (location.pathname !== '/') {
+      if (pathname !== '/') {
         setCurrentStepIndex(0)
       }
     }
-  }, [isIntersecting])
+    // eslint-disable-next-line
+  }, [isIntersecting, pathname])
   return (
     <footer className="footer flex-center">
       <div className="footer-content-wrapper flex-grow-1" ref={ref}>

@@ -8,13 +8,13 @@ import { ClosingKeynoteRoute } from '../constants'
 const Zeitschiene = ({ data }) => {
   // console.log('[XXXXXXXXXX]', data)
   if (!data) {
-    return null
+    return <div className="Zeitschiene" />
   }
 
   const title = data.title?.rendered
   const content = String(data.content?.rendered)
-  const removeHtml = content.replace(/<[^>]*>?/gm, '')
-  const splitter = removeHtml.split('\n')
+  // const removeHtml = content.replace(/<[^>]*>?/gm, '')
+  // const splitter = removeHtml.split('\n')
 
   return (
     <div className="Zeitschiene">
@@ -23,7 +23,7 @@ const Zeitschiene = ({ data }) => {
           <Row>
             <Col className="col col-sm-12 col-md-9 col-lg-7">
               <h1>{title}</h1>
-              <h4 className="my-3"></h4>
+              {/* <h4 className="my-3"></h4> */}
             </Col>
             <div className="d-flex">
               <ButtonDhd

@@ -12,7 +12,7 @@ const KomiteeAndTeam = ({ data }) => {
     return null
   }
 
-  const SrcSetRegexp = new RegExp('(?<=<h2>)(.*?)(?=</h2>)', 'i')
+  // const SrcSetRegexp = new RegExp('(?<=<h2>)(.*?)(?=</h2>)', 'i')
   const title = data.title?.rendered
   // const content = data.content?.rendered
   // const hTwoExtracter = content.match(SrcSetRegexp)

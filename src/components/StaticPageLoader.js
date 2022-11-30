@@ -53,7 +53,7 @@ const StaticPageLoader = ({ url, delay = 0, Component, fakeData, raw = false, ..
         opacity: 0,
       })
     }
-  }, [status])
+  }, [apiAnimatedLine, status])
   console.debug('[StaticPageLoader] status:', status, url)
   return (
     <>

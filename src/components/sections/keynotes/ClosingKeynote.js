@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { useOnScreen } from '../../../hooks/viewport'
-import { useMenuStore } from '../../../store'
-import { useLocation } from 'react-router-dom'
+// import { useMenuStore } from '../../../store'
+// import { useLocation } from 'react-router-dom'
 import './Keynotes.scss'
 
 const { Container, Row, Col } = require('react-bootstrap')

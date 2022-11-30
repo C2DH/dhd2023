@@ -1,4 +1,4 @@
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import './ImageGrid.scss'
 
 const SrcSetRegexp = new RegExp('srcset="([^"]+)"', 'i')
@@ -12,15 +12,15 @@ const ImageGrid = ({ data }) => {
   if (!Array.isArray(data)) {
     return null
   }
-  const groups = data.reduce((acc, d) => {
-    if (!d.tags.length) {
-      acc.untagged = (acc.untagged ?? []).concat([d])
-      return acc
-    }
-    const tag = Tags[d.tags[0]] ? Tags[d.tags[0]] : d.tags[0]
-    acc[tag] = (acc[tag] ?? []).concat([d])
-    return acc
-  }, {})
+  // const groups = data.reduce((acc, d) => {
+  //   if (!d.tags.length) {
+  //     acc.untagged = (acc.untagged ?? []).concat([d])
+  //     return acc
+  //   }
+  //   const tag = Tags[d.tags[0]] ? Tags[d.tags[0]] : d.tags[0]
+  //   acc[tag] = (acc[tag] ?? []).concat([d])
+  //   return acc
+  // }, {})
 
   console.debug('ImageGrid', data)
 
