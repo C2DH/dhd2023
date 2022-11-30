@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  app:
+    image: c2dhunilu/dhd2023:latest
+    volumes:
+      - app-files:/app_files:z
+    # Every time container is launched just copy static files
+    # from the files directory in the container to the mounted `frontend-app-files`
+    # directory which is also mounted to `nginx`. This is where `nginx` will be
+    # looking for these files. Also remove the old files before copying the new ones.
+    command: >
+      /bin/sh -c "rm -rf /app_files/* &&
+                  echo 'Files in /app_files :' &&
+                  ls -lat /app_files/ &&
+                  cp -r /app/* /app_files/ &&
+                  echo 'Files in /app_files :' &&
+                  ls -lat /app_files/"
+  nginx:
+    image: nginx:1.19-alpine
+    restart: always
+    ports:
+      - '${NGINX_PORT:-80}:80'
+    depends_on:
+      - app
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - app-files:/opt/app:z
+volumes:
+  app-files:
