@@ -104,7 +104,13 @@ h2 {
   color: var(--black);
 }
 
-.bg-dark ~ main h2 {
+.bg-dark ~ main h2,
+.bg-dark ~ main h3,
+.bg-dark ~ main h4,
+.bg-dark ~ main h5,
+.bg-dark ~ main h6,
+.bg-dark ~ main p,
+.bg-dark ~ main span {
   color: var(--white) !important;
 }
 
@@ -117,8 +123,12 @@ a {
 span,
 p,
 li {
-  font-variation-settings: 'ital' 10, 'wdth' 84;
+  font-variation-settings: 'ital' 10, 'wdth' 120;
   color: var(--black);
+}
+
+p {
+  font-size: 1.1rem;
 }
 
 li {

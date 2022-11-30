@@ -1,6 +1,6 @@
-import { ZeitschieneRoute } from './constants'
+import { ZeitschieneRoute, AboutRoute } from './constants'
 export const dataDropdown = [
-  { title: 'About', link: ZeitschieneRoute.to },
+  { title: 'About', link: AboutRoute.to },
   { title: 'Zeitschiene', link: ZeitschieneRoute.to },
   { title: 'Opening Keynote', link: '#/' },
   { title: 'Programmübersicht', link: '#/' },
@@ -19,5 +19,5 @@ export const dataSecondaryMenu = [
 
 export const dataFooterMenu = [
   { title: 'Impressum', link: '#/' },
-  { title: 'Datenschutz', link: '#/' },
+  { title: 'Datenschutz', link: 'https://dig-hum.de/datenschutz' },
 ]

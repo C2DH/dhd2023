@@ -38,7 +38,7 @@ const ImageGrid = ({ data }) => {
           <Col md={{ span: 6 }} sm={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 3 }} key={person.id}>
             {srcset ? (
               <figure>
-                <img className="w-100" srcSet={srcset[1]} />
+                <img className="w-100" alt="" srcSet={srcset[1]} />
                 <figcaption className="figcaption">
                   <h4 dangerouslySetInnerHTML={{ __html: person.title?.rendered }}></h4>
                   <div dangerouslySetInnerHTML={{ __html: person.excerpt?.rendered }}></div>

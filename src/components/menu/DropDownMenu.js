@@ -16,7 +16,7 @@ const DropDownMenu = () => {
                   'cool'
                 }}
               >
-                {dataDropdown.title}{' '}
+                {dataDropdown.title}
                 <i>
                   <ArrowRight />
                 </i>

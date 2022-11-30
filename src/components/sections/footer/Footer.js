@@ -1,8 +1,9 @@
 import { useLayoutEffect } from 'react'
-import { useOnScreen } from '../../hooks/viewport'
-import { useMenuStore } from '../../store'
-import MenuFooter from '../menu/MenuFooter'
+import { useOnScreen } from '../../../hooks/viewport'
+import { useMenuStore } from '../../../store'
+import MenuFooter from '../../menu/MenuFooter'
 import { useLocation } from 'react-router-dom'
+import './Footer.scss'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -13,7 +14,8 @@ const Footer = ({ availableWidth, availableHeight }) => {
   const [{ isIntersecting = false } = {}, ref] = useOnScreen()
   useLayoutEffect(() => {
     console.debug('[Footer] isIntersecting:', isIntersecting)
-    if (isIntersecting) {
+
+    if (ref.current && isIntersecting) {
       setCurrentStepIndex(5)
     } else {
       if (location.pathname !== '/') {
@@ -22,7 +24,7 @@ const Footer = ({ availableWidth, availableHeight }) => {
     }
   }, [isIntersecting])
   return (
-    <footer className="footer h-100 flex-center">
+    <footer className="footer flex-center">
       <div className="footer-content-wrapper flex-grow-1" ref={ref}>
         <Container>
           <Row>
@@ -34,7 +36,13 @@ const Footer = ({ availableWidth, availableHeight }) => {
           </Row>
         </Container>
       </div>
-      <MenuFooter />
+      <Container className="my-4">
+        <Row>
+          <Col className="col">
+            <MenuFooter />
+          </Col>
+        </Row>
+      </Container>
     </footer>
   )
 }

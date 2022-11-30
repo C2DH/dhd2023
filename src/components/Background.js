@@ -13,12 +13,13 @@ const Background = () => {
   if (
     location.pathname === '/' ||
     location.pathname === '/team' ||
-    location.pathname === '/page/cfp'
+    location.pathname === '/page/cfp' ||
+    location.pathname === '/page/zeitschiene'
   ) {
     if ([0, 2].includes(currentStepIndex)) {
       classColor = 'bg-light'
     }
-    if ([1, 3, 4].includes(currentStepIndex)) {
+    if ([1, 3, 4, 6].includes(currentStepIndex)) {
       classColor = 'bg-dark'
     }
     if ([5].includes(currentStepIndex)) {

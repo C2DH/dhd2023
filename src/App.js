@@ -5,12 +5,13 @@ import { useCurrentWindowDimensions } from './hooks/viewport'
 import Header from './components/menu/Header'
 import Background from './components/Background'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import Footer from './components/sections/Footer'
+import Footer from './components/sections/footer/Footer'
 import ThreeJsBgArch from './components/ThreeJsBgArch'
 import React from 'react'
 import { CfpRoute } from './constants'
-import { KomiteeAndTeamRoute, ZeitschieneRoute } from './constants'
+import { KomiteeAndTeamRoute, ZeitschieneRoute, AboutRoute } from './constants'
 import ScrollToTop from './components/ScrollToTop'
+import Loading from './pages/Loading'
 
 // Create a client
 const queryClient = new QueryClient({
@@ -39,10 +40,18 @@ function App({ isMobile }) {
     <div className="App">
       <QueryClientProvider client={queryClient}>
         <Background></Background>
-        <main style={{ minHeight: height }}>
+        <main style={{ minHeight: height * 1.5 }}>
           <Header></Header>
           <MenuFullScreen availableWidth={width} availableHeight={height} />
           <Routes>
+            <Route
+              path="/page/about"
+              element={
+                <React.Suspense fallback={'loading....'}>
+                  <Page url={AboutRoute.contentUrl} />
+                </React.Suspense>
+              }
+            />
             <Route
               path="/page/cfp"
               element={
@@ -62,8 +71,8 @@ function App({ isMobile }) {
             <Route
               path="/page/zeitschiene"
               element={
-                <React.Suspense fallback={'loading....'}>
-                  <Page url={ZeitschieneRoute.contentUrl} />
+                <React.Suspense fallback={<Loading height={height} />}>
+                  <Page height={height} url={ZeitschieneRoute.contentUrl} />
                 </React.Suspense>
               }
             />

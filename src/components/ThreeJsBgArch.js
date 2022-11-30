@@ -62,6 +62,15 @@ const SceneSteps = [
     color: '#dcf3fc',
     fog: ['#e5f4ff', -0, -10],
   },
+  {
+    scale: 0.16,
+    position: [1, -3.4],
+    positionTwo: [16.2, 0, 0],
+    positionThree: [-16.2, 0, 0],
+    rotation: [0, -1.6, 0],
+    color: '#000000',
+    fog: ['#4e4a54', -15, 35],
+  },
 ]
 
 const ThreeJsBgArch = ({ availableWidth = 100, availableHeight = 100 }) => {

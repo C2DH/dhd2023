@@ -3,11 +3,14 @@ import CfpPage from './CfpPage.js'
 import KomiteeAndTeam from './KomiteeAndTeam.js'
 import { useLocation } from 'react-router-dom'
 import Zeitschiene from './Zeitschiene.js'
+import About from './About.js'
 import './Page.scss'
 
 const PageContent = ({ data }) => {
   const location = useLocation()
-
+  if (location.pathname === '/page/about') {
+    return <About data={data}></About>
+  }
   if (location.pathname === '/page/cfp') {
     return <CfpPage data={data}></CfpPage>
   }

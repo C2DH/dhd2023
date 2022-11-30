@@ -32,6 +32,25 @@ footer .footer-menu-wrapper {
   background-color: var(--white);
 }
 
-.menu-full-screen .footer-menu-wrapper ul li a {
+.menu-full-screen .footer-menu-wrapper ul li a,
+.menu-full-screen .footer-menu-wrapper p {
   color: var(--white);
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.menu-full-screen .footer-menu-wrapper p {
+  margin: 0;
+}
+
+.menu-full-screen .footer-menu-wrapper ul,
+footer ul {
+  padding: 0;
+}
+
+footer p {
+  color: var(--black);
+  white-space: nowrap;
+  font-size: 0.9rem;
+  margin: 0;
 }

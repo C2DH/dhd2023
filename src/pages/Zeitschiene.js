@@ -1,17 +1,20 @@
 import { Col, Container, Row } from 'react-bootstrap'
+import ClosingKeynote from '../components/sections/keynotes/ClosingKeynote'
 import './Page.scss'
 import ButtonDhd from '../components/ui/ButtonDhd.js'
+import StaticPageLoader from '../components/StaticPageLoader'
+import { ClosingKeynoteRoute } from '../constants'
 
 const Zeitschiene = ({ data }) => {
-  console.log('[XXXXXXXXXX]', data)
+  // console.log('[XXXXXXXXXX]', data)
   if (!data) {
     return null
   }
 
-  const SrcSetRegexp = new RegExp('(?<=<h2>)(.*?)(?=</h2>)', 'i')
   const title = data.title?.rendered
-  const content = data.content?.rendered
-  // const hTwoExtracter = content.match(SrcSetRegexp)
+  const content = String(data.content?.rendered)
+  const removeHtml = content.replace(/<[^>]*>?/gm, '')
+  const splitter = removeHtml.split('\n')
 
   return (
     <div className="Zeitschiene">
@@ -20,7 +23,7 @@ const Zeitschiene = ({ data }) => {
           <Row>
             <Col className="col col-sm-12 col-md-9 col-lg-7">
               <h1>{title}</h1>
-              <h4 className="my-3">Check the full schedule before we start</h4>
+              <h4 className="my-3"></h4>
             </Col>
             <div className="d-flex">
               <ButtonDhd
@@ -42,6 +45,10 @@ const Zeitschiene = ({ data }) => {
           </Row>
         </Container>
       </section>
+      <StaticPageLoader
+        url={ClosingKeynoteRoute.contentUrl}
+        Component={ClosingKeynote}
+      ></StaticPageLoader>
     </div>
   )
 }
