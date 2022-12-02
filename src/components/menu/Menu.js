@@ -1,13 +1,14 @@
 import './Menu.css'
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
 import DropDownMenu from './DropDownMenu'
 import { MenuOpen, MenuClosed, useMenuStore } from '../../store'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { CfpRoute, KomiteeAndTeamRoute } from '../../constants'
 
 const Menu = () => {
   const [dropdown, setDropdown] = useState(true)
+  const { pathname } = useLocation()
   const menuStatus = useMenuStore((state) => state.menuStatus)
   const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
   console.log('menustus', MenuOpen)
@@ -28,6 +29,19 @@ const Menu = () => {
       setMenuStatus(menuStatus === MenuOpen ? MenuClosed : MenuOpen)
     }
   }
+
+  useLayoutEffect(() => {
+    console.debug(
+      '[Menu] @useLayoutEffect \n - pathname:',
+      pathname,
+      '\n - menuStatus:',
+      menuStatus,
+    )
+    if (menuStatus === MenuOpen) {
+      setMenuStatus(MenuClosed)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
 
   return (
     <nav className="menu-wrapper">

@@ -10,7 +10,15 @@ export const axiosInstance = axios.create({
   contentType: 'application/json',
 })
 
-const StaticPageLoader = ({ url, delay = 0, Component, fakeData, raw = false, ...rest }) => {
+const StaticPageLoader = ({
+  url,
+  options,
+  delay = 0,
+  Component,
+  fakeData,
+  raw = false,
+  ...rest
+}) => {
   const [animatedLine, apiAnimatedLine] = useSpring(() => ({
     width: 0,
     opacity: 1,
@@ -18,7 +26,7 @@ const StaticPageLoader = ({ url, delay = 0, Component, fakeData, raw = false, ..
   }))
 
   const { data, error, status } = useQuery([url], () => {
-    return axiosInstance.get(url).then(({ data }) => data)
+    return axiosInstance.get(url, options).then(({ data }) => data)
   })
   // const { data, error, status } = useGetJSON({
   //   url,

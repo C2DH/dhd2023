@@ -1,10 +1,9 @@
-import { ZeitschieneRoute, AboutRoute } from './constants'
+import { ZeitschieneRoute, AboutRoute, KeynoteRoute } from './constants'
 export const dataDropdown = [
   { title: 'About', link: AboutRoute.to },
   { title: 'Zeitschiene', link: ZeitschieneRoute.to },
-  { title: 'Opening Keynote', link: '#/' },
+  { title: 'Keynotes', link: KeynoteRoute.to },
   { title: 'Programmübersicht', link: '#/' },
-  { title: 'Closing Keynote', link: '#/' },
   { title: 'Anmeldung Conftool', link: '#/' },
   { title: 'Teilnahmegebühren', link: '#/' },
   { title: 'FAQ', link: '#/' },

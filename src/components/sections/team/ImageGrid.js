@@ -33,14 +33,15 @@ const ImageGrid = ({ data }) => {
       {data.map((person) => {
         const content = String(person.content?.rendered)
         const srcset = content.match(SrcSetRegexp)
+        const title = person.title?.rendered
 
         return (
-          <Col md={{ span: 6 }} sm={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 3 }} key={person.id}>
+          <Col md={{ span: 6 }} xl={{ span: 4 }} xxl={{ span: 3 }} key={person.id}>
             {srcset ? (
               <figure>
-                <img className="w-100" alt="" srcSet={srcset[1]} />
+                <img className="w-100" alt={title} srcSet={srcset[1]} />
                 <figcaption className="figcaption">
-                  <h4 dangerouslySetInnerHTML={{ __html: person.title?.rendered }}></h4>
+                  <h4 dangerouslySetInnerHTML={{ __html: title }}></h4>
                   <div dangerouslySetInnerHTML={{ __html: person.excerpt?.rendered }}></div>
                 </figcaption>
               </figure>

@@ -21,8 +21,19 @@
   line-height: auto;
 }
 
+.date-of-conference-wrapper p {
+  font-size: min(3.5vw, 1.2rem);
+  margin: 0;
+}
+
 @media (max-width: 540px) {
   .date-of-conference-wrapper .box {
     padding: 1rem 1.7rem;
+  }
+  .date-of-conference-wrapper h3 {
+    font-size: min(5.55vw, 2.2rem);
+  }
+  .date-of-conference-wrapper .box:nth-child(1) {
+    margin-right: 0.5rem;
   }
 }

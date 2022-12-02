@@ -46,12 +46,10 @@ export const ConferenceHighlightsRoute = {
   ),
 }
 
-export const ClosingKeynoteRoute = {
-  to: `${StaticPageRoutePrefix}/closing_keynote`,
-  label: 'Closing keynote',
-  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_CLOSINGKEYNOTE_URL].join(
-    '',
-  ),
+export const KeynoteRoute = {
+  to: `${StaticPageRoutePrefix}/keynotes`,
+  label: 'Keynote',
+  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_KEYNOTE_URL].join(''),
 }
 
 export const StaticPagesRoutes = [
@@ -62,6 +60,6 @@ export const StaticPagesRoutes = [
   ConferenceHighlightsRoute,
   AboutRoute,
   ZeitschieneRoute,
-  ClosingKeynoteRoute,
+  KeynoteRoute,
 ]
 export const StaticPagesRoutesPathnames = StaticPagesRoutes.map((route) => route.to)

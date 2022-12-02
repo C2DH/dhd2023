@@ -36,7 +36,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 1000px) {
   .menu-wrapper ul {
     display: none;
   }

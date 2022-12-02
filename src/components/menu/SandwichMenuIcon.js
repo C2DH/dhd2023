@@ -22,7 +22,7 @@ const SandwichMenuIcon = ({ menuStatus, currentStepIndex }) => {
   }
 
   return (
-    <Button tabIndex={0} className="menu-icon-wrapper">
+    <Button tabIndex={0} className="menu-icon-wrapper" variant="none">
       <i className={`flex-center ${classColor}`}>
         <span></span>
         <span></span>

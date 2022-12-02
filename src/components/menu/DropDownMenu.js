@@ -7,7 +7,7 @@ const DropDownMenu = () => {
   return (
     <ul className="dropdown-menu">
       <div className="dropdown-menu-row-one">
-        {dataDropdown.slice(0, 5).map((dataDropdown, index) => {
+        {dataDropdown.slice(0, 4).map((dataDropdown, index) => {
           return (
             <li key={dataDropdown.title}>
               <Link
@@ -26,7 +26,7 @@ const DropDownMenu = () => {
         })}
       </div>
       <div className="dropdown-menu-row-two">
-        {dataDropdown.slice(5, 8).map((dataDropdown, index) => {
+        {dataDropdown.slice(4, 7).map((dataDropdown, index) => {
           return (
             <li key={dataDropdown.title}>
               <a href="/">

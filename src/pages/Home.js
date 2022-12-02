@@ -3,15 +3,17 @@ import { useMenuStore } from '../store'
 import { useLocation } from 'react-router-dom'
 import { Scrollama, Step } from 'react-scrollama'
 
-import IntroHomePage from '../components/sections/intro/IntroHomePage'
-import ViewConfereceHomePage from '../components/sections/ViewConfereceHomePage'
-import TeamSection from '../components/sections/team/TeamSection'
-import ConferenceHighlights from '../components/sections/conferenceHighlights/ConferenceHighlights'
+import IntroHomePage from '../components/sections/intro/IntroHomePage.js'
+import Keynotes from '../components/sections/keynotes/Keynotes.js'
+import TeamSection from '../components/sections/team/TeamSection.js'
+import ConferenceHighlights from '../components/sections/conferenceHighlights/ConferenceHighlights.js'
 import Sponsors from '../components/sections/sponsors/Sponsors.js'
+import StaticPageLoader from '../components/StaticPageLoader'
+import { KeynoteRoute } from '../constants'
 
 const AvailableSteps = [
   'intro section',
-  'second section',
+  'keynotes',
   'team section',
   'conference highlights section',
   'sponsors',
@@ -52,7 +54,7 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
                 className="step-index-section"
                 style={{
                   display: 'flex',
-                  margin: text === 'intro section' ? '0 0 50vh' : '70vh 0',
+                  margin: text === 'intro section' ? '0 0 50vh' : '50vh 0',
                   // borderTop: "4px solid gray",
                   // borderBottom: "4px solid red",
                   height: text === 'intro section' ? availableHeight : 'auto',
@@ -64,7 +66,12 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
                 }}
               >
                 {text === 'intro section' && <IntroHomePage></IntroHomePage>}
-                {text === 'second section' && <ViewConfereceHomePage></ViewConfereceHomePage>}
+                {text === 'keynotes' && (
+                  <StaticPageLoader
+                    url={KeynoteRoute.contentUrl}
+                    Component={Keynotes}
+                  ></StaticPageLoader>
+                )}
                 {text === 'team section' && <TeamSection></TeamSection>}
                 {text === 'conference highlights section' && (
                   <ConferenceHighlights></ConferenceHighlights>

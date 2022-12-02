@@ -1,5 +1,5 @@
 // Custom.scss
-@import '../src/components/ui/ButtonDhd.css';
+@import '../src/components/ui/ButtonDhd.scss';
 // Option B: Include parts of Bootstrap
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import '../node_modules/bootstrap/scss/functions';
@@ -91,8 +91,8 @@ h4 {
 }
 
 h1 {
-  font-size: min(10vw, 4rem);
-  line-height: min(8.55vw, 3.8rem);
+  font-size: min(9vw, 4rem);
+  line-height: min(10vw, 3.8rem);
   text-transform: uppercase;
   color: var(--black);
 }
@@ -127,8 +127,14 @@ li {
   color: var(--black);
 }
 
-p {
+p,
+span,
+data {
   font-size: 1.1rem;
+}
+
+data {
+  font-weight: 800;
 }
 
 li {

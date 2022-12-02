@@ -23,7 +23,11 @@ const TeamSection = () => {
           </Row>
         </Container>
         <Container className="mt-5">
-          <StaticPageLoader url={TeamRoute.contentUrl} Component={ImageGrid}></StaticPageLoader>
+          <StaticPageLoader
+            url={TeamRoute.contentUrl}
+            options={{ params: { per_page: 50 } }}
+            Component={ImageGrid}
+          ></StaticPageLoader>
         </Container>
         <Container>
           <Row>

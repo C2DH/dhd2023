@@ -3,7 +3,7 @@ import ClosingKeynote from '../components/sections/keynotes/ClosingKeynote'
 import './Page.scss'
 import ButtonDhd from '../components/ui/ButtonDhd.js'
 import StaticPageLoader from '../components/StaticPageLoader'
-import { ClosingKeynoteRoute } from '../constants'
+import { KeynoteRoute } from '../constants'
 
 const Zeitschiene = ({ data }) => {
   // console.log('[XXXXXXXXXX]', data)
@@ -45,10 +45,7 @@ const Zeitschiene = ({ data }) => {
           </Row>
         </Container>
       </section>
-      <StaticPageLoader
-        url={ClosingKeynoteRoute.contentUrl}
-        Component={ClosingKeynote}
-      ></StaticPageLoader>
+      <StaticPageLoader url={KeynoteRoute.contentUrl} Component={ClosingKeynote}></StaticPageLoader>
     </div>
   )
 }
