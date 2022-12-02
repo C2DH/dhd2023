@@ -1,0 +1,107 @@
+$border: 3px solid var(--white);
+
+.btn {
+  border-radius: 0 !important;
+  padding: 1rem 2rem !important;
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  text-transform: uppercase !important;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
+  &:hover,
+  &:focus {
+    background-color: rgb(18, 106, 144) !important;
+    color: var(--white);
+  }
+}
+
+.btn {
+  &::after {
+    content: '';
+    box-sizing: content-box;
+    position: absolute;
+    left: -3px;
+    bottom: -3px;
+    width: calc(100% + 6px);
+    height: 100%;
+    display: block;
+    border-top: $border;
+    border-bottom: $border;
+    transform-origin: center;
+    transform: scaleX(0%);
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  &::before {
+    content: '';
+    box-sizing: content-box;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 100%;
+    height: calc(100% + 6px);
+    display: block;
+    border-left: $border;
+    border-right: $border;
+    transform-origin: center;
+    transform: scaleY(0%);
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+.bg-blue ~ main .Page .btn {
+  &::after {
+    transform: scaleX(100%);
+  }
+  &::before {
+    transform: scaleY(100%);
+  }
+}
+
+.bg-blue ~ main .Page .btn:hover::after,
+.bg-blue ~ main .Page .btn:focus::after {
+  transform: scaleX(0%);
+}
+.bg-blue ~ main .Page .btn:hover::before,
+.bg-blue ~ main .Page .btn:focus::before {
+  transform: scaleY(0%);
+}
+
+.btn:hover::after,
+.btn:focus::after {
+  transform: scaleX(100%);
+}
+.btn:hover::before,
+.btn:focus::before {
+  transform: scaleY(100%);
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: transparent !important;
+  color: var(--white);
+}
+
+.btn-secondary {
+  background-color: transparent !important;
+  border: 3px var(--primary) solid !important;
+  color: var(--primary);
+}
+
+.btn svg {
+  margin-left: 0.4rem;
+}
+
+.download.btn svg {
+  transform: rotate(90deg);
+}
+
+.bg-blue ~ main .Page .btn {
+  &.btn-primary,
+  &.btn-secondary {
+    color: var(--white);
+  }
+}
