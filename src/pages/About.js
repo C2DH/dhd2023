@@ -1,6 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import './Page.scss'
-
+import { ArrowRight } from 'lucide-react'
 import ButtonDhd from '../components/ui/ButtonDhd.js'
 
 const About = ({ data }) => {
@@ -33,7 +33,7 @@ const About = ({ data }) => {
                 className={'mt-0 mt-sm-4 download'}
                 variant={'primary'}
                 title={'About conference'}
-                icon={true}
+                // iconType={ArrowRight}
               />
             </div>
           </Row>

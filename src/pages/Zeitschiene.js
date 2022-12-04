@@ -4,6 +4,7 @@ import './Page.scss'
 import ButtonDhd from '../components/ui/ButtonDhd.js'
 import StaticPageLoader from '../components/StaticPageLoader'
 import { KeynoteRoute } from '../constants'
+import { ArrowRight } from 'lucide-react'
 
 const Zeitschiene = ({ data }) => {
   // console.log('[XXXXXXXXXX]', data)
@@ -30,7 +31,7 @@ const Zeitschiene = ({ data }) => {
                 className={'mt-0 mt-sm-4 download'}
                 variant={'primary'}
                 title={'View schedule'}
-                icon={true}
+                // iconType={ArrowRight}
               />
             </div>
           </Row>

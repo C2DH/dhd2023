@@ -114,10 +114,32 @@ h2 {
   color: var(--white) !important;
 }
 
-a {
+a:not(.logo) {
+  position: relative;
+  display: inline-flex;
   color: var(--black);
   text-decoration: none;
   text-transform: uppercase;
+  transform-origin: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    z-index: -1;
+    transform: scaleX(0%);
+    transition: transform 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+  &:hover,
+  &:focus {
+    &::before {
+      transform: scaleX(100%);
+    }
+  }
 }
 
 span,
@@ -125,6 +147,10 @@ p,
 li {
   font-variation-settings: 'ital' 10, 'wdth' 120;
   color: var(--black);
+}
+
+li {
+  display: inline-flex;
 }
 
 p,
@@ -171,7 +197,7 @@ li {
   --main-container-padding: 4rem;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1320px) {
   :root {
     --fixed-menu-rm: 4rem;
     --main-container-padding: 2rem;
@@ -180,7 +206,7 @@ li {
 
 @media (max-width: 540px) {
   :root {
-    --fixed-menu-rm: 2rem;
+    --fixed-menu-rm: 1rem;
     --main-container-padding: 1rem;
   }
   main {

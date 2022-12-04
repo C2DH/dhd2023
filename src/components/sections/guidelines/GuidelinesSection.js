@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import ButtonDhd from '../../ui/ButtonDhd.js'
 import './GuidelinesSection.scss'
+import { ArrowRight } from 'lucide-react'
 
 const GuidelinesSection = ({ data }) => {
   if (!data) {
@@ -28,13 +29,13 @@ const GuidelinesSection = ({ data }) => {
                 className={'mt-0 mt-sm-4 download'}
                 variant={'primary'}
                 title={'Zitierregeln Deutsch'}
-                icon={true}
+                // iconType={ArrowRight}
               />
               <ButtonDhd
                 className={'mt-0 mx-3 mt-sm-4 download'}
                 variant={'primary'}
                 title={'Citation Rules English'}
-                icon={true}
+                // iconType={ArrowRight}
               />
             </div>
           </Row>

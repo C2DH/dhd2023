@@ -43,7 +43,7 @@ li.active .dropdown-menu {
   padding-left: 0.3rem;
 }
 
-.dropdown-menu li:hover i {
+.dropdown-menu a:hover i {
   opacity: 1;
   transform: scale(0.8) translateX(0px) translateY(-1px);
 }

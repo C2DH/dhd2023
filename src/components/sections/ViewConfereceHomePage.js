@@ -1,4 +1,5 @@
 import ButtonDhd from '../ui/ButtonDhd.js'
+import { ArrowRight } from 'lucide-react'
 const { Container, Row, Col } = require('react-bootstrap')
 
 const ViewConfereceHomePage = () => {
@@ -17,7 +18,7 @@ const ViewConfereceHomePage = () => {
                   className={'mt-4'}
                   variant={'primary'}
                   title={'VIEW CONFERENCE'}
-                  icon={true}
+                  // iconType={ArrowRight}
                 />
               </div>
             </Col>

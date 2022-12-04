@@ -24,7 +24,7 @@ const Intro = () => {
                 className={'mt-0 mt-sm-4'}
                 variant={'primary'}
                 title={'Register'}
-                icon={true}
+                iconType={'ArrowRight'}
               />
             </Col>
           </Row>

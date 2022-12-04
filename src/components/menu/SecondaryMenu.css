@@ -8,6 +8,7 @@
 }
 
 .secondery-menu li {
+  display: block;
   padding: 0.3rem 0;
 }
 
@@ -22,7 +23,7 @@
   }
   .secondery-menu {
     padding-top: 0rem;
-    padding-left: 0rem;
+    padding-left: 0rem !important;
     margin: 1rem 0;
   }
   .secondery-menu li {

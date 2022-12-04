@@ -6,6 +6,7 @@ import { GuidelinesRoute } from '../constants.js'
 import StaticPageLoader from '../components/StaticPageLoader.js'
 import GuidelinesSection from '../components/sections/guidelines/GuidelinesSection.js'
 import './Page.scss'
+import { ArrowRight } from 'lucide-react'
 
 const CfpPage = ({ data }) => {
   const [open, setOpen] = useState(false)
@@ -30,16 +31,16 @@ const CfpPage = ({ data }) => {
             </Col>
             <div className="d-flex">
               <ButtonDhd
-                className={'mt-0 mt-sm-4 download'}
+                className={'mt-0 mt-sm-4'}
                 variant={'primary'}
                 title={'Das CfP als .pdf'}
-                icon={true}
+                iconType={'FileDown'}
               />
               <ButtonDhd
                 className={'mt-0 mx-3 mt-sm-4'}
                 variant={'secondary'}
                 title={'Guidelines'}
-                icon={false}
+                iconType={'ArrowDown'}
               />
             </div>
           </Row>
@@ -57,8 +58,8 @@ const CfpPage = ({ data }) => {
               ariaExpanded={open}
               className={'mt-0 mx-3 mt-sm-4'}
               variant={'secondary'}
-              title={'Guidelines'}
-              icon={false}
+              title={'Show more'}
+              iconType={'Plus'}
             />
           </Col>
         </Row>

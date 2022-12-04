@@ -5,6 +5,7 @@ import { CalendarDays, MapPin } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 import ButtonDhd from '../../ui/ButtonDhd'
 import './Keynotes.scss'
+import { ArrowRight } from 'lucide-react'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -102,7 +103,12 @@ const OpeningKeynote = ({ data }) => {
               </Col>
             </Row>
           ) : null}
-          <ButtonDhd className={'mt-4'} variant={'primary'} title={'Read More'} icon={true} />
+          <ButtonDhd
+            className={'mt-4'}
+            variant={'primary'}
+            title={'Read More'}
+            // iconType={ArrowRight}
+          />
         </Container>
       </div>
     </section>

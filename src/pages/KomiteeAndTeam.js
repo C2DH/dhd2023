@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { TeamRoute } from '../constants.js'
 import StaticPageLoader from '../components/StaticPageLoader.js'
 import './Page.scss'
+import { ArrowRight } from 'lucide-react'
 
 import ButtonDhd from '../components/ui/ButtonDhd.js'
 
@@ -31,7 +32,7 @@ const KomiteeAndTeam = ({ data }) => {
                 className={'mt-0 mt-sm-4 download'}
                 variant={'primary'}
                 title={'Das CfP als .pdf'}
-                icon={true}
+                // iconType={ArrowRight}
               />
             </div>
           </Row>

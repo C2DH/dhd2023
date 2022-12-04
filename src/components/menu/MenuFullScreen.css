@@ -79,7 +79,7 @@
 }
 
 .full-screen-menu-wrapper .menu-wrapper > ul > li {
-  font-size: min(7.5vw, 2.5rem);
+  font-size: min(6vw, 2.5rem);
   height: auto;
   padding: 0.5rem 0;
 }
@@ -101,13 +101,12 @@
 }
 
 @media (max-width: 720px) {
-  .menu-full-screen .container {
+  .menu-full-screen > .menu-block {
     margin-top: 12vh;
     overflow-y: auto;
     overflow-x: hidden;
   }
   .menu-full-screen .footer-menu-wrapper {
-    position: relative;
     margin-top: 2rem;
   }
 }

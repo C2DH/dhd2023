@@ -2,6 +2,7 @@ import ButtonDhd from '../../ui/ButtonDhd.js'
 import ConferenceHighlightsBlocks from '../conferenceHighlights/ConferenceHighlightsBlocks.js'
 import StaticPageLoader from '../../StaticPageLoader.js'
 import { ConferenceHighlightsRoute } from '../../../constants.js'
+import { ArrowRight } from 'lucide-react'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -26,7 +27,12 @@ const ConferenceHighlights = () => {
             url={ConferenceHighlightsRoute.contentUrl}
             Component={ConferenceHighlightsBlocks}
           ></StaticPageLoader>
-          <ButtonDhd className={'mt-4'} variant={'primary'} title={'Register'} icon={true} />
+          <ButtonDhd
+            className={'mt-4'}
+            variant={'primary'}
+            title={'Register'}
+            // iconType={ArrowRight}
+          />
         </Container>
       </div>
     </section>

@@ -11,7 +11,7 @@ const MenuFixed = ({ currentStepIndex }) => {
 
   return (
     <header className="menu-fixed">
-      <Link to="/" tabIndex={1}>
+      <Link className="logo" to="/" tabIndex={1}>
         <Dhd2023Logo currentStepIndex={currentStepIndex} menuStatus={menuStatus} />
       </Link>
 
