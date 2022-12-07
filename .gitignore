@@ -103,3 +103,6 @@ dist
 .tern-port
 .DS_Store
 .env.development
+
+# Local Netlify folder
+.netlify
