@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 export const axiosInstance = axios.create({
-  baseURL: '',
+  baseURL: process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROXY : '',
   timeout: 15000,
   contentType: 'application/json',
 })
