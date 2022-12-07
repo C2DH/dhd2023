@@ -19,15 +19,15 @@ const Intro = () => {
               <h1>
                 A unique experience of inspiration, meeting and networking for the ANY WORD industry
               </h1>
-              <DateOfConference />
-              <ButtonDhd
-                className={'mt-0 mt-sm-4'}
-                variant={'primary'}
-                title={'Register'}
-                iconType={'ArrowRight'}
-              />
             </Col>
+            <DateOfConference />
           </Row>
+          <ButtonDhd
+            className={'mt-0 mt-sm-4'}
+            variant={'primary'}
+            title={'Register'}
+            iconType={'ArrowRight'}
+          />
         </Container>
       </div>
     </section>

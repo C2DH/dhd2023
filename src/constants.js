@@ -5,8 +5,8 @@ export const CfpRoute = {
   contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_CFP_URL].join(''),
 }
 export const TeamRoute = {
-  to: `${StaticPageRoutePrefix}/team`,
-  label: 'Team',
+  to: `${StaticPageRoutePrefix}/guidelines`,
+  label: 'Guidelines',
   contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_TEAM_URL].join(''),
 }
 

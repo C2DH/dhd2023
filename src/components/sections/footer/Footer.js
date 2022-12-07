@@ -47,7 +47,6 @@ const Footer = () => {
                 oder füllen Sie dieses Formular aus.
               </p>
               <ButtonDhd
-                // href={'/doc/location_eng_de.pdf'}
                 className={'mt-0 mt-sm-4'}
                 variant={'secondary'}
                 title={'Location'}

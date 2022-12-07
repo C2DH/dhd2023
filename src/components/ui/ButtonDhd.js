@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap'
-import { ArrowRight, ArrowDown, FileDown, Plus } from 'lucide-react'
+import { ArrowRight, ArrowDown, FileDown, Plus, Minus } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import './ButtonDhd.scss'
 
@@ -24,6 +24,9 @@ const ButtonDhd = ({
     }
     if (iconType === 'ArrowDown') {
       return <ArrowDown />
+    }
+    if (iconType === 'Minus') {
+      return <Minus />
     }
     if (iconType === 'Plus') {
       return <Plus />

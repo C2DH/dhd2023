@@ -2,14 +2,14 @@ import './DateOfConference.scss'
 
 const DateOfConference = () => {
   return (
-    <div className="date-of-conference-wrapper d-flex mt-0 mt-sm-4">
-      <div className="box date location my-sm-0 my-4">
-        <h3>14</h3>
+    <div className="date-of-conference-wrapper d-flex flex-wrap mt-0 mt-sm-4">
+      <div className="box date location my-sm-2 my-4">
+        <h3>14-17</h3>
         <p>Mar 2023</p>
       </div>
-      <div className="box location my-sm-0 my-4">
-        <h3>Trier</h3>
-        <p>Germany</p>
+      <div className="box location my-sm-2 my-4">
+        <h3>Trier / Belval</h3>
+        <p>Germany / Luxembourg</p>
       </div>
     </div>
   )

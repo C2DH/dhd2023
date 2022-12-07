@@ -1,8 +1,22 @@
+import { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { useLocation } from 'react-router-dom'
 import ButtonDhd from '../../ui/ButtonDhd.js'
 import './GuidelinesSection.scss'
 
-const GuidelinesSection = ({ data }) => {
+const GuidelinesSection = ({ data, status }) => {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (status === 'success' && typeof hash === 'string' && hash.indexOf('#') === 0) {
+      console.debug('[GuidelinesSection] @useEffect location.hash:', hash, status)
+      const el = document.getElementById(hash.substring(1))
+      if (el) {
+        el.scrollIntoView()
+      }
+    }
+  }, [hash, status])
+
   if (!data) {
     return null
   }
@@ -15,7 +29,7 @@ const GuidelinesSection = ({ data }) => {
   console.log('DATA', data)
 
   return (
-    <div>
+    <div id="guidelines">
       <section className="d-flex mt-30">
         <Container id="guidelines-section" className="my-5 h-100">
           <Row>
@@ -25,16 +39,16 @@ const GuidelinesSection = ({ data }) => {
             </Col>
             <div className="d-flex">
               <ButtonDhd
-                className={'mt-0 mt-sm-4 download'}
+                className={'mt-0 mt-sm-4'}
                 variant={'primary'}
                 title={'Zitierregeln Deutsch'}
-                // iconType={ArrowRight}
+                iconType={'FileDown'}
               />
               <ButtonDhd
-                className={'mt-0 mx-3 mt-sm-4 download'}
+                className={'mt-0 mx-3 mt-sm-4'}
                 variant={'primary'}
                 title={'Citation Rules English'}
-                // iconType={ArrowRight}
+                iconType={'FileDown'}
               />
             </div>
           </Row>

@@ -3,7 +3,6 @@ import { TeamRoute } from '../../../constants'
 import StaticPageLoader from '../../StaticPageLoader'
 import ImageGrid from './ImageGrid.js'
 import ButtonDhd from '../../ui/ButtonDhd.js'
-import { ArrowRight } from 'lucide-react'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -37,7 +36,7 @@ const TeamSection = () => {
                 className={'mt-4'}
                 variant={'primary'}
                 title={'VIEW CONFERENCE'}
-                // iconType={ArrowRight}
+                iconType={'ArrowRight'}
               />
             </Col>
           </Row>
