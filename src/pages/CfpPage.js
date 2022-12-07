@@ -6,6 +6,7 @@ import { GuidelinesRoute } from '../constants.js'
 import StaticPageLoader from '../components/StaticPageLoader.js'
 import GuidelinesSection from '../components/sections/guidelines/GuidelinesSection.js'
 import './Page.scss'
+import { Helmet } from 'react-helmet'
 
 const CfpPage = ({ data }) => {
   const [open, setOpen] = useState(false)
@@ -22,6 +23,10 @@ const CfpPage = ({ data }) => {
   console.log('ZZZOPNE', data)
   return (
     <div>
+      <Helmet>
+        <title>{title}</title>
+        <meta property="og:title" content={`${title} - DHd2023 Conference - Luxemburg / Trier`} />
+      </Helmet>
       <section className="genric-page-intro d-flex">
         <Container>
           <Row>
