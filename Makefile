@@ -6,6 +6,13 @@ run-dev:
 	REACT_APP_GIT_REVISION=$(shell git rev-parse --short HEAD) \
 	npm start
 
+run-build:
+	REACT_APP_GIT_TAG=$(shell git describe --tags --abbrev=0 HEAD) \
+	REACT_APP_GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD) \
+	REACT_APP_GIT_REVISION=$(shell git rev-parse --short HEAD) \
+	npm run build && netlify deploy
+
+
 build-docker-image:
 	docker build --network host -t c2dhunilu/dhd2023:${BUILD_TAG} \
 	--build-arg GIT_TAG=$(shell git describe --tags --abbrev=0 HEAD) \
