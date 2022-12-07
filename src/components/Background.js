@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { useMenuStore } from '../store'
+import { dataLocation } from '../Data'
 import './Background.css'
 
 const Background = () => {
@@ -10,12 +11,15 @@ const Background = () => {
 
   let classColor = 'bg-light'
 
-  if (
-    location.pathname === '/' ||
-    location.pathname === '/team' ||
-    location.pathname === '/page/cfp' ||
-    location.pathname === '/page/zeitschiene'
-  ) {
+  const getLocation = () => {
+    dataLocation.map((dataLocation, index) => {
+      return location.pathname === dataLocation.location + '||'
+    })
+  }
+
+  // console.log('getLocation', getLocation)
+
+  if (getLocation) {
     if ([0, 2].includes(currentStepIndex)) {
       classColor = 'bg-light'
     }

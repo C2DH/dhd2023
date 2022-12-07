@@ -1,0 +1,33 @@
+.Zeitschiene p,
+.Zeitschiene h3,
+.Zeitschiene h4 {
+  display: flex;
+  padding: 2rem 1rem;
+  text-align: right;
+  border-bottom: 2px solid;
+  margin: 0;
+
+  strong {
+    flex-grow: 1;
+    position: relative;
+    text-align: left;
+    margin-right: 1rem;
+  }
+
+  a {
+    color: var(--primary);
+    font-weight: 600;
+    &:hover {
+      color: var(--white);
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .Zeitschiene p,
+  .Zeitschiene h3,
+  .Zeitschiene h4 {
+    flex-direction: column;
+    text-align: left;
+  }
+}

@@ -1,5 +1,5 @@
 import { dataDropdown } from '../../Data'
-import './DropDownMenu.css'
+import './DropDownMenu.scss'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -10,12 +10,7 @@ const DropDownMenu = () => {
         {dataDropdown.slice(0, 4).map((dataDropdown, index) => {
           return (
             <li key={dataDropdown.title}>
-              <Link
-                to={dataDropdown.link}
-                onClick={() => {
-                  'cool'
-                }}
-              >
+              <Link to={dataDropdown.link}>
                 {dataDropdown.title}
                 <i>
                   <ArrowRight />
@@ -26,15 +21,15 @@ const DropDownMenu = () => {
         })}
       </div>
       <div className="dropdown-menu-row-two">
-        {dataDropdown.slice(4, 7).map((dataDropdown, index) => {
+        {dataDropdown.slice(4, 8).map((dataDropdown, index) => {
           return (
             <li key={dataDropdown.title}>
-              <a href="/">
-                {dataDropdown.title}{' '}
+              <Link to={dataDropdown.link}>
+                {dataDropdown.title}
                 <i>
                   <ArrowRight />
                 </i>
-              </a>
+              </Link>
             </li>
           )
         })}

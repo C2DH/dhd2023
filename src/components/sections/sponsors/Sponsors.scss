@@ -1,0 +1,23 @@
+.sponsors {
+  i svg path,
+  i svg circle,
+  i svg rect,
+  i svg polygon {
+    fill: var(--white);
+  }
+
+  i {
+    display: inline-block;
+    width: 250px;
+    align-self: center;
+    margin: 1rem;
+  }
+  .logos {
+    margin-top: 4rem;
+    flex-direction: column;
+  }
+  h4 {
+    color: var(--primary) !important;
+    flex-grow: 1;
+  }
+}

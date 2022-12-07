@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom'
+import { dataLocation } from '../../Data'
 
 const Dhd2023Logo = ({ menuStatus, currentStepIndex }) => {
   const PrimaryColor = 'var(--primary)'
@@ -10,13 +11,13 @@ const Dhd2023Logo = ({ menuStatus, currentStepIndex }) => {
   let primaryColor = PrimaryColor
   let secondatyColor = BlackColor
 
-  if (
-    location.pathname === '/' ||
-    location.pathname === '/page/cfp' ||
-    location.pathname === '/team' ||
-    location.pathname === '/page/zeitschiene' ||
-    menuStatus === 'open'
-  ) {
+  const getLocation = () => {
+    dataLocation.map((dataLocation, index) => {
+      return location.pathname === dataLocation.location + '||'
+    })
+  }
+
+  if (getLocation || menuStatus === 'open') {
     if ([1, 3, 4, 5, 6].includes(currentStepIndex) || menuStatus === 'open') {
       primaryColor = secondatyColor = WhiteColor
     } else {

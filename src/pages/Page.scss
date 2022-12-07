@@ -17,3 +17,65 @@
 .About section:nth-child(2) {
   margin-bottom: 20rem;
 }
+
+.Location {
+  .de-ver,
+  .eng-ver {
+    position: relative;
+    &::after {
+      display: inline-block;
+      position: absolute;
+      top: -0.5rem;
+      right: 0;
+      font-size: 2rem;
+      font-variation-settings: 'ital' 10, 'wdth' 135;
+      font-weight: 300;
+    }
+  }
+  .de-ver.no-h,
+  .eng-ver.no-h {
+    &::after {
+      top: -3.8rem;
+    }
+  }
+  .de-ver {
+    &::after {
+      content: 'DE';
+    }
+  }
+  .eng-ver {
+    &::after {
+      content: 'ENG';
+    }
+  }
+}
+
+.Location pre {
+  display: none;
+}
+
+.Location a {
+  color: var(--primary);
+  font-weight: 600;
+  &:hover {
+    color: var(--white);
+  }
+}
+
+.Location h5 {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0px;
+    background-color: var(--black);
+  }
+}

@@ -64,8 +64,9 @@ main {
   padding: 1.5rem var(--main-container-padding);
 }
 
-canvas {
+.canvas-container {
   z-index: 0;
+  pointer-events: none;
 }
 
 code {
@@ -82,7 +83,6 @@ section {
 // }
 
 h1,
-h2,
 h3,
 h4 {
   font-weight: 400;
@@ -102,16 +102,27 @@ h2 {
   line-height: min(8.55vw, 3.4rem);
   text-transform: uppercase;
   color: var(--black);
+  font-weight: 300;
+  font-stretch: 85%;
+  font-variation-settings: 'ital' 10, 'wdth' 120;
 }
 
 .bg-dark ~ main h2,
-.bg-dark ~ main h3,
-.bg-dark ~ main h4,
+.bg-dark ~ main h3:not(.blue),
+.bg-dark ~ main h4:not(.blue),
 .bg-dark ~ main h5,
 .bg-dark ~ main h6,
 .bg-dark ~ main p,
 .bg-dark ~ main span {
   color: var(--white) !important;
+}
+
+.container {
+  padding: 0;
+}
+
+.bg-dark ~ main h4 {
+  font-weight: 700;
 }
 
 a:not(.logo) {
@@ -185,6 +196,18 @@ li {
 
 .bg-light {
   background-color: var(--body-light-bg) !important;
+}
+
+.mt-30 {
+  margin-top: 30vh;
+}
+
+.mb-30 {
+  margin-bottom: 30vh;
+}
+
+footer {
+  padding: var(--main-container-padding);
 }
 
 :root {

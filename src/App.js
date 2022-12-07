@@ -9,7 +9,14 @@ import Footer from './components/sections/footer/Footer'
 import ThreeJsBgArch from './components/ThreeJsBgArch'
 import React from 'react'
 import { CfpRoute } from './constants'
-import { KomiteeAndTeamRoute, ZeitschieneRoute, AboutRoute } from './constants'
+import {
+  KomiteeAndTeamRoute,
+  ZeitschieneRoute,
+  AboutRoute,
+  KeynoteRoute,
+  ImpressumRoute,
+  LocationRoute,
+} from './constants'
 import ScrollToTop from './components/ScrollToTop'
 import Loading from './pages/Loading'
 
@@ -73,6 +80,30 @@ function App({ isMobile }) {
               element={
                 <React.Suspense fallback={<Loading height={height} />}>
                   <Page height={height} url={ZeitschieneRoute.contentUrl} />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/page/keynotes"
+              element={
+                <React.Suspense fallback={<Loading height={height} />}>
+                  <Page height={height} url={KeynoteRoute.contentUrl} />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/page/impressum"
+              element={
+                <React.Suspense fallback={<Loading height={height} />}>
+                  <Page height={height} url={ImpressumRoute.contentUrl} />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/page/location"
+              element={
+                <React.Suspense fallback={<Loading height={height} />}>
+                  <Page height={height} url={LocationRoute.contentUrl} />
                 </React.Suspense>
               }
             />

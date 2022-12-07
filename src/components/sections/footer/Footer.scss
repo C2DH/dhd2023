@@ -1,3 +1,20 @@
 footer {
-  height: 70vh;
+  height: 60vh;
+
+  i svg path,
+  i svg circle,
+  i svg rect,
+  i svg polygon {
+    fill: var(--black);
+  }
+
+  i {
+    display: inline-block;
+    width: 200px;
+    align-self: center;
+    margin: 1rem;
+  }
+  .logos {
+    margin-top: 4rem;
+  }
 }

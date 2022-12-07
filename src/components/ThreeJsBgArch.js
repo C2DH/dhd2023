@@ -45,17 +45,17 @@ const SceneSteps = [
     fog: ['#4e4a54', -15, 35],
   },
   {
-    scale: 0.13,
-    position: [-2, -2.8],
-    positionTwo: [-2, 0, -40],
-    positionThree: [-1, 0, -20],
-    rotation: [-0.2, -0.25, -0.08],
+    scale: 0.14,
+    position: [2, -3.2],
+    positionTwo: [2, 0, -40],
+    positionThree: [1, 0, -20],
+    rotation: [-0.2, -0.6, -0.08],
     color: '#000000',
     fog: ['#4e4a54', -0, 30],
   },
   {
     scale: 0.12,
-    position: [-0.1, -4.5],
+    position: [-0.1, -4.8],
     positionTwo: [16.2, 0, 0],
     positionThree: [-16.2, 0, 0],
     rotation: [-0.1, -0.45, -0.058],
@@ -77,7 +77,7 @@ const ThreeJsBgArch = ({ availableWidth = 100, availableHeight = 100 }) => {
   const currentStepIndex = useMenuStore((state) => state.currentStepIndex)
   const scene = SceneSteps[currentStepIndex ?? 0]
   const SceneStepsValidation = currentStepIndex ?? 0
-  console.log('SceneSteps', scene)
+  console.log('SceneSteps', currentStepIndex)
   const [styles, api] = useSpring(() => ({
     scale: 0,
     rotation: [0, 0, 0],
@@ -111,7 +111,10 @@ const ThreeJsBgArch = ({ availableWidth = 100, availableHeight = 100 }) => {
             rotation={styles.rotation.to((x, y, z) => [x, y, z])}
             position={styles.position.to((x, y) => [x, y, 0])}
           >
-            <Float floatIntensity={0.35} rotationIntensity={0.35}>
+            <Float
+              floatIntensity={currentStepIndex === 5 ? 0 : 0.35}
+              rotationIntensity={currentStepIndex === 5 ? 0 : 0.35}
+            >
               <Arch color={scene.color}></Arch>
               <Arch
                 position={SceneSteps[SceneStepsValidation].positionTwo}
@@ -145,7 +148,7 @@ const ThreeJsBgArch = ({ availableWidth = 100, availableHeight = 100 }) => {
           />
 
           {/* <spotLight position={[0, 3, -3]} angle={0.2} penumbra={1} intensity={1} /> */}
-          <OrbitControls autoRotate={false} enableZoom={false} makeDefault />
+          <OrbitControls autoRotate={false} enableZoom={false} makeDefault enableRotate={false} />
           <Environment rotation={[Math.PI / 2, 0, 5]} preset="sunset" />
         </Canvas>
       </Suspense>

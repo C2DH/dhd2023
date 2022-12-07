@@ -1,7 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import './Page.scss'
 
-const About = ({ data }) => {
+const Impressum = ({ data }) => {
   if (!data) {
     return null
   }
@@ -13,6 +13,7 @@ const About = ({ data }) => {
   const removeHtml = content.replace(/<[^>]*>?/gm, '')
 
   const splitter = removeHtml.split('\n')
+  const splitterHtml = content.split('\n')
 
   // const hTwoExtracter = data.content?.rendered.match(SrcSetRegexp)
 
@@ -33,8 +34,13 @@ const About = ({ data }) => {
         <Container>
           <Row>
             <Col sm={12} md={9} lg={7}>
-              <p dangerouslySetInnerHTML={{ __html: splitter[13] }}></p>
-              <p dangerouslySetInnerHTML={{ __html: splitter[17] }}></p>
+              <p dangerouslySetInnerHTML={{ __html: splitterHtml[5] }}></p>
+              <p dangerouslySetInnerHTML={{ __html: splitterHtml[9] }}></p>
+              <p dangerouslySetInnerHTML={{ __html: splitterHtml[13] }}></p>
+              <p dangerouslySetInnerHTML={{ __html: splitterHtml[17] }}></p>
+              <p dangerouslySetInnerHTML={{ __html: splitterHtml[21] }}></p>
+              <p dangerouslySetInnerHTML={{ __html: splitterHtml[25] }}></p>
+              <p dangerouslySetInnerHTML={{ __html: splitterHtml[29] }}></p>
             </Col>
           </Row>
         </Container>
@@ -44,4 +50,4 @@ const About = ({ data }) => {
   )
 }
 
-export default About
+export default Impressum

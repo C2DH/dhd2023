@@ -1,7 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import ButtonDhd from '../../ui/ButtonDhd.js'
 import './GuidelinesSection.scss'
-import { ArrowRight } from 'lucide-react'
 
 const GuidelinesSection = ({ data }) => {
   if (!data) {
@@ -17,7 +16,7 @@ const GuidelinesSection = ({ data }) => {
 
   return (
     <div>
-      <section className="d-flex">
+      <section className="d-flex mt-30">
         <Container id="guidelines-section" className="my-5 h-100">
           <Row>
             <Col className="col col-sm-12 col-md-9 col-lg-7">

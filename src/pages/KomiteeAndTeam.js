@@ -3,9 +3,6 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { TeamRoute } from '../constants.js'
 import StaticPageLoader from '../components/StaticPageLoader.js'
 import './Page.scss'
-import { ArrowRight } from 'lucide-react'
-
-import ButtonDhd from '../components/ui/ButtonDhd.js'
 
 const KomiteeAndTeam = ({ data }) => {
   console.log('[XXXXXXXXXX]', data)
@@ -19,33 +16,36 @@ const KomiteeAndTeam = ({ data }) => {
   // const hTwoExtracter = content.match(SrcSetRegexp)
 
   return (
-    <div className="KomiteeAndTeam">
-      <section className="genric-page-intro d-flex">
+    <div className="KomiteeAndTeam mt-30">
+      <section>
         <Container>
           <Row>
             <Col className="col col-sm-12 col-md-9 col-lg-7">
-              <h1>{title}</h1>
+              <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
               <h4 className="my-3">Get inspired by our amazing speakers on 14 nov</h4>
             </Col>
-            <div className="d-flex">
-              <ButtonDhd
-                className={'mt-0 mt-sm-4 download'}
-                variant={'primary'}
-                title={'Das CfP als .pdf'}
-                // iconType={ArrowRight}
-              />
-            </div>
+          </Row>
+          <Row className="mt-5">
+            <Col sm={12} md={8}>
+              <h2 className="my-5">Programmkomitee</h2>
+            </Col>
+          </Row>
+          <Row>
+            <StaticPageLoader url={TeamRoute.contentUrl} Component={ImageGrid}></StaticPageLoader>
           </Row>
         </Container>
       </section>
       <section>
-        <h2 className="my-5">Programmkomitee</h2>
-
-        <StaticPageLoader url={TeamRoute.contentUrl} Component={ImageGrid}></StaticPageLoader>
-      </section>
-      <section>
-        <h2 className="my-5">Lokales Organisationskomitee</h2>
-        <StaticPageLoader url={TeamRoute.contentUrl} Component={ImageGrid}></StaticPageLoader>
+        <Container>
+          <Row>
+            <Col sm={12} md={8}>
+              <h2 className="my-5">Lokales Organisationskomitee</h2>
+            </Col>
+          </Row>
+          <Row>
+            <StaticPageLoader url={TeamRoute.contentUrl} Component={ImageGrid}></StaticPageLoader>
+          </Row>
+        </Container>
       </section>
     </div>
   )

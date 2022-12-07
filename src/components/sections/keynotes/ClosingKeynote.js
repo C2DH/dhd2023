@@ -5,7 +5,6 @@ import { CalendarDays, MapPin } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 import ButtonDhd from '../../ui/ButtonDhd'
 import './Keynotes.scss'
-import { ArrowRight } from 'lucide-react'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -57,7 +56,10 @@ const ClosingKeynote = ({ data }) => {
               <figure>
                 <img alt={splitter[1]} srcSet={srcset[1]} />
                 <figcaption className="figcaption">
-                  <h4 className="d-flex justify-content-end mb-3">{splitter[1]}</h4>
+                  <h4
+                    className="d-flex justify-content-end mb-3"
+                    dangerouslySetInnerHTML={{ __html: splitter[1] }}
+                  ></h4>
                 </figcaption>
               </figure>
             </Col>
@@ -67,7 +69,7 @@ const ClosingKeynote = ({ data }) => {
               className="align-self-start text-right"
             >
               <h2>{title}</h2>
-              <h3 className="my-5">{splitter[6]}</h3>
+              <h3 className="my-5" dangerouslySetInnerHTML={{ __html: splitter[6] }}></h3>
               <div className="when-and-where d-flex my-4">
                 <data className="data me-4">
                   <i className="me-2">
@@ -92,22 +94,22 @@ const ClosingKeynote = ({ data }) => {
               </Col>
             </Row>
           ) : null}
-          {location.pathname === 'keynotes' ? (
+          {location.pathname === '/page/keynotes' ? (
             <Row>
               <Col className="col-12 col-lg-6 align-self-start">
                 <h4 className="my-4">
-                  <b>{splitter[7]}</b>
+                  <b dangerouslySetInnerHTML={{ __html: splitter[7] }}></b>
                 </h4>
-                <p>{splitter[8]}</p>
+                <p dangerouslySetInnerHTML={{ __html: splitter[8] }}></p>
                 <h4 className="my-4">
-                  <b>{splitter[9]}</b>
+                  <b dangerouslySetInnerHTML={{ __html: splitter[9] }}></b>
                 </h4>
-                <p>{splitter[10]}</p>
+                <p dangerouslySetInnerHTML={{ __html: splitter[10] }}></p>
               </Col>
               <Col className="col-12 col-lg-6 mt-4 align-self-start">
-                <p>{splitter[11]}</p>
-                <p>{splitter[12]}</p>
-                <p>{splitter[13]}</p>
+                <p dangerouslySetInnerHTML={{ __html: splitter[11] }}></p>
+                <p dangerouslySetInnerHTML={{ __html: splitter[12] }}></p>
+                <p dangerouslySetInnerHTML={{ __html: splitter[13] }}></p>
               </Col>
             </Row>
           ) : null}
@@ -115,7 +117,7 @@ const ClosingKeynote = ({ data }) => {
             className={'mt-4'}
             variant={'primary'}
             title={'Read More'}
-            // iconType={ArrowRight}
+            iconType={'ArrowRight'}
           />
         </Container>
       </div>

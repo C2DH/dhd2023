@@ -6,7 +6,6 @@ import { GuidelinesRoute } from '../constants.js'
 import StaticPageLoader from '../components/StaticPageLoader.js'
 import GuidelinesSection from '../components/sections/guidelines/GuidelinesSection.js'
 import './Page.scss'
-import { ArrowRight } from 'lucide-react'
 
 const CfpPage = ({ data }) => {
   const [open, setOpen] = useState(false)
@@ -18,6 +17,7 @@ const CfpPage = ({ data }) => {
   const SrcSetRegexp = new RegExp('(?<=<h2>)(.*?)(?=</h2>)', 'i')
   const title = data.title?.rendered
   const content = data.content?.rendered
+  const excerpt = String(data.excerpt?.rendered)
   const hTwoExtracter = content.match(SrcSetRegexp)
   console.log('ZZZOPNE', data)
   return (
@@ -26,8 +26,8 @@ const CfpPage = ({ data }) => {
         <Container>
           <Row>
             <Col className="col col-sm-12 col-md-9 col-lg-7">
-              <h1>{title}</h1>
-              <h4 className="my-3">{hTwoExtracter}</h4>
+              <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
+              <h4 dangerouslySetInnerHTML={{ __html: hTwoExtracter }}></h4>
             </Col>
             <div className="d-flex">
               <ButtonDhd
@@ -49,6 +49,7 @@ const CfpPage = ({ data }) => {
       <Container>
         <Row>
           <Col className="col">
+            <section dangerouslySetInnerHTML={{ __html: excerpt }}></section>
             <Collapse in={open}>
               <section dangerouslySetInnerHTML={{ __html: content }}></section>
             </Collapse>
@@ -56,7 +57,7 @@ const CfpPage = ({ data }) => {
               onClick={() => setOpen(!open)}
               ariaControls="example-collapse-text"
               ariaExpanded={open}
-              className={'mt-0 mx-3 mt-sm-4'}
+              className={'mt-0 mt-sm-4'}
               variant={'secondary'}
               title={'Show more'}
               iconType={'Plus'}

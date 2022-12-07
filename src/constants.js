@@ -52,6 +52,18 @@ export const KeynoteRoute = {
   contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_KEYNOTE_URL].join(''),
 }
 
+export const ImpressumRoute = {
+  to: `${StaticPageRoutePrefix}/impressum`,
+  label: 'Impressum',
+  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_IMPRESSUM_URL].join(''),
+}
+
+export const LocationRoute = {
+  to: `${StaticPageRoutePrefix}/location`,
+  label: 'Location',
+  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_LOCATION_URL].join(''),
+}
+
 export const StaticPagesRoutes = [
   CfpRoute,
   TeamRoute,
@@ -61,5 +73,7 @@ export const StaticPagesRoutes = [
   AboutRoute,
   ZeitschieneRoute,
   KeynoteRoute,
+  ImpressumRoute,
+  LocationRoute,
 ]
 export const StaticPagesRoutesPathnames = StaticPagesRoutes.map((route) => route.to)

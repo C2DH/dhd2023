@@ -17,6 +17,19 @@
   text-decoration: none;
 }
 
+.secondery-menu i {
+  display: inline-block;
+  transform: scale(0.8) translateX(-3px) translateY(-1px);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out;
+  padding-left: 0.3rem;
+}
+
+.secondery-menu a:hover i {
+  opacity: 1;
+  transform: scale(0.8) translateX(0px) translateY(-1px);
+}
+
 @media (max-width: 540px) {
   .secondery-menu a {
     font-size: 1rem;

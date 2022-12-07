@@ -52,7 +52,8 @@ $border: 3px solid var(--white);
   }
 }
 
-.bg-blue ~ main .Page .btn {
+.bg-blue ~ main .btn,
+.bg-blue ~ footer .btn {
   &::after {
     transform: scaleX(100%);
   }
@@ -61,12 +62,16 @@ $border: 3px solid var(--white);
   }
 }
 
-.bg-blue ~ main .Page .btn:hover::after,
-.bg-blue ~ main .Page .btn:focus::after {
+.bg-blue ~ main .btn:hover::after,
+.bg-blue ~ main .btn:focus::after,
+.bg-blue ~ footer .btn:hover::after,
+.bg-blue ~ footer .btn:focus::after {
   transform: scaleX(0%);
 }
-.bg-blue ~ main .Page .btn:hover::before,
-.bg-blue ~ main .Page .btn:focus::before {
+.bg-blue ~ main .btn:hover::before,
+.bg-blue ~ main .btn:focus::before,
+.bg-blue ~ footer .btn:hover::before,
+.bg-blue ~ footer .btn:focus::before {
   transform: scaleY(0%);
 }
 
@@ -99,7 +104,8 @@ $border: 3px solid var(--white);
   transform: rotate(90deg);
 }
 
-.bg-blue ~ main .Page .btn {
+.bg-blue ~ main .btn,
+.bg-blue ~ footer .btn {
   &.btn-primary,
   &.btn-secondary {
     color: var(--white);

@@ -1,6 +1,5 @@
 .ImageGrid {
   position: relative;
-  // height: 500px;
   overflow: hidden;
   z-index: 1;
 }
@@ -20,6 +19,7 @@
   position: relative;
   object-fit: cover;
   filter: grayscale(100%);
+  max-height: 500px;
   min-height: 500px;
 }
 

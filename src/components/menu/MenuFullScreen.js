@@ -11,7 +11,6 @@ import { OrbitControls } from '@react-three/drei'
 import SecondaryMenu from './SecondaryMenu'
 import MenuFooter from './MenuFooter'
 import ButtonDhd from '../ui/ButtonDhd.js'
-import { ArrowRight } from 'lucide-react'
 
 const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
   const menuStatus = useMenuStore((state) => state.menuStatus)
@@ -29,7 +28,7 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
 
   return (
     <a.div style={styles} className="menu-full-screen p-4 flex-center">
-      <Container className="menu-block h-100 position-relative p-0 d-flex flex-column justify-content-sm-center">
+      <Container className="menu-block h-100 position-relative p-0 d-flex flex-column justify-content-md-center">
         <Row>
           <Col lg={7} md={12}>
             <div className="full-screen-menu-wrapper">
