@@ -1,5 +1,5 @@
 // Custom.scss
-@import '../src/components/ui/ButtonDhd.scss';
+
 // Option B: Include parts of Bootstrap
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import '../node_modules/bootstrap/scss/functions';
@@ -125,13 +125,14 @@ h2 {
   font-weight: 700;
 }
 
-a:not(.logo) {
+a:not(.logo, .btn) {
   position: relative;
   display: inline-flex;
   color: var(--black);
   text-decoration: none;
   text-transform: uppercase;
   transform-origin: center;
+  z-index: 1;
 
   &::before {
     content: '';

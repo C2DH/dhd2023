@@ -7,14 +7,18 @@ import {
 } from './constants'
 
 export const dataDropdown = [
-  { title: 'About', link: AboutRoute.to },
-  { title: 'Zeitschiene', link: ZeitschieneRoute.to },
-  { title: 'Keynotes', link: KeynoteRoute.to },
-  { title: 'Programmübersicht', link: '#/' },
-  { title: 'Anmeldung Conftool', link: '#/' },
-  { title: 'Teilnahmegebühren', link: '#/' },
-  { title: 'FAQ', link: '#/' },
-  { title: 'Location', link: LocationRoute.to },
+  { title: 'About', to: AboutRoute.to },
+  { title: 'Zeitschiene', to: ZeitschieneRoute.to },
+  { title: 'Keynotes', to: KeynoteRoute.to },
+  { title: 'Programmübersicht', to: '#/' },
+  { title: 'Anmeldung Conftool', to: 'https://www.conftool.net/dhd2023/', reloadDocument: true },
+  {
+    title: 'DHConvalidator',
+    to: 'https://dh-convalidator.dhd2023.dig-hum.de/',
+    reloadDocument: true,
+  },
+  { title: 'FAQ', to: '#/' },
+  { title: 'Location', to: LocationRoute.to },
 ]
 
 export const dataSecondaryMenu = [
@@ -25,8 +29,8 @@ export const dataSecondaryMenu = [
 ]
 
 export const dataFooterMenu = [
-  { title: 'Impressum', link: ImpressumRoute.to },
-  { title: 'Datenschutz', link: 'https://dig-hum.de/datenschutz' },
+  { title: 'Impressum', to: ImpressumRoute.to },
+  { title: 'Datenschutz', to: 'https://dig-hum.de/datenschutz', reloadDocument: true },
 ]
 
 export const dataLocation = [

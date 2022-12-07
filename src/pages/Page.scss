@@ -54,7 +54,7 @@
   display: none;
 }
 
-.Location a {
+.Location a:not(.btn) {
   color: var(--primary);
   font-weight: 600;
   &:hover {

@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { useOnScreen } from '../../../hooks/viewport'
 import { CalendarDays, MapPin } from 'lucide-react'
-// import { useMenuStore } from '../../../store'
+import { KeynoteRoute } from '../../../constants'
 import { useLocation } from 'react-router-dom'
 import ButtonDhd from '../../ui/ButtonDhd'
 import './Keynotes.scss'
@@ -77,11 +77,20 @@ const OpeningKeynote = ({ data }) => {
             </Col>
           </Row>
           {location.pathname === '/' ? (
-            <Row>
-              <Col className="col-12 col-lg-9 mt-4 align-self-start">
-                <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
-              </Col>
-            </Row>
+            <>
+              <Row>
+                <Col className="col-12 col-lg-9 mt-4 align-self-start">
+                  <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
+                </Col>
+              </Row>
+              <ButtonDhd
+                className={'mt-4'}
+                variant={'primary'}
+                title={'Read More'}
+                iconType={'ArrowRight'}
+                to={KeynoteRoute.to}
+              />
+            </>
           ) : null}
           {location.pathname === '/page/keynotes' ? (
             <Row>
@@ -102,12 +111,6 @@ const OpeningKeynote = ({ data }) => {
               </Col>
             </Row>
           ) : null}
-          <ButtonDhd
-            className={'mt-4'}
-            variant={'primary'}
-            title={'Read More'}
-            iconType={'ArrowRight'}
-          />
         </Container>
       </div>
     </section>

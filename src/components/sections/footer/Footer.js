@@ -7,6 +7,7 @@ import UniTrierLogo from '../../svg/UniTrierLogo.js'
 import UniLogos from '../../svg/UniLogo.js'
 import KompetenzzentrumLogo from '../../svg/KompetenzzentrumLogo.js'
 import ButtonDhd from '../../ui/ButtonDhd.js'
+import { LocationRoute } from '../../../constants'
 import './Footer.scss'
 
 const { Container, Row, Col } = require('react-bootstrap')
@@ -46,10 +47,12 @@ const Footer = () => {
                 oder füllen Sie dieses Formular aus.
               </p>
               <ButtonDhd
+                // href={'/doc/location_eng_de.pdf'}
                 className={'mt-0 mt-sm-4'}
                 variant={'secondary'}
                 title={'Location'}
                 iconType={'ArrowRight'}
+                to={LocationRoute.to}
               />
             </Col>
           </Row>

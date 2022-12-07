@@ -8,17 +8,16 @@ const MenuFooter = () => {
       <p>© 2022</p>
       <span className="footer-line mx-3"></span>
       <ul className="d-flex align-content-flex-end">
-        {dataFooterMenu.map((dataFooterMenu, index) => {
+        {dataFooterMenu.map(({ title, to, reloadDocument }, index) => {
           return (
-            <li key={dataFooterMenu.title}>
-              <Link
-                to={dataFooterMenu.link}
-                onClick={() => {
-                  'cool'
-                }}
-              >
-                {dataFooterMenu.title}
-              </Link>
+            <li key={index}>
+              {reloadDocument ? (
+                <a href={to} target="_blank" rel="noreferrer">
+                  {title}
+                </a>
+              ) : (
+                <Link to={to}>{title}</Link>
+              )}
             </li>
           )
         })}

@@ -29,15 +29,16 @@ const CfpPage = ({ data }) => {
               <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
               <h4 dangerouslySetInnerHTML={{ __html: hTwoExtracter }}></h4>
             </Col>
-            <div className="d-flex">
+            <div className="d-flex flex-wrap">
               <ButtonDhd
-                className={'mt-0 mt-sm-4'}
+                href={'/doc/location_eng_de.pdf'}
+                className={'mt-0 me-3 mt-sm-4'}
                 variant={'primary'}
                 title={'Das CfP als .pdf'}
                 iconType={'FileDown'}
               />
               <ButtonDhd
-                className={'mt-0 mx-3 mt-sm-4'}
+                className={'mt-3 mt-sm-4'}
                 variant={'secondary'}
                 title={'Guidelines'}
                 iconType={'ArrowDown'}

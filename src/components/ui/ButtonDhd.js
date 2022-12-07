@@ -1,5 +1,7 @@
 import { Button } from 'react-bootstrap'
 import { ArrowRight, ArrowDown, FileDown, Plus } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import './ButtonDhd.scss'
 
 const ButtonDhd = ({
   title,
@@ -9,8 +11,11 @@ const ButtonDhd = ({
   ariaControls,
   ariaExpanded,
   onClick,
+  href,
+  to,
+  download,
 }) => {
-  const icon = () => {
+  const Icon = () => {
     if (iconType === 'ArrowRight') {
       return <ArrowRight />
     }
@@ -26,18 +31,32 @@ const ButtonDhd = ({
       return null
     }
   }
-
+  console.log('href', href)
+  if (to) {
+    return (
+      <Link
+        className={`ButtonDhd btn btn-${variant} btn-lg  with-to ${className}`}
+        to={to}
+        tabIndex={1}
+      >
+        {title}
+        {<Icon />}
+      </Link>
+    )
+  }
   return (
     <Button
+      href={href}
+      download={''}
       onClick={onClick}
-      className={className}
+      className={`ButtonDhd ${className}`}
       variant={variant}
       size="lg"
       aria-controls={ariaControls}
       aria-expanded={ariaExpanded}
     >
       {title}
-      {icon()}
+      {<Icon />}
     </Button>
   )
 }

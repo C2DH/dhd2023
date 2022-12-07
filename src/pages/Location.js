@@ -1,5 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import './Page.scss'
+import ButtonDhd from '../components/ui/ButtonDhd'
 
 const Location = ({ data }) => {
   if (!data) {
@@ -32,6 +33,15 @@ const Location = ({ data }) => {
       <section className="d-flex mt-30">
         <Container className="mb-30">
           <h1 className="mb-5" dangerouslySetInnerHTML={{ __html: title }}></h1>
+          <ButtonDhd
+            href={'/doc/location_eng_de.pdf'}
+            download={'download'}
+            className={'mt-0 me-3 mt-sm-4 mb-5'}
+            variant={'primary'}
+            title={'Location PDF'}
+            iconType={'FileDown'}
+          />
+
           <div className="mb-4" dangerouslySetInnerHTML={{ __html: Belval }}></div>
           <Row>
             <Col sm={12} lg={6}>
