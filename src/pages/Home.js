@@ -10,6 +10,7 @@ import ConferenceHighlights from '../components/sections/conferenceHighlights/Co
 import Sponsors from '../components/sections/sponsors/Sponsors.js'
 import StaticPageLoader from '../components/StaticPageLoader'
 import { KeynoteRoute } from '../constants'
+import { Helmet } from 'react-helmet'
 
 const AvailableSteps = [
   'intro section',
@@ -46,6 +47,10 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
   }, [pathname])
   return (
     <div className="Home">
+      <Helmet>
+        <title>DHd2023</title>
+        <meta property="og:image" content="social-media.png" />
+      </Helmet>
       <div>
         <Scrollama offset={0.5} onStepEnter={onStepEnter}>
           {AvailableSteps.map((text, stepIndex) => (
