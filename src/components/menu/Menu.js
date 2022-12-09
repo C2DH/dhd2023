@@ -16,6 +16,10 @@ const Menu = () => {
     setDropdown(!dropdown)
   }
 
+  // const togglePanel = () => {
+  //   setIsCollapsed((prevState) => !prevState)
+  // }
+
   if (menuStatus === MenuOpen) {
     document.body.style.overflow = 'hidden'
   }
@@ -55,7 +59,7 @@ const Menu = () => {
           <div className="programm-events" href="/#" tabIndex={1}>
             Programm & Events
             {dropdown === false ? <Minus className="icon" /> : <Plus className="icon" />}
-            <DropDownMenu />
+            <DropDownMenu dropdown={dropdown} menuStatus={menuStatus} />
           </div>
         </li>
         <li>

@@ -21,6 +21,7 @@ import {
 } from './constants'
 import ScrollToTop from './components/ScrollToTop'
 import Loading from './pages/Loading'
+import { isMobile } from 'react-device-detect'
 
 // Create a client
 const queryClient = new QueryClient({
@@ -43,7 +44,7 @@ const queryClient = new QueryClient({
 const Page = React.lazy(() => import('./pages/Page'))
 const Home = React.lazy(() => import('./pages/Home'))
 
-function App({ isMobile }) {
+function App() {
   const { width, height } = useCurrentWindowDimensions(isMobile)
   return (
     <div className="App">
@@ -65,7 +66,7 @@ function App({ isMobile }) {
               path="/page/cfp"
               element={
                 <React.Suspense fallback={'loading....'}>
-                  <Page url={CfpRoute.contentUrl} />
+                  <Page url={CfpRoute.contentUrl} isMobile={isMobile} />
                 </React.Suspense>
               }
             />

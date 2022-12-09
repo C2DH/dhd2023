@@ -99,14 +99,12 @@ const ThreeJsBgArch = ({ availableWidth = 100, availableHeight = 100 }) => {
       id="canvas-container"
       style={{ width: availableWidth, height: availableHeight, zIndex: 0 }}
       className="position-fixed top-0"
-      // {...props}
     >
       <Suspense>
         <Canvas flat shadows camera={{ position: [-4, 1.5, 8], fov: 25 }}>
           <fog attach="fog" args={SceneSteps[SceneStepsValidation].fog} />
 
           <a.group
-            // position={[2, -1.2, 0]}
             scale={styles.scale}
             rotation={styles.rotation.to((x, y, z) => [x, y, z])}
             position={styles.position.to((x, y) => [x, y, 0])}

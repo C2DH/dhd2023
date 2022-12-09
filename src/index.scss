@@ -62,11 +62,14 @@ footer {
 main {
   position: relative;
   padding: 1.5rem var(--main-container-padding);
+  overflow-x: hidden;
 }
 
-.canvas-container {
+#canvas-container {
   z-index: 0;
-  pointer-events: none;
+  div {
+    touch-action: auto !important;
+  }
 }
 
 code {

@@ -1,29 +1,26 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import ButtonDhd from '../components/ui/ButtonDhd.js'
 // import Collapse from 'react-bootstrap/Collapse'
 import { useSpring, animated, config } from 'react-spring'
-import useMeasure from 'react-use-measure'
 import { GuidelinesRoute } from '../constants.js'
 import StaticPageLoader from '../components/StaticPageLoader.js'
 import GuidelinesSection from '../components/sections/guidelines/GuidelinesSection.js'
-import { useCurrentWindowDimensions } from '../hooks/viewport.js'
+import { useBoundingClientRect } from '../hooks/viewport.js'
 import './Page.scss'
 import { Helmet } from 'react-helmet'
 
-const CfpPage = ({ data }) => {
+const CfpPage = ({ data, isMobile }) => {
   const [isCollapsed, setIsCollapsed] = useState(false)
 
-  // const { height } = useCurrentWindowDimensions(isMobile)
-
-  const [ref, bounds] = useMeasure()
+  const [bbox, ref] = useBoundingClientRect()
 
   const slideInStyles = useSpring({
     config: { ...config.slow },
     from: { height: 800 },
     to: {
       // opacity: isCollapsed ? 1 : 0,
-      height: isCollapsed ? bounds.height : 800,
+      height: isCollapsed ? bbox.height : 800,
     },
   })
 
@@ -34,6 +31,8 @@ const CfpPage = ({ data }) => {
   if (!data) {
     return null
   }
+
+  console.log('Dropdown availableHeight', bbox.height)
 
   const SrcSetRegexp = new RegExp('(?<=<h2>)(.*?)(?=</h2>)', 'i')
   const title = data.title?.rendered
@@ -75,7 +74,7 @@ const CfpPage = ({ data }) => {
       </section>
       <Container>
         <Row>
-          <Col className="col">
+          <Col xs={12}>
             {/* <section dangerouslySetInnerHTML={{ __html: excerpt }}></section> */}
             {/* className={`contentToggle ${showContent === true ? 'open' : 'close'}`} */}
             <animated.div style={{ ...slideInStyles, overflow: 'hidden' }}>

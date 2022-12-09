@@ -14,6 +14,8 @@ import ButtonDhd from '../ui/ButtonDhd.js'
 
 const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
   const menuStatus = useMenuStore((state) => state.menuStatus)
+
+  //MENU ANIMATION
   const { width } = useCurrentWindowDimensions(isMobile)
   const [styles, api] = useSpring(() => ({
     x: width,
@@ -71,7 +73,7 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
             castShadow
           />
 
-          <OrbitControls autoRotate={false} enableZoom={false} />
+          <OrbitControls autoRotate={false} enableZoom={false} makeDefault enableRotate={false} />
         </Canvas>
       </div>
     </a.div>

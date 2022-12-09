@@ -30,9 +30,8 @@ const KomiteeAndTeam = ({ data }) => {
               <h2 className="my-5">Programmkomitee</h2>
             </Col>
           </Row>
-          <Row>
-            <StaticPageLoader url={TeamRoute.contentUrl} Component={ImageGrid}></StaticPageLoader>
-          </Row>
+
+          <StaticPageLoader url={TeamRoute.contentUrl} Component={ImageGrid}></StaticPageLoader>
         </Container>
       </section>
       <section>
@@ -42,9 +41,8 @@ const KomiteeAndTeam = ({ data }) => {
               <h2 className="my-5">Lokales Organisationskomitee</h2>
             </Col>
           </Row>
-          <Row>
-            <StaticPageLoader url={TeamRoute.contentUrl} Component={ImageGrid}></StaticPageLoader>
-          </Row>
+
+          <StaticPageLoader url={TeamRoute.contentUrl} Component={ImageGrid}></StaticPageLoader>
         </Container>
       </section>
     </div>
