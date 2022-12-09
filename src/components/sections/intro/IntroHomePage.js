@@ -23,7 +23,7 @@ const Intro = () => {
             <DateOfConference />
           </Row>
           <ButtonDhd
-            className={'mt-0 mt-sm-4'}
+            className={'mt-2 mt-sm-4'}
             variant={'primary'}
             title={'Register'}
             iconType={'ArrowRight'}

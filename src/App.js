@@ -16,6 +16,8 @@ import {
   KeynoteRoute,
   ImpressumRoute,
   LocationRoute,
+  ProgrammubersichtRoute,
+  FaqRoute,
 } from './constants'
 import ScrollToTop from './components/ScrollToTop'
 import Loading from './pages/Loading'
@@ -104,6 +106,22 @@ function App({ isMobile }) {
               element={
                 <React.Suspense fallback={<Loading height={height} />}>
                   <Page height={height} url={LocationRoute.contentUrl} />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/page/programmubersich"
+              element={
+                <React.Suspense fallback={<Loading height={height} />}>
+                  <Page height={height} url={ProgrammubersichtRoute.contentUrl} />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/page/faq"
+              element={
+                <React.Suspense fallback={<Loading height={height} />}>
+                  <Page height={height} url={FaqRoute.contentUrl} />
                 </React.Suspense>
               }
             />

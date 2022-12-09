@@ -4,20 +4,22 @@ import {
   KeynoteRoute,
   ImpressumRoute,
   LocationRoute,
+  ProgrammubersichtRoute,
+  FaqRoute,
 } from './constants'
 
 export const dataDropdown = [
   { title: 'About', to: AboutRoute.to },
   { title: 'Zeitschiene', to: ZeitschieneRoute.to },
   { title: 'Keynotes', to: KeynoteRoute.to },
-  { title: 'Programmübersicht', to: '#/' },
+  { title: 'Programmübersicht', to: ProgrammubersichtRoute.to },
   { title: 'Anmeldung Conftool', to: 'https://www.conftool.net/dhd2023/', reloadDocument: true },
   {
     title: 'DHConvalidator',
     to: 'https://dh-convalidator.dhd2023.dig-hum.de/',
     reloadDocument: true,
   },
-  { title: 'FAQ', to: '#/' },
+  { title: 'FAQ', to: FaqRoute.to },
   { title: 'Location', to: LocationRoute.to },
 ]
 
@@ -25,7 +27,7 @@ export const dataSecondaryMenu = [
   { title: 'Postersession', link: '#/' },
   { title: 'Behind the Scenes', link: '#/' },
   { title: 'BLOG', link: '#/' },
-  { title: 'Kontakt', link: '#/' },
+  { title: 'Kontakt', to: '/contact' },
 ]
 
 export const dataFooterMenu = [
@@ -40,4 +42,5 @@ export const dataLocation = [
   { location: '/page/keynotes' },
   { location: '/page/impressum' },
   { location: '/page/location' },
+  { location: '/page/programmubersicht' },
 ]

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import { useMenuStore } from '../store'
 import { useLocation } from 'react-router-dom'
 import { Scrollama, Step } from 'react-scrollama'
@@ -20,7 +20,19 @@ const AvailableSteps = [
   'sponsors',
 ]
 
+function scrollToSection(section) {
+  const el = document.getElementById(`section-${section}`)
+
+  if (el) {
+    console.debug('[Home] scrollToSection:', section, el)
+    el.scrollIntoView()
+  } else {
+    console.debug('[Home] scrollToSection not zorking:', section, el)
+  }
+}
+
 const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
+  const timeoutIdRef = useRef()
   const currentStepIndex = useMenuStore((state) => state.currentStepIndex)
   const setCurrentStepIndex = useMenuStore((state) => state.setCurrentStepIndex)
   const { pathname } = useLocation()
@@ -29,21 +41,20 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
   const onStepEnter = ({ data }) => {
     setCurrentStepIndex(data)
   }
-
   //Scroll to section
-  useEffect(() => {
+  useLayoutEffect(() => {
     console.debug('[Home] @useEffect location.pathname:', pathname)
-    if (pathname === '/team') {
-      const el = document.getElementById('section-team')
-      if (el) {
-        el.scrollIntoView()
-      } else {
-        console.debug('[Home] noooooooooo')
-      }
+    if (timeoutIdRef.current) {
+      clearTimeout(timeoutIdRef.current)
+    }
+    if (['/contact', '/team'].includes(pathname)) {
+      console.debug('[Home] scrollToSection:', pathname.substring(1))
+      timeoutIdRef.current = setTimeout(() => scrollToSection(pathname.substring(1)), 1)
       // document.elementFromPoint. section-team
     } else {
       window.scrollTo(0, 0)
     }
+    return () => clearTimeout(timeoutIdRef.current)
   }, [pathname])
   return (
     <div className="Home">

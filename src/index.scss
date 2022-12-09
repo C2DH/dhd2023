@@ -55,9 +55,9 @@ footer {
   z-index: 1;
 }
 
-#root {
-  overflow-x: hidden;
-}
+// #root {
+//   overflow: hidden;
+// }
 
 main {
   position: relative;
@@ -229,8 +229,12 @@ footer {
 }
 
 @media (max-width: 540px) {
+  h3,
+  h2 {
+    font-weight: 600;
+  }
   :root {
-    --fixed-menu-rm: 1rem;
+    --fixed-menu-rm: 2rem;
     --main-container-padding: 1rem;
   }
   main {

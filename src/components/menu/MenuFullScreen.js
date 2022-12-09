@@ -39,12 +39,7 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
             <SecondaryMenu />
           </Col>
         </Row>
-        <ButtonDhd
-          className={'mt-4 align-self-start'}
-          variant={'primary'}
-          title={'Register'}
-          // iconType={ArrowRight}
-        />
+        <ButtonDhd className={'mt-4 align-self-start'} variant={'primary'} title={'Register'} />
       </Container>
       <Container className="position-relative p-0 d-flex">
         <Row>

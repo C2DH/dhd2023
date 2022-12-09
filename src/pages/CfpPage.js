@@ -1,21 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import ButtonDhd from '../components/ui/ButtonDhd.js'
 // import Collapse from 'react-bootstrap/Collapse'
+import { useSpring, animated, config } from 'react-spring'
+import useMeasure from 'react-use-measure'
 import { GuidelinesRoute } from '../constants.js'
 import StaticPageLoader from '../components/StaticPageLoader.js'
 import GuidelinesSection from '../components/sections/guidelines/GuidelinesSection.js'
+import { useCurrentWindowDimensions } from '../hooks/viewport.js'
 import './Page.scss'
 import { Helmet } from 'react-helmet'
 
 const CfpPage = ({ data }) => {
-  const [showContent, setDropdown] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(false)
 
-  const toggleHiddenContent = () => {
-    setDropdown(!showContent)
+  // const { height } = useCurrentWindowDimensions(isMobile)
+
+  const [ref, bounds] = useMeasure()
+
+  const slideInStyles = useSpring({
+    config: { ...config.slow },
+    from: { height: 800 },
+    to: {
+      // opacity: isCollapsed ? 1 : 0,
+      height: isCollapsed ? bounds.height : 800,
+    },
+  })
+
+  const togglePanel = () => {
+    setIsCollapsed((prevState) => !prevState)
   }
-
-  console.log('showContent', showContent)
 
   if (!data) {
     return null
@@ -63,17 +77,18 @@ const CfpPage = ({ data }) => {
         <Row>
           <Col className="col">
             {/* <section dangerouslySetInnerHTML={{ __html: excerpt }}></section> */}
-            <div className={`contentToggle ${showContent === true ? 'open' : 'close'}`}>
-              <section dangerouslySetInnerHTML={{ __html: content }}></section>
-            </div>
+            {/* className={`contentToggle ${showContent === true ? 'open' : 'close'}`} */}
+            <animated.div style={{ ...slideInStyles, overflow: 'hidden' }}>
+              <section ref={ref} dangerouslySetInnerHTML={{ __html: content }}></section>
+            </animated.div>
             <ButtonDhd
-              onClick={toggleHiddenContent}
+              onClick={togglePanel}
               // ariaControls="example-collapse-text"
               // ariaExpanded={open}
               className={'mt-0 mt-sm-4'}
               variant={'secondary'}
               title={'Show more'}
-              iconType={showContent === true ? 'Minus' : 'Plus'}
+              iconType={isCollapsed === true ? 'Minus' : 'Plus'}
             />
           </Col>
         </Row>

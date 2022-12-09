@@ -30,9 +30,9 @@ const Footer = () => {
     // eslint-disable-next-line
   }, [isIntersecting, pathname])
   return (
-    <footer className="footer flex-center">
+    <footer id="section-contact" className="footer flex-center">
       <div className="footer-content-wrapper flex-grow-1" ref={ref}>
-        <Container>
+        <Container className="contact">
           <Row>
             <Col sm={12} md={6}>
               <h2>Kontakt</h2>
@@ -56,7 +56,7 @@ const Footer = () => {
             </Col>
           </Row>
         </Container>
-        <Container className="logos d-flex flex-wrap justify-content-center">
+        <Container className="logos d-flex flex-wrap justify-content-center mb-5">
           <i>
             <UniTrierLogo />
           </i>
@@ -68,9 +68,9 @@ const Footer = () => {
           </i>
         </Container>
       </div>
-      <Container className="my-4">
+      <Container className="mt-4">
         <Row>
-          <Col className="col">
+          <Col>
             <MenuFooter />
           </Col>
         </Row>

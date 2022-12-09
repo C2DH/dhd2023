@@ -64,7 +64,24 @@ export const LocationRoute = {
   contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_LOCATION_URL].join(''),
 }
 
+export const FaqRoute = {
+  to: `${StaticPageRoutePrefix}/faq`,
+  label: 'Faq',
+  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_FAQ_URL].join(''),
+}
+
+export const ProgrammubersichtRoute = {
+  to: `${StaticPageRoutePrefix}/programmubersich`,
+  label: 'programmubersich',
+  contentUrl: [
+    process.env.REACT_APP_API_ROOT,
+    process.env.REACT_APP_PAGES_PROGRAMMBERSICH_URL,
+  ].join(''),
+}
+
 export const StaticPagesRoutes = [
+  FaqRoute,
+  ProgrammubersichtRoute,
   CfpRoute,
   TeamRoute,
   GuidelinesRoute,

@@ -49,8 +49,8 @@ const ClosingKeynote = ({ data }) => {
         <Container>
           <Row className="mb-4">
             <Col
+              xs={{ span: 12, order: 1 }}
               lg={{ order: 0, span: 6 }}
-              md={{ order: 1 }}
               className="align-self-start ImageGrid"
             >
               <figure>
@@ -63,11 +63,7 @@ const ClosingKeynote = ({ data }) => {
                 </figcaption>
               </figure>
             </Col>
-            <Col
-              lg={{ order: 1, span: 6 }}
-              md={{ order: 0 }}
-              className="align-self-start text-right"
-            >
+            <Col className="align-self-start text-right">
               <h2>{title}</h2>
               <h3 className="my-5" dangerouslySetInnerHTML={{ __html: splitter[6] }}></h3>
               <div className="when-and-where d-flex my-4">

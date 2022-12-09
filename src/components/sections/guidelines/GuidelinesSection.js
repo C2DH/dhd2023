@@ -1,21 +1,22 @@
-import { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { useLocation } from 'react-router-dom'
 import ButtonDhd from '../../ui/ButtonDhd.js'
 import './GuidelinesSection.scss'
+import { useScrollToHash } from '../../../hooks/scrolling.js'
 
 const GuidelinesSection = ({ data, status }) => {
-  const { hash } = useLocation()
+  // const { hash } = useLocation()
 
-  useEffect(() => {
-    if (status === 'success' && typeof hash === 'string' && hash.indexOf('#') === 0) {
-      console.debug('[GuidelinesSection] @useEffect location.hash:', hash, status)
-      const el = document.getElementById(hash.substring(1))
-      if (el) {
-        el.scrollIntoView()
-      }
-    }
-  }, [hash, status])
+  // useEffect(() => {
+  //   if (status === 'success' && typeof hash === 'string' && hash.indexOf('#') === 0) {
+  //     // console.debug('[GuidelinesSection] @useEffect location.hash:', hash, status)
+  //     const el = document.getElementById(hash.substring(1))
+  //     if (el) {
+  //       el.scrollIntoView()
+  //     }
+  //   }
+  // }, [hash, status])
+
+  useScrollToHash({ status })
 
   if (!data) {
     return null
