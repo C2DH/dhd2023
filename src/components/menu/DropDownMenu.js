@@ -2,7 +2,7 @@ import { dataDropdown } from '../../Data'
 import './DropDownMenu.scss'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { useSpring, animated, config } from 'react-spring'
+import { useSpring, animated } from 'react-spring'
 import { useBoundingClientRect } from '../../hooks/viewport.js'
 
 const DropDownMenu = ({ dropdown }) => {
