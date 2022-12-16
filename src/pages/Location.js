@@ -31,7 +31,7 @@ const Location = ({ data }) => {
   return (
     <div className="Location">
       <section className="d-flex mt-30">
-        <Container className="mb-30">
+        <Container className="mb-15">
           <h1 className="mb-5" dangerouslySetInnerHTML={{ __html: title }}></h1>
           <ButtonDhd
             href={'/doc/location_eng_de.pdf'}

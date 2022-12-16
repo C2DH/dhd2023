@@ -3,6 +3,7 @@ import { TeamRoute } from '../../../constants'
 import StaticPageLoader from '../../StaticPageLoader'
 import ImageGrid from './ImageGrid.js'
 import ButtonDhd from '../../ui/ButtonDhd.js'
+import { KomiteeAndTeamRoute } from '../../../constants'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -14,7 +15,7 @@ const TeamSection = () => {
       <div className="iview-conference-content-wrapper">
         <Container>
           <Row>
-            <Col className=" col-7 align-self-start">
+            <Col sm={12} md={9} lg={7}>
               <h2>
                 TEQM A unique experience of inspiration, meeting and networking for the ANY WORD
                 industry
@@ -25,7 +26,7 @@ const TeamSection = () => {
         <Container className="mt-5">
           <StaticPageLoader
             url={TeamRoute.contentUrl}
-            options={{ params: { per_page: 50 } }}
+            options={{ params: { per_page: 8 } }}
             Component={ImageGrid}
           ></StaticPageLoader>
         </Container>
@@ -33,9 +34,10 @@ const TeamSection = () => {
           <Row>
             <Col className=" col-7 align-self-start">
               <ButtonDhd
+                to={KomiteeAndTeamRoute.to}
                 className={'mt-4'}
                 variant={'primary'}
-                title={'VIEW CONFERENCE'}
+                title={'VIEW ALL'}
                 iconType={'ArrowRight'}
               />
             </Col>

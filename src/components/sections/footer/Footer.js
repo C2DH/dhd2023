@@ -8,6 +8,7 @@ import UniLogos from '../../svg/UniLogo.js'
 import KompetenzzentrumLogo from '../../svg/KompetenzzentrumLogo.js'
 import ButtonDhd from '../../ui/ButtonDhd.js'
 import { LocationRoute } from '../../../constants'
+import CultureAndComputationLogo from '../../svg/CultureAndComputationLabLogo'
 import './Footer.scss'
 
 const { Container, Row, Col } = require('react-bootstrap')
@@ -42,7 +43,7 @@ const Footer = () => {
                 Bei Fragen, Anregungen oder Wünschen schreiben Sie eine E-Mail an die Lokalen
                 Organisatoren in Potsdam unter{' '}
                 <strong>
-                  <a href="info@dhd2022.de">info[at]dhd2022.de</a>
+                  <a href="mailto:info@dhd2022.de">info[at]dhd2022.de</a>
                 </strong>{' '}
                 oder füllen Sie dieses Formular aus.
               </p>
@@ -56,7 +57,7 @@ const Footer = () => {
             </Col>
           </Row>
         </Container>
-        <Container className="logos d-flex flex-wrap justify-content-center mb-5">
+        <Container className="logos d-flex flex-wrap justify-content-center mb-15">
           <i>
             <UniTrierLogo />
           </i>
@@ -65,6 +66,9 @@ const Footer = () => {
           </i>
           <i>
             <KompetenzzentrumLogo />
+          </i>
+          <i>
+            <CultureAndComputationLogo />
           </i>
         </Container>
       </div>

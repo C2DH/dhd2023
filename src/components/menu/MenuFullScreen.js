@@ -7,7 +7,7 @@ import { useCurrentWindowDimensions } from '../../hooks/viewport'
 import Menu from '../menu/Menu.js'
 import Arch from '../Arch.js'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, Sparkles } from '@react-three/drei'
 import SecondaryMenu from './SecondaryMenu'
 import MenuFooter from './MenuFooter'
 import ButtonDhd from '../ui/ButtonDhd.js'
@@ -30,26 +30,26 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
 
   return (
     <a.div style={styles} className="menu-full-screen p-4 flex-center">
-      <Container className="menu-block h-100 position-relative p-0 d-flex flex-column justify-content-md-center">
-        <Row>
-          <Col lg={7} md={12}>
-            <div className="full-screen-menu-wrapper">
-              <Menu />
-            </div>
-          </Col>
-          <Col lg={5} md={12}>
-            <SecondaryMenu />
-          </Col>
-        </Row>
-        <ButtonDhd className={'mt-4 align-self-start'} variant={'primary'} title={'Register'} />
-      </Container>
-      <Container className="position-relative p-0 d-flex">
-        <Row>
-          <Col lg={7} md={12}>
+      <div className="scroll-wrapper position-relative ">
+        <Container className="menu-block h-100 position-relative p-0 d-flex flex-column justify-content-md-center">
+          <Row>
+            <Col lg={7} md={12}>
+              <div className="full-screen-menu-wrapper">
+                <Menu />
+              </div>
+            </Col>
+            <Col lg={5} md={12}>
+              <SecondaryMenu />
+            </Col>
+          </Row>
+          <ButtonDhd className={'mt-4 align-self-start'} variant={'primary'} title={'Register'} />
+        </Container>
+        <Container className="footer-menu-wrapper p-0 position-relative d-flex">
+          <Row className="w-100">
             <MenuFooter />
-          </Col>
-        </Row>
-      </Container>
+          </Row>
+        </Container>
+      </div>
 
       <div
         id="menu-canvas-container"
@@ -59,7 +59,12 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
       >
         <Canvas shadows camera={{ position: [-4, 1.5, 8], fov: 25 }}>
           <group scale={0.15} rotation={[0, 1.8, -0.02]} position={[1, -3.2, 0]}>
-            <Arch menuStatus={menuStatus} color={'var(--primary)'} wireframe></Arch>
+            <Arch
+              position={[0, -1.5, 0]}
+              menuStatus={menuStatus}
+              color={'var(--primary)'}
+              wireframe
+            ></Arch>
           </group>
           <fog attach="fog" args={['#312a24', 0.01, 0]} />
           <ambientLight intensity={0.5} />
@@ -72,7 +77,14 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
             shadow-mapSize={[512, 512]}
             castShadow
           />
-
+          <Sparkles
+            count={40}
+            size={[5, 5, 10]}
+            speed={0.1}
+            scale={[3, 3, 10]}
+            opacity={0.15}
+            color={'white'}
+          />
           <OrbitControls autoRotate={false} enableZoom={false} makeDefault enableRotate={false} />
         </Canvas>
       </div>

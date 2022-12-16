@@ -65,7 +65,8 @@ main {
   overflow-x: hidden;
 }
 
-#canvas-container {
+#canvas-container,
+#canvas-container-menu-fullscreen {
   z-index: 0;
   div {
     touch-action: auto !important;
@@ -80,10 +81,6 @@ section {
   position: relative;
   z-index: 1;
 }
-
-// .step-index-section {
-//   transition: translateY 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-// }
 
 h1,
 h3,
@@ -150,10 +147,22 @@ a:not(.logo, .btn) {
     transition: transform 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     &::before {
       transform: scaleX(100%);
     }
+  }
+}
+
+footer a:not(.logo, .btn) {
+  &::before {
+    background-color: var(--black);
+  }
+  &:hover,
+  &:focus,
+  &.active {
+    color: var(--primary);
   }
 }
 
@@ -210,6 +219,14 @@ li {
   margin-bottom: 30vh;
 }
 
+.mt-15 {
+  margin-top: 15vh;
+}
+
+.mb-15 {
+  margin-bottom: 15vh;
+}
+
 footer {
   padding: var(--main-container-padding);
 }
@@ -219,7 +236,7 @@ footer {
   --primary: rgb(29, 167, 224);
   --black: #172429;
   --white: #eef1f2;
-  --body-light-bg: #dceefc;
+  --body-light-bg: #cadeed;
   --fixed-menu-rm: 8rem;
   --main-container-padding: 4rem;
 }

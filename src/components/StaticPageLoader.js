@@ -86,7 +86,7 @@ const StaticPageLoader = ({
             opacity: animatedLine.opacity,
           }}
         >
-          {animatedLine.width.to((x) => `${Math.round(x * 10000) / 10000}%`)}
+          {/* {animatedLine.width.to((x) => `${Math.round(x * 10000) / 10000}%`)} */}
         </a.span>
       </div>
 

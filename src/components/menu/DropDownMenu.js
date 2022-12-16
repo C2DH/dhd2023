@@ -1,7 +1,8 @@
 import { dataDropdown } from '../../Data'
 import './DropDownMenu.scss'
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
 import { useSpring, animated } from 'react-spring'
 import { useBoundingClientRect } from '../../hooks/viewport.js'
 
@@ -24,7 +25,7 @@ const DropDownMenu = ({ dropdown }) => {
   return (
     <ul className="dropdown-menu">
       <animated.div style={{ ...slideInStyles, overflow: 'hidden' }}>
-        <div className="d-flex" ref={ref}>
+        <div className="d-flex dropdown-wrapper" ref={ref}>
           <div className="dropdown-menu-row-one">
             {dataDropdown.slice(0, 4).map(({ title, to, reloadDocument }, index) => {
               return (
@@ -37,12 +38,12 @@ const DropDownMenu = ({ dropdown }) => {
                       </i>
                     </a>
                   ) : (
-                    <Link to={to}>
+                    <NavLink to={to}>
                       {title}{' '}
                       <i>
                         <ArrowRight />
                       </i>
-                    </Link>
+                    </NavLink>
                   )}
                 </li>
               )
@@ -60,12 +61,12 @@ const DropDownMenu = ({ dropdown }) => {
                       </i>
                     </a>
                   ) : (
-                    <Link to={to}>
+                    <NavLink to={to}>
                       {title}{' '}
                       <i>
                         <ArrowRight />
                       </i>
-                    </Link>
+                    </NavLink>
                   )}
                 </li>
               )

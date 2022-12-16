@@ -1,11 +1,12 @@
 import './Sponsors.scss'
-import CultureAndComputationLabLogo from '../../svg/CultureAndComputationLabLogo.js'
+import NfdiForMemoryLogo from '../../svg/NfdiForMemoryLogo'
+import CnfdiLogo from '../../svg/CnfdiLogo'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
 const Sponsors = () => {
   return (
-    <div className="sponsors footer-content-wrapper flex-grow-1">
+    <div className="sponsors footer-content-wrapper flex-grow-1 mb-15 mt-15">
       <Container>
         <Row>
           <Col sm={12} md={7} className="align-self-start">
@@ -19,13 +20,13 @@ const Sponsors = () => {
         </Row>
         <Row className="justify-content-center  mt-4">
           <i>
-            <CultureAndComputationLabLogo />
+            <CnfdiLogo />
           </i>
           <i>
-            <CultureAndComputationLabLogo />
+            <NfdiForMemoryLogo />
           </i>
           <i>
-            <CultureAndComputationLabLogo />
+            <CnfdiLogo />
           </i>
         </Row>
         <Row>
@@ -33,13 +34,13 @@ const Sponsors = () => {
         </Row>
         <Row className="justify-content-center mt-4">
           <i>
-            <CultureAndComputationLabLogo />
+            <NfdiForMemoryLogo />
           </i>
           <i>
-            <CultureAndComputationLabLogo />
+            <CnfdiLogo />
           </i>
           <i>
-            <CultureAndComputationLabLogo />
+            <NfdiForMemoryLogo />
           </i>
         </Row>
       </Container>

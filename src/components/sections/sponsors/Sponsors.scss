@@ -6,6 +6,10 @@
     fill: var(--white);
   }
 
+  i svg line {
+    stroke: var(--white);
+  }
+
   i {
     display: inline-block;
     width: 250px;

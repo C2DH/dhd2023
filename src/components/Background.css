@@ -21,8 +21,8 @@
   position: fixed;
   top: -50%;
   left: -50%;
-  width: 1800px;
-  height: 1800px;
+  width: 2300px;
+  height: 2300px;
   border-radius: 100%;
   opacity: 0.5;
   background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
@@ -49,11 +49,11 @@
   z-index: 0;
   bottom: -50%;
   right: -50%;
-  width: 1800px;
-  height: 1800px;
+  width: 2000px;
+  height: 2000px;
   border-radius: 100%;
   opacity: 0.2;
-  background: radial-gradient(circle, rgb(88, 124, 255) 0%, rgba(124, 182, 253, 0) 70%);
+  background: radial-gradient(circle, rgb(55, 84, 188) 0%, rgba(48, 100, 164, 0) 70%);
 }
 
 .bg-blue {

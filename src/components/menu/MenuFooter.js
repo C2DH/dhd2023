@@ -1,5 +1,5 @@
 import { dataFooterMenu } from '../../Data'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './MenuFooter.scss'
 
 const MenuFooter = () => {
@@ -16,7 +16,7 @@ const MenuFooter = () => {
                   {title}
                 </a>
               ) : (
-                <Link to={to}>{title}</Link>
+                <NavLink to={to}>{title}</NavLink>
               )}
             </li>
           )

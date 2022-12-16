@@ -93,20 +93,33 @@
 }
 
 .menu-full-screen .footer-menu-wrapper {
-  bottom: 0;
-  position: absolute;
-  margin: 0;
-  right: 0;
+  margin: auto;
+  padding: 0;
   width: 100%;
+}
+.menu-full-screen .scroll-wrapper {
+  height: 100%;
+}
+
+.menu-full-screen .footer-menu-wrapper {
+  transform: translateY(-15px);
+  justify-content: center;
 }
 
 @media (max-width: 720px) {
-  .menu-full-screen > .menu-block {
-    margin-top: 12vh;
+  .menu-full-screen .scroll-wrapper {
+    height: 90%;
+    padding-top: 10vh;
+  }
+
+  .menu-full-screen .scroll-wrapper .menu-block {
     overflow-y: auto;
     overflow-x: hidden;
   }
   .menu-full-screen .footer-menu-wrapper {
-    margin-top: 2rem;
+    margin-top: 1rem;
+  }
+  .menu-full-screen .footer-menu-wrapper {
+    transform: translateY(-5px);
   }
 }

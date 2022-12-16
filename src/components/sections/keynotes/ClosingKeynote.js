@@ -44,7 +44,7 @@ const ClosingKeynote = ({ data }) => {
   // console.debug('[Keynote] content', content)
 
   return (
-    <section className="keynote closing flex-center" ref={ref}>
+    <section className="keynote closing flex-center mt-15" ref={ref}>
       <div className="flex-grow-1">
         <Container>
           <Row className="mb-4">
@@ -83,7 +83,7 @@ const ClosingKeynote = ({ data }) => {
               </div>
             </Col>
           </Row>
-          {location.pathname === '/' ? (
+          {location.pathname === '/' || location.pathname === '/contact' ? (
             <>
               <Row>
                 <Col className="col-12 col-lg-9 mt-4 align-self-start">

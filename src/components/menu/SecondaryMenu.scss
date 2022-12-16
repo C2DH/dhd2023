@@ -25,7 +25,9 @@
   padding-left: 0.3rem;
 }
 
-.secondery-menu a:hover i {
+.secondery-menu a:hover i,
+.secondery-menu a:focus i,
+.secondery-menu a.active i {
   opacity: 1;
   transform: scale(0.8) translateX(0px) translateY(-1px);
 }

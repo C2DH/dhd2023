@@ -1,9 +1,9 @@
-import './Menu.css'
+import './Menu.scss'
 import { useLayoutEffect, useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
 import DropDownMenu from './DropDownMenu'
 import { MenuOpen, MenuClosed, useMenuStore } from '../../store'
-import { Link, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { CfpRoute, KomiteeAndTeamRoute } from '../../constants'
 
 const Menu = () => {
@@ -56,14 +56,17 @@ const Menu = () => {
           onMouseOver={(event) => setDropdown(false)}
           onMouseOut={(event) => setDropdown(true)}
         >
-          <div className="programm-events" href="/#" tabIndex={1}>
-            Programm & Events
-            {dropdown === false ? <Minus className="icon" /> : <Plus className="icon" />}
+          <div className="programm-events-wrapper">
+            <div className="programm-events">
+              Programm & Events
+              {dropdown === false ? <Minus className="icon" /> : <Plus className="icon" />}
+            </div>
+
             <DropDownMenu dropdown={dropdown} menuStatus={menuStatus} />
           </div>
         </li>
         <li>
-          <Link
+          <NavLink
             // to="/team"
             to={KomiteeAndTeamRoute.to}
             tabIndex={1}
@@ -72,10 +75,10 @@ const Menu = () => {
             }}
           >
             Komitee & team
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
             to={CfpRoute.to}
             tabIndex={1}
             onClick={() => {
@@ -83,7 +86,7 @@ const Menu = () => {
             }}
           >
             {CfpRoute.label}
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

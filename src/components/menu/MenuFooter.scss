@@ -54,3 +54,12 @@ footer .footer-menu-wrapper p {
   font-size: 0.9rem;
   margin: 0;
 }
+
+@media (max-width: 540px) {
+  .menu-full-screen .footer-menu-wrapper ul li a {
+    font-size: 0.7rem;
+  }
+  .menu-full-screen .footer-menu-wrapper p {
+    font-size: 0.7rem;
+  }
+}

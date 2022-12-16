@@ -76,7 +76,7 @@ const OpeningKeynote = ({ data }) => {
               </figure>
             </Col>
           </Row>
-          {location.pathname === '/' ? (
+          {location.pathname === '/' || location.pathname === '/contact' ? (
             <>
               <Row>
                 <Col className="col-12 col-lg-9 mt-4 align-self-start">

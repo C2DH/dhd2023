@@ -15,7 +15,7 @@ const Intro = () => {
       <div className="intro-content-wrapper">
         <Container>
           <Row>
-            <Col className="col col-sm-12 col-md-9 col-lg-7">
+            <Col sm={12} md={9} lg={7}>
               <h1>
                 A unique experience of inspiration, meeting and networking for the ANY WORD industry
               </h1>

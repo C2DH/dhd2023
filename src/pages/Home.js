@@ -70,7 +70,7 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
                 className="step-index-section"
                 style={{
                   display: 'flex',
-                  margin: text === 'intro section' ? '0 0 50vh' : '50vh 0',
+                  margin: text === 'intro section' ? '0 0 30vh' : '30vh 0',
                   // borderTop: "4px solid gray",
                   // borderBottom: "4px solid red",
                   height: text === 'intro section' ? availableHeight : 'auto',

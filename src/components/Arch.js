@@ -16,7 +16,7 @@ const Arch = ({ color = '#b5d6ff', menuStatus, wireframe, ...props }) => {
   }))
 
   const acrhTextures = useTexture({
-    map: '/textures/tex-diff.jpeg',
+    // map: '/textures/tex-diff.jpeg',
     // map: "/textures/checkerboard.png",
     normalMap: '/textures/tex-nor.jpeg',
     roughnessMap: '/textures/tex-rough.jpeg',
@@ -25,23 +25,26 @@ const Arch = ({ color = '#b5d6ff', menuStatus, wireframe, ...props }) => {
     // metalnessMap: "/textures/aerial_rocks_02_arm_4k_metalness_edited.jpg",
     // alphaMap: "/textures/alpha.png",
   })
-  acrhTextures.map.wrapS = THREE.RepeatWrapping
-  acrhTextures.map.wrapT = THREE.RepeatWrapping
 
-  acrhTextures.map.repeat.x = 2.3
-  acrhTextures.map.repeat.y = 2.3
+  const textWrapper = 6
+
+  // acrhTextures.map.wrapS = THREE.RepeatWrapping
+  // acrhTextures.map.wrapT = THREE.RepeatWrapping
+
+  // acrhTextures.map.repeat.x = textWrapper
+  // acrhTextures.map.repeat.y = textWrapper
 
   acrhTextures.normalMap.wrapS = THREE.RepeatWrapping
   acrhTextures.normalMap.wrapT = THREE.RepeatWrapping
 
-  acrhTextures.normalMap.repeat.x = 2.3
-  acrhTextures.normalMap.repeat.y = 2.3
+  acrhTextures.normalMap.repeat.x = textWrapper
+  acrhTextures.normalMap.repeat.y = textWrapper
 
   acrhTextures.roughnessMap.wrapS = THREE.RepeatWrapping
   acrhTextures.roughnessMap.wrapT = THREE.RepeatWrapping
 
-  acrhTextures.roughnessMap.repeat.x = 2.3
-  acrhTextures.roughnessMap.repeat.y = 2.3
+  acrhTextures.roughnessMap.repeat.x = textWrapper
+  acrhTextures.roughnessMap.repeat.y = textWrapper
 
   console.log('HELLO', nodes.Arch.geometry)
 
@@ -85,17 +88,17 @@ const Arch = ({ color = '#b5d6ff', menuStatus, wireframe, ...props }) => {
         castShadow
         receiveShadow
         geometry={nodes.Arch.geometry}
-        position={[0, 10.87, 2.6]}
+        position={[0, 20, 2.6]}
       >
         <a.meshStandardMaterial
           color={styles.color}
-          roughness={0.1}
+          roughness={0.4}
           envMapIntensity={0.4}
           // emissive={"#370037"}
-          map={acrhTextures.map}
+          // map={acrhTextures.map}
           normalMap={acrhTextures.normalMap}
-          normalScale={0.5}
-          metalness={0.3}
+          normalScale={0.2}
+          metalness={0.4}
           wireframe={wireframe}
           // aoMap={acrhTextures.aoMap}
         />

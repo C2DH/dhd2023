@@ -4,31 +4,34 @@ import './ImageGrid.scss'
 const SrcSetRegexp = new RegExp('srcset="([^"]+)"', 'i')
 
 const Tags = {
-  7: 'VIPS',
-  8: 'SUPER VIPS',
+  13: 'PROGRAMMKOMITEE',
+  14: 'LOKALES_ORGANISATIONSKOMITEE',
 }
 
 const ImageGrid = ({ data }) => {
   if (!Array.isArray(data)) {
     return null
   }
+
   // const groups = data.reduce((acc, d) => {
-  //   if (!d.tags.length) {
+  //   if (!d.categories.length) {
   //     acc.untagged = (acc.untagged ?? []).concat([d])
   //     return acc
   //   }
-  //   const tag = Tags[d.tags[0]] ? Tags[d.tags[0]] : d.tags[0]
-  //   acc[tag] = (acc[tag] ?? []).concat([d])
+  //   const categories = d.categories.map((category) => (Tags[category] ? Tags[category] : category))
+  //   categories.forEach((category) => {
+  //     acc[category] = (acc[category] ?? []).concat([d])
+  //   })
+
   //   return acc
   // }, {})
 
-  console.debug('ImageGrid', data)
-
-  // console.debug('[ImageGrid] groups', groups)
   return (
     <Row className="ImageGrid">
       {Object.keys(Tags).map((k) => (
-        <Row key={k}>{}</Row>
+        <Row className="ImageGrid" key={k}>
+          {}
+        </Row>
       ))}
       {data.map((person) => {
         const content = String(person.content?.rendered)
@@ -36,7 +39,14 @@ const ImageGrid = ({ data }) => {
         const title = person.title?.rendered
 
         return (
-          <Col md={{ span: 6 }} xl={{ span: 4 }} xxl={{ span: 3 }} key={person.id}>
+          <Col
+            xs={{ span: 12 }}
+            sm={{ span: 6 }}
+            md={{ span: 6 }}
+            lg={{ span: 4 }}
+            xxl={{ span: 3 }}
+            key={person.id}
+          >
             {srcset ? (
               <figure>
                 <img className="w-100" alt={title} srcSet={srcset[1]} />

@@ -38,15 +38,17 @@ const GuidelinesSection = ({ data, status }) => {
               <h1>{title}</h1>
               <h4 className="my-3">{hTwoExtracter}</h4>
             </Col>
-            <div className="d-flex">
+            <div className="d-flex flex-wrap">
               <ButtonDhd
-                className={'mt-0 mt-sm-4'}
+                href={'/doc/Citation-Rules-English.docx'}
+                className={'mt-4 me-sx-0 me-3'}
                 variant={'primary'}
                 title={'Zitierregeln Deutsch'}
                 iconType={'FileDown'}
               />
               <ButtonDhd
-                className={'mt-0 mx-3 mt-sm-4'}
+                href={'/doc/Zitierregeln-Deutsch.docx'}
+                className={'mt-4'}
                 variant={'primary'}
                 title={'Citation Rules English'}
                 iconType={'FileDown'}

@@ -24,9 +24,9 @@ export const dataDropdown = [
 ]
 
 export const dataSecondaryMenu = [
-  { title: 'Postersession', link: '#/' },
-  { title: 'Behind the Scenes', link: '#/' },
-  { title: 'BLOG', link: '#/' },
+  { title: 'Postersession', to: '#/' },
+  { title: 'Behind the Scenes', to: '#/' },
+  { title: 'BLOG', to: '#/' },
   { title: 'Kontakt', to: '/contact' },
 ]
 

@@ -1,7 +1,7 @@
 import './SecondaryMenu.scss'
 import { dataSecondaryMenu } from '../../Data'
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { MenuClosed, useMenuStore } from '../../store'
 
 const SecondaryMenu = () => {
@@ -20,12 +20,12 @@ const SecondaryMenu = () => {
                 </i>
               </a>
             ) : (
-              <Link to={to} onClick={() => setMenuStatus(MenuClosed)}>
+              <NavLink to={to} onClick={() => setMenuStatus(MenuClosed)}>
                 {title}{' '}
                 <i>
                   <ArrowRight />
                 </i>
-              </Link>
+              </NavLink>
             )}
           </li>
         )

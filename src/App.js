@@ -45,101 +45,113 @@ const Page = React.lazy(() => import('./pages/Page'))
 const Home = React.lazy(() => import('./pages/Home'))
 
 function App() {
+  // console.log('useQuery', useQuery.status)
+
+  // const { status } = useQuery(() => {
+  //   if (status === 'loading') {
+  //     return <Loading />
+  //   } else if (status === 'success') {
+  //     return null
+  //   }
+  // })
+
   const { width, height } = useCurrentWindowDimensions(isMobile)
   return (
     <div className="App">
-      <QueryClientProvider client={queryClient}>
-        <Background></Background>
-        <main style={{ minHeight: height * 1.5 }}>
-          <Header></Header>
-          <MenuFullScreen availableWidth={width} availableHeight={height} />
-          <Routes>
-            <Route
-              path="/page/about"
-              element={
-                <React.Suspense fallback={'loading....'}>
-                  <Page url={AboutRoute.contentUrl} />
-                </React.Suspense>
-              }
-            />
-            <Route
-              path="/page/cfp"
-              element={
-                <React.Suspense fallback={'loading....'}>
-                  <Page url={CfpRoute.contentUrl} isMobile={isMobile} />
-                </React.Suspense>
-              }
-            />
-            <Route
-              path="/page/komitee_and_team"
-              element={
-                <React.Suspense fallback={'loading....'}>
-                  <Page url={KomiteeAndTeamRoute.contentUrl} />
-                </React.Suspense>
-              }
-            />
-            <Route
-              path="/page/zeitschiene"
-              element={
-                <React.Suspense fallback={<Loading height={height} />}>
-                  <Page height={height} url={ZeitschieneRoute.contentUrl} />
-                </React.Suspense>
-              }
-            />
-            <Route
-              path="/page/keynotes"
-              element={
-                <React.Suspense fallback={<Loading height={height} />}>
-                  <Page height={height} url={KeynoteRoute.contentUrl} />
-                </React.Suspense>
-              }
-            />
-            <Route
-              path="/page/impressum"
-              element={
-                <React.Suspense fallback={<Loading height={height} />}>
-                  <Page height={height} url={ImpressumRoute.contentUrl} />
-                </React.Suspense>
-              }
-            />
-            <Route
-              path="/page/location"
-              element={
-                <React.Suspense fallback={<Loading height={height} />}>
-                  <Page height={height} url={LocationRoute.contentUrl} />
-                </React.Suspense>
-              }
-            />
-            <Route
-              path="/page/programmubersich"
-              element={
-                <React.Suspense fallback={<Loading height={height} />}>
-                  <Page height={height} url={ProgrammubersichtRoute.contentUrl} />
-                </React.Suspense>
-              }
-            />
-            <Route
-              path="/page/faq"
-              element={
-                <React.Suspense fallback={<Loading height={height} />}>
-                  <Page height={height} url={FaqRoute.contentUrl} />
-                </React.Suspense>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <React.Suspense fallback={'loading....'}>
-                  <Home availableWidth={width} availableHeight={height}></Home>
-                </React.Suspense>
-              }
-            />
-          </Routes>
-        </main>
-        <ThreeJsBgArch availableWidth={width} availableHeight={height} />
-        <Footer />
-        <ScrollToTop />
-      </QueryClientProvider>
+      <React.Suspense fallback={<Loading height={height} width={width} />}>
+        <QueryClientProvider client={queryClient}>
+          <Background></Background>
+          <main style={{ minHeight: height * 1.5 }}>
+            <Header></Header>
+            <MenuFullScreen availableWidth={width} availableHeight={height} />
+            <Routes>
+              <Route
+                path="/page/about"
+                element={
+                  <React.Suspense fallback={<Loading height={height} width={width} />}>
+                    <Page url={AboutRoute.contentUrl} height={height} />
+                  </React.Suspense>
+                }
+              />
+              <Route
+                path="/page/cfp"
+                element={
+                  <React.Suspense fallback={<Loading height={height} width={width} />}>
+                    <Page url={CfpRoute.contentUrl} height={height} />
+                  </React.Suspense>
+                }
+              />
+              <Route
+                path="/page/komitee_and_team"
+                element={
+                  <React.Suspense fallback={<Loading height={height} width={width} />}>
+                    <Page url={KomiteeAndTeamRoute.contentUrl} height={height} />
+                  </React.Suspense>
+                }
+              />
+              <Route
+                path="/page/zeitschiene"
+                element={
+                  <React.Suspense fallback={<Loading height={height} width={width} />}>
+                    <Page height={height} url={ZeitschieneRoute.contentUrl} />
+                  </React.Suspense>
+                }
+              />
+              <Route
+                path="/page/keynotes"
+                element={
+                  <React.Suspense fallback={<Loading height={height} width={width} />}>
+                    <Page height={height} url={KeynoteRoute.contentUrl} />
+                  </React.Suspense>
+                }
+              />
+              <Route
+                path="/page/impressum"
+                element={
+                  <React.Suspense fallback={<Loading height={height} width={width} />}>
+                    <Page height={height} url={ImpressumRoute.contentUrl} />
+                  </React.Suspense>
+                }
+              />
+              <Route
+                path="/page/location"
+                element={
+                  <React.Suspense fallback={<Loading height={height} width={width} />}>
+                    <Page height={height} url={LocationRoute.contentUrl} />
+                  </React.Suspense>
+                }
+              />
+              <Route
+                path="/page/programmubersich"
+                element={
+                  <React.Suspense fallback={<Loading height={height} width={width} />}>
+                    <Page height={height} url={ProgrammubersichtRoute.contentUrl} />
+                  </React.Suspense>
+                }
+              />
+              <Route
+                path="/page/faq"
+                element={
+                  <React.Suspense fallback={<Loading height={height} width={width} />}>
+                    <Page height={height} url={FaqRoute.contentUrl} />
+                  </React.Suspense>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <React.Suspense fallback={'loading....'}>
+                    <Home availableWidth={width} availableHeight={height}></Home>
+                  </React.Suspense>
+                }
+              />
+            </Routes>
+          </main>
+          <ThreeJsBgArch availableWidth={width} availableHeight={height} />
+          <Footer />
+          <ScrollToTop />
+        </QueryClientProvider>
+      </React.Suspense>
     </div>
   )
 }
