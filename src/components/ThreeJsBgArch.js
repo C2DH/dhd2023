@@ -86,10 +86,11 @@ const ThreeJsBgArch = () => {
   const SceneStepsValidation = currentStepIndex ?? 0
   console.log('SceneSteps', currentStepIndex, scene)
   const [styles, api] = useSpring(() => ({
-    scale: 1,
-    rotation: [0, 0, 0],
-    position: [0, 0],
-    color: '#dcf3fc',
+    // scale: 1,
+    // rotation: [0, 0, 0],
+    // position: [0, 20, 2.6],
+    // color: '#dcf3fc',
+    ...scene,
     config: config.slow,
   }))
 
