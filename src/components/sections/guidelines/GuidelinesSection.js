@@ -41,7 +41,7 @@ const GuidelinesSection = ({ data, status }) => {
             <div className="d-flex flex-wrap">
               <ButtonDhd
                 href={'/doc/Citation-Rules-English.docx'}
-                className={'mt-4 me-xs-0 mt-sm-4'}
+                className={'mt-4 me-xs-0 me-sm-4 mt-sm-4'}
                 variant={'primary'}
                 title={'Zitierregeln Deutsch'}
                 iconType={'FileDown'}

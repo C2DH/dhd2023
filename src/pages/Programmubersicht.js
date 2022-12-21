@@ -9,20 +9,19 @@ const Programmubersicht = ({ data }) => {
   const onChangeDayHandler = (index) => {
     setDisplayDay(index)
   }
-  const title = data ? data.title.rendered : ''
 
+  const title = data ? data.title.rendered : ''
   const content = data ? String(data.content.rendered) : ''
-  // const splitterHTML = content.split('<pre>Split days</pre>')
   const splitterHTML = useMemo(() => content.split('<pre>Split days</pre>'), [content])
 
-  console.log('[Programmubersicht]', data)
+  console.log('displayDay', displayDay)
   if (!data) {
     return <div className="Programmubersicht" />
   }
 
   return (
     <div className="Programmubersicht mt-30">
-      <PageMune onChange={onChangeDayHandler} />
+      <PageMune onChange={onChangeDayHandler} displayDay={displayDay} />
       <section>
         <Container>
           <Row>
@@ -34,7 +33,7 @@ const Programmubersicht = ({ data }) => {
               <h1 dangerouslySetInnerHTML={{ __html: title }} className="mb-5"></h1>
               <div className="d-flex flex-wrap">
                 <ButtonDhd
-                  href={'/doc/CfP_DHd2023.pdf'}
+                  // href={''}
                   className={'mt-0 mt-sm-4'}
                   variant={'primary'}
                   title={'Download pdf'}
@@ -45,10 +44,10 @@ const Programmubersicht = ({ data }) => {
           </Row>
         </Container>
       </section>
-      <section className="programm-content mt-5">
+      <section className="programm-content mt-5 mb-30">
         <Container>
           <Row>
-            <PageMune onChange={onChangeDayHandler} />
+            <PageMune onChange={onChangeDayHandler} displayDay={displayDay} />
           </Row>
 
           <Row>

@@ -1,17 +1,18 @@
 // import { Col, Container, Row } from 'react-bootstrap'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './PageMenu.scss'
 import { ArrowRight } from 'lucide-react'
 import { dataPageMenu } from '../../Data'
 
-const PageMune = ({ onChange }) => {
+const PageMune = ({ onChange, displayDay }) => {
   return (
     <nav class="PageMenu">
       <ul className="flex-wrap">
-        {dataPageMenu.map(({ day, date, to }, index) => {
+        {dataPageMenu.map(({ day, date }, index) => {
           return (
-            <li key={index} className="my-2">
-              <a
+            <li key={index}>
+              <Link
+                className={displayDay === index ? 'active my-2' : 'my-2'}
                 onClick={(e) => {
                   if (typeof onChange === 'function') {
                     onChange(index)
@@ -26,7 +27,7 @@ const PageMune = ({ onChange }) => {
                 <i>
                   <ArrowRight />
                 </i>
-              </a>
+              </Link>
             </li>
           )
         })}

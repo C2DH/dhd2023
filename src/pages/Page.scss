@@ -88,7 +88,7 @@
 .Programmubersicht {
   h2 {
     margin-bottom: 3rem;
-    margin-top: 8rem;
+    margin-top: 4vh;
   }
 
   h3 {
@@ -114,6 +114,22 @@
     font-weight: 600;
     &:hover {
       color: var(--white);
+    }
+  }
+}
+
+.bg-blue ~ main .Page {
+  p,
+  span,
+  h2,
+  h3,
+  h4,
+  hr,
+  div,
+  a {
+    color: var(--white);
+    &::before {
+      background-color: var(--black);
     }
   }
 }

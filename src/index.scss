@@ -142,6 +142,7 @@ a:not(.logo, .btn) {
   text-transform: uppercase;
   transform-origin: center;
   z-index: 1;
+  cursor: pointer;
 
   &::before {
     content: '';
@@ -157,7 +158,11 @@ a:not(.logo, .btn) {
   }
   &:hover,
   &:focus,
-  &.active {
+  &.active,
+  &:hover span,
+  &:focus span,
+  &.active span {
+    color: var(--white);
     &::before {
       transform: scaleX(100%);
     }
