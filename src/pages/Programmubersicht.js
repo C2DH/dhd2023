@@ -2,26 +2,27 @@ import { Col, Container, Row } from 'react-bootstrap'
 import './Page.scss'
 import PageMune from '../components/pageMenu/PageMenu'
 import ButtonDhd from '../components/ui/ButtonDhd'
+import { useState, useMemo } from 'react'
 
 const Programmubersicht = ({ data }) => {
+  const [displayDay, setDisplayDay] = useState(0)
+  const onChangeDayHandler = (index) => {
+    setDisplayDay(index)
+  }
+  const title = data ? data.title.rendered : ''
+
+  const content = data ? String(data.content.rendered) : ''
+  // const splitterHTML = content.split('<pre>Split days</pre>')
+  const splitterHTML = useMemo(() => content.split('<pre>Split days</pre>'), [content])
+
   console.log('[Programmubersicht]', data)
   if (!data) {
     return <div className="Programmubersicht" />
   }
 
-  const title = data.title?.rendered
-  const content = String(data.content?.rendered)
-  const splitterHTML = content.split('<pre>Split days</pre>')
-  const monday = splitterHTML[0]
-  const tuesday = splitterHTML[1]
-  // const removeHtml = content.replace(/<[^>]*>?/gm, '')
-  // const splitter = removeHtml.split('\n')
-
-  console.log('splitterHTML', splitterHTML)
-
   return (
     <div className="Programmubersicht mt-30">
-      <PageMune />
+      <PageMune onChange={onChangeDayHandler} />
       <section>
         <Container>
           <Row>
@@ -47,7 +48,7 @@ const Programmubersicht = ({ data }) => {
       <section className="programm-content mt-5">
         <Container>
           <Row>
-            <PageMune />
+            <PageMune onChange={onChangeDayHandler} />
           </Row>
 
           <Row>
@@ -56,7 +57,7 @@ const Programmubersicht = ({ data }) => {
               lg={{ span: 10, offset: 2 }}
               xl={{ span: 10, offset: 1 }}
             >
-              <section dangerouslySetInnerHTML={{ __html: tuesday }}></section>
+              <section dangerouslySetInnerHTML={{ __html: splitterHTML[displayDay] }}></section>
             </Col>
           </Row>
         </Container>
