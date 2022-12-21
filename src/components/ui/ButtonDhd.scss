@@ -110,3 +110,10 @@ $border: 3px solid var(--white);
     color: var(--white);
   }
 }
+
+@media (max-width: 540px) {
+  .btn:not(.btn-none) {
+    width: 100%;
+    justify-content: center;
+  }
+}

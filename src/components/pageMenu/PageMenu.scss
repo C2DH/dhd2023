@@ -1,0 +1,80 @@
+.PageMenu {
+  opacity: 1;
+  display: flex;
+  position: fixed;
+  top: calc(50vh - 130px);
+  left: -0.6rem;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
+  li {
+    display: flex;
+    a {
+      .nav-group {
+        display: flex;
+        flex-direction: column;
+        b {
+          font-size: 0.9rem;
+          font-weight: 900;
+        }
+        span {
+          font-size: 0.9rem;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+
+  i {
+    display: inline-block;
+    transform: scale(0.8) translateX(-3px) translateY(-5px);
+    opacity: 0;
+    transition: transform 0.2s ease-in-out;
+    padding-left: 0.3rem;
+  }
+
+  a:hover i,
+  a:focus i,
+  a.active i {
+    opacity: 1;
+    transform: scale(0.8) translateX(0px) translateY(-5px);
+  }
+}
+
+.programm-content .PageMenu {
+  display: none;
+}
+
+.bg-blue ~ main .PageMenu {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 920px) {
+  .PageMenu {
+    display: none;
+  }
+
+  .programm-content .PageMenu {
+    position: relative;
+    display: flex;
+    top: 0;
+    left: 0;
+
+    ul {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      li {
+        padding-right: 0.5rem;
+        b {
+          font-size: 0.8rem;
+          font-weight: 900;
+        }
+        span {
+          font-size: 0.9rem;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+}

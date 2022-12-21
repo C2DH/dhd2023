@@ -10,7 +10,7 @@ import { useBoundingClientRect } from '../hooks/viewport.js'
 import './Page.scss'
 import { Helmet } from 'react-helmet'
 
-const CfpPage = ({ data, isMobile }) => {
+const CfpPage = ({ data }) => {
   const [isCollapsed, setIsCollapsed] = useState(false)
 
   const [bbox, ref] = useBoundingClientRect()
@@ -39,7 +39,7 @@ const CfpPage = ({ data, isMobile }) => {
   const content = data.content?.rendered
   // const excerpt = String(data.excerpt?.rendered)
   const hTwoExtracter = content.match(SrcSetRegexp)
-  console.log('ZZZOPNE', data)
+  console.log('ZZZOPNE', hTwoExtracter)
   return (
     <div>
       <Helmet>
@@ -50,13 +50,13 @@ const CfpPage = ({ data, isMobile }) => {
         <Container>
           <Row>
             <Col className="col col-sm-12 col-md-9 col-lg-7">
-              <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
-              <h4 dangerouslySetInnerHTML={{ __html: hTwoExtracter }}></h4>
+              <h1 className="mb-3" dangerouslySetInnerHTML={{ __html: title }}></h1>
+              <h4 dangerouslySetInnerHTML={{ __html: hTwoExtracter[0] }}></h4>
             </Col>
             <div className="d-flex flex-wrap">
               <ButtonDhd
                 href={'/doc/CfP_DHd2023.pdf'}
-                className={'mt-0 me-3 mt-sm-4'}
+                className={'mt-0 me-sm-3 me-xs-0 mt-sm-4'}
                 variant={'primary'}
                 title={'Das CfP als .pdf'}
                 iconType={'FileDown'}
@@ -84,7 +84,7 @@ const CfpPage = ({ data, isMobile }) => {
               onClick={togglePanel}
               // ariaControls="example-collapse-text"
               // ariaExpanded={open}
-              className={'mt-0 mt-sm-4'}
+              className={'mt-4'}
               variant={'secondary'}
               title={'Show more'}
               iconType={isCollapsed === true ? 'Minus' : 'Plus'}

@@ -44,10 +44,292 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>DHd2023</title>
+    <style>
+      #Loading {
+        pointer-events: none;
+        background-color: var(--primary);
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #Loading span {
+        width: 156px;
+        transform: translateY(1rem);
+      }
+      #Loading .arch-animated-pic {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        width: 150px;
+        height: 280px;
+        display: block;
+        border: 3px solid var(--white);
+        border-radius: 75px 75px 0 0;
+      }
+      #Loading .ArchOutline-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        transform-origin: bottom;
+        transform: scale(0) translateY(50px);
+      }
+      #Loading .ArchOutline-wrapper.one {
+        animation: arch 2.1s linear 0s infinite forwards;
+      }
+      #Loading .ArchOutline-wrapper.two {
+        animation: arch 2.1s linear 0.3s infinite forwards;
+      }
+      #Loading .ArchOutline-wrapper.three {
+        animation: arch 2.1s linear 0.6s infinite forwards;
+      }
+      #Loading .ArchOutline-wrapper.four {
+        animation: arch 2.1s linear 0.9s infinite forwards;
+      }
+      #Loading .ArchOutline-wrapper.five {
+        animation: arch 2.1s linear 1.2s infinite forwards;
+      }
+      #Loading .ArchOutline-wrapper.six {
+        animation: arch 2.1s linear 1.5s infinite forwards;
+      }
+      #Loading .ArchOutline-wrapper.seven {
+        animation: arch 2.1s linear 1.8s infinite forwards;
+      }
+
+      @keyframes arch {
+        0% {
+          transform: scale(0) translateY(60px);
+        }
+        100% {
+          transform: scale(1.2) translateY(25px);
+        }
+      }
+      body {
+        background-color: var(--primary);
+      }
+
+      #Loading {
+        /* display: block; */
+        transform: scale(1);
+        /* transition: all 1s ease-out; */
+        /* overflow: hidden; */
+      }
+
+      #root:has(.App) ~ #Loading {
+        transform: scale(2);
+        animation: hideLoading 1s ease-out forwards;
+        opacity: 0;
+      }
+
+      @keyframes hideLoading {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+
+      :root {
+        --primary: rgb(29, 167, 224);
+        --black: #172429;
+        --white: #eef1f2;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- <div id="loading-root">
+    </div> -->
+    <div id="Loading">
+      <div class="arch-animated-pic">
+        <div class="ArchOutline-wrapper one">
+          <div class="arch-outline-wrapper">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 152.83 301.42"
+            >
+              <g id="MAIN_ARC">
+                <path
+                  d="M1.42,301.42V76.42C1.42,35.01,35.01,1.42,76.42,1.42h0c41.41,0,75,33.59,75,75v225"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="ArchOutline-wrapper two">
+          <div class="arch-outline-wrapper">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 152.83 301.42"
+            >
+              <g id="MAIN_ARC">
+                <path
+                  d="M1.42,301.42V76.42C1.42,35.01,35.01,1.42,76.42,1.42h0c41.41,0,75,33.59,75,75v225"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="ArchOutline-wrapper three">
+          <div class="arch-outline-wrapper">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 152.83 301.42"
+            >
+              <g id="MAIN_ARC">
+                <path
+                  d="M1.42,301.42V76.42C1.42,35.01,35.01,1.42,76.42,1.42h0c41.41,0,75,33.59,75,75v225"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="ArchOutline-wrapper four">
+          <div class="arch-outline-wrapper">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 152.83 301.42"
+            >
+              <g id="MAIN_ARC">
+                <path
+                  d="M1.42,301.42V76.42C1.42,35.01,35.01,1.42,76.42,1.42h0c41.41,0,75,33.59,75,75v225"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="ArchOutline-wrapper five">
+          <div class="arch-outline-wrapper">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 152.83 301.42"
+            >
+              <g id="MAIN_ARC">
+                <path
+                  d="M1.42,301.42V76.42C1.42,35.01,35.01,1.42,76.42,1.42h0c41.41,0,75,33.59,75,75v225"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="ArchOutline-wrapper six">
+          <div class="arch-outline-wrapper">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 152.83 301.42"
+            >
+              <g id="MAIN_ARC">
+                <path
+                  d="M1.42,301.42V76.42C1.42,35.01,35.01,1.42,76.42,1.42h0c41.41,0,75,33.59,75,75v225"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="ArchOutline-wrapper seven">
+          <div class="arch-outline-wrapper">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 152.83 301.42"
+            >
+              <g id="MAIN_ARC">
+                <path
+                  d="M1.42,301.42V76.42C1.42,35.01,35.01,1.42,76.42,1.42h0c41.41,0,75,33.59,75,75v225"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="4"
+                  stroke-miterlimit="10"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <span class="mt-2">
+        <svg
+          id="Layer_1"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 148.53 12.69"
+        >
+          <path d="M0,.14H2.04V10.82h6.77v1.72H0V.14Z" fill="#fff" />
+          <path
+            d="M19.71,6.35c0-3.84,2.59-6.35,6.79-6.35s6.77,2.52,6.77,6.35-2.6,6.35-6.77,6.35-6.79-2.54-6.79-6.35Zm11.5,0c0-2.96-1.84-4.7-4.71-4.7s-4.71,1.75-4.71,4.7,1.82,4.68,4.71,4.68,4.71-1.75,4.71-4.68Z"
+            fill="#fff"
+          />
+          <path
+            d="M49.94,.14h2.64l5.67,12.4h-2.21l-1.29-2.84h-6.96l-1.28,2.84h-2.21L49.94,.14Zm4.2,8l-2.19-4.8-.65-1.5h-.07l-.65,1.51-2.19,4.78h5.75Z"
+            fill="#fff"
+          />
+          <path
+            d="M70.45,.14h5.67c4.15,0,6.43,2.47,6.43,6.21s-2.48,6.19-6.43,6.19h-5.67V.14Zm5.33,10.77c3.13,0,4.71-1.77,4.71-4.59,0-3.06-1.87-4.54-4.71-4.54h-3.3V10.91h3.3Z"
+            fill="#fff"
+          />
+          <path d="M95.19,.14h2.04V12.54h-2.04V.14Z" fill="#fff" />
+          <path
+            d="M110.4,.14h2.52l7.59,9.8h.12l-.08-4.01V.14h2.02V12.54h-2.5l-7.59-9.77h-.1l.07,3.88v5.89h-2.04V.14Z"
+            fill="#fff"
+          />
+          <path
+            d="M135.2,6.35c0-3.83,2.62-6.35,6.81-6.35,3.47,0,5.89,1.7,6.28,4.3h-2.06c-.39-1.67-2.04-2.64-4.22-2.64-2.98,0-4.76,1.82-4.76,4.66s1.84,4.71,4.71,4.71c2.72,0,4.41-1.38,4.54-3.62h-4.76v-1.4h6.81v.8c0,3.78-2.84,5.87-6.6,5.87-4.15,0-6.74-2.54-6.74-6.35Z"
+            fill="#fff"
+          />
+        </svg>
+      </span>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

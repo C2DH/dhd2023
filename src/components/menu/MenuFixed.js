@@ -9,9 +9,22 @@ const MenuFixed = ({ currentStepIndex }) => {
   const menuStatus = useMenuStore((state) => state.menuStatus)
   const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
 
+  const menuClickEvent = () => {
+    if (menuStatus === MenuOpen) {
+      setMenuStatus(menuStatus === MenuOpen ? MenuClosed : MenuOpen)
+    }
+  }
+
   return (
     <header className="menu-fixed">
-      <Link className="logo" to="/" tabIndex={1}>
+      <Link
+        className="logo"
+        to="/"
+        tabIndex={1}
+        onClick={() => {
+          menuClickEvent()
+        }}
+      >
         <Dhd2023Logo currentStepIndex={currentStepIndex} menuStatus={menuStatus} />
       </Link>
 

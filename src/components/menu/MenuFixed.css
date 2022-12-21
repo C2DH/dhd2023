@@ -3,7 +3,7 @@
   width: calc(100% - var(--fixed-menu-rm));
   display: flex;
   justify-content: space-between;
-  z-index: 3;
+  z-index: 4;
 }
 
 .dhd-logo-wrapper {

@@ -82,7 +82,6 @@ section {
   z-index: 1;
 }
 
-h1,
 h3,
 h4 {
   font-weight: 400;
@@ -91,10 +90,20 @@ h4 {
 }
 
 h1 {
-  font-size: min(9vw, 4rem);
-  line-height: min(10vw, 3.8rem);
+  font-weight: 400;
+  font-stretch: 85%;
+  font-variation-settings: 'ital' 10, 'wdth' 130;
+  font-size: min(10vw, 4.5rem);
+  line-height: min(10vw, 4.4rem);
   text-transform: uppercase;
   color: var(--black);
+}
+
+h1 b {
+  font-size: min(12vw, 6rem);
+  color: #dbe5f3;
+  text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    -2px -2px 0 #000;
 }
 
 h2 {
@@ -190,6 +199,19 @@ data {
 li {
   position: relative;
   list-style-type: none;
+}
+
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  border: 0;
+  border-top: 3px solid;
+  opacity: 1;
+  margin-top: 3rem;
+}
+
+pre {
+  display: none;
 }
 
 .flex-center {

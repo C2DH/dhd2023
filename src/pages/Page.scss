@@ -50,10 +50,6 @@
   }
 }
 
-.Location pre {
-  display: none;
-}
-
 .Location a:not(.btn) {
   color: var(--primary);
   font-weight: 600;
@@ -89,11 +85,67 @@
   height: auto;
 }
 
-.Programmubersicht h1 {
-  font-size: min(7.5vw, 4rem);
+.Programmubersicht {
+  h2 {
+    margin-bottom: 3rem;
+    margin-top: 8rem;
+  }
+
+  h3 {
+    margin-top: 2rem;
+  }
+  h4 {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
 }
 
 .collapse-section {
   overflow: hidden;
   height: 600px;
+}
+
+.Page p,
+.Page h3,
+.Page h4 {
+  a {
+    color: var(--primary);
+    font-weight: 600;
+    &:hover {
+      color: var(--white);
+    }
+  }
+}
+
+.Zeitschiene p,
+.Zeitschiene h3,
+.Zeitschiene h4 {
+  display: flex;
+  padding: 2rem 1rem;
+  text-align: right;
+  border-bottom: 2px solid;
+  margin: 0;
+
+  strong {
+    flex-grow: 1;
+    position: relative;
+    text-align: left;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .Programmubersicht h1 {
+    font-size: min(6vw, 3.6rem);
+  }
+}
+
+@media (max-width: 540px) {
+  .Zeitschiene p,
+  .Zeitschiene h3,
+  .Zeitschiene h4 {
+    flex-direction: column;
+    text-align: left;
+  }
 }

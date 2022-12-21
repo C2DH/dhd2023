@@ -3,7 +3,7 @@ import OpeningKeynote from './OpeningKeynote.js'
 
 const Keynotes = ({ data }) => {
   return (
-    <section>
+    <section className="mt-30">
       <OpeningKeynote data={data} />
       <ClosingKeynote data={data} />
     </section>

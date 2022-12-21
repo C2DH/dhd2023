@@ -17,7 +17,12 @@ const Intro = () => {
           <Row>
             <Col sm={12} md={9} lg={7}>
               <h1>
-                A unique experience of inspiration, meeting and networking for the ANY WORD industry
+                <b>Open</b>
+                <br></br> Humanities
+              </h1>
+              <h1 className="mt-4">
+                <b>Open</b>
+                <br></br> Culture
               </h1>
             </Col>
             <DateOfConference />

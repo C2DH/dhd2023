@@ -6,12 +6,22 @@ import { useSpring, config } from '@react-spring/core'
 import { a } from '@react-spring/three'
 import Arch from './Arch'
 import { useMenuStore } from '../store'
-// import * as THREE from 'three'
+// import { isMobile } from 'react-device-detect'
+// import { useCurrentWindowDimensions } from './hooks/viewport'
+
+//   const { width, height } = useCurrentWindowDimensions(isMobile)
+// useEffect(() => {
+//   if (isMobile) {
+//     return 2
+//   }
+//   return 0
+
+// }, [scene, api])
 
 const SceneSteps = [
   {
     scale: 0.14,
-    position: [2, -3.2],
+    position: [1.6, -3.1],
     positionTwo: [-100, 50, -100],
     positionThree: [-100, 50, -100],
     rotation: [0.02, -1.2, 0.04],
@@ -61,10 +71,10 @@ const SceneSteps = [
   },
   {
     scale: 0.14,
-    position: [-0.07, -5.2],
+    position: [0.13, -5.3],
     positionTwo: [16.2, 0, 0],
     positionThree: [-16.2, 0, 0],
-    rotation: [-0.3, -0.45, -0.14],
+    rotation: [-0.3, -0.45, -0.132],
     color: '#c5def5',
     fog: ['#e8f4fd', 0, 20],
   },
@@ -93,6 +103,8 @@ const ThreeJsBgArch = () => {
     ...scene,
     config: config.slow,
   }))
+
+  // console.log('isMobile', MyComponent.v)
 
   useEffect(() => {
     api.start({

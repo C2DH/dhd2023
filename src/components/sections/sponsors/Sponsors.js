@@ -1,6 +1,10 @@
 import './Sponsors.scss'
 import NfdiForMemoryLogo from '../../svg/NfdiForMemoryLogo'
 import CnfdiLogo from '../../svg/CnfdiLogo'
+import CultureAndComputationLogo from '../../svg/CultureAndComputationLabLogo'
+import KompetenzzentrumLogo from '../../svg/KompetenzzentrumLogo.js'
+import UniTrierLogo from '../../svg/UniTrierLogo.js'
+import UniLogos from '../../svg/UniLogo.js'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -15,7 +19,7 @@ const Sponsors = () => {
         </Row>
       </Container>
       <Container className="logos d-flex flex-wrap justify-content-center">
-        <Row>
+        {/* <Row>
           <h4 className="blue">Partner</h4>
         </Row>
         <Row className="justify-content-center  mt-4">
@@ -28,20 +32,42 @@ const Sponsors = () => {
           <i>
             <CnfdiLogo />
           </i>
-        </Row>
+        </Row> */}
         <Row>
           <h4 className="blue mt-5">Förderer und Sponsoren</h4>
         </Row>
+
         <Row className="justify-content-center mt-4">
-          <i>
-            <NfdiForMemoryLogo />
-          </i>
-          <i>
-            <CnfdiLogo />
-          </i>
-          <i>
-            <NfdiForMemoryLogo />
-          </i>
+          <Col sm={6} lg={4}>
+            <i className="w-100 m-0 p-sm-3 p-lg-5 p-5">
+              <UniTrierLogo />
+            </i>
+          </Col>
+          <Col sm={6} lg={4}>
+            <i className="w-100 m-0 p-sm-3 p-lg-5 p-5">
+              <UniLogos />
+            </i>
+          </Col>
+          <Col sm={6} lg={4}>
+            <i className="w-100 m-0 p-sm-3 p-lg-5 p-5">
+              <KompetenzzentrumLogo />
+            </i>
+          </Col>
+          <Col sm={6} lg={4}>
+            <i className="w-100 m-0 p-sm-3 p-lg-5 p-5">
+              <CultureAndComputationLogo />
+            </i>
+          </Col>
+          <Col sm={6} lg={4}>
+            <i className="w-100 m-0 p-sm-3 p-lg-5 p-5">
+              <NfdiForMemoryLogo />
+            </i>
+          </Col>
+          <Col sm={6} lg={4}>
+            <i className="w-100 m-0 p-sm-3 p-lg-5 p-5">
+              <CnfdiLogo />
+            </i>
+          </Col>
         </Row>
       </Container>
     </div>

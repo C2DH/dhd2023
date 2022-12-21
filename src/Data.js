@@ -24,15 +24,23 @@ export const dataDropdown = [
 ]
 
 export const dataSecondaryMenu = [
-  { title: 'Postersession', to: '#/' },
-  { title: 'Behind the Scenes', to: '#/' },
-  { title: 'BLOG', to: '#/' },
+  // { title: 'Postersession', to: '#/' },
+  // { title: 'Behind the Scenes', to: '#/' },
+  // { title: 'BLOG', to: '#/' },
   { title: 'Kontakt', to: '/contact' },
 ]
 
 export const dataFooterMenu = [
   { title: 'Impressum', to: ImpressumRoute.to },
   { title: 'Datenschutz', to: 'https://dig-hum.de/datenschutz', reloadDocument: true },
+]
+
+export const dataPageMenu = [
+  { day: 'Montag', date: '13/03', to: ProgrammubersichtRoute + '/monday' },
+  { day: 'Dienstag', date: '14/03', to: '/monday' },
+  { day: 'Mittwoch', date: '15/03', to: '/monday' },
+  { day: 'Donnerstag', date: '16/03', to: '/monday' },
+  { day: 'Freitag', date: '17/03', to: '/monday' },
 ]
 
 export const dataLocation = [

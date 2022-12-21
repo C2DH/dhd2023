@@ -3,12 +3,8 @@ import { useOnScreen } from '../../../hooks/viewport'
 import { useMenuStore } from '../../../store'
 import MenuFooter from '../../menu/MenuFooter'
 import { useLocation } from 'react-router-dom'
-import UniTrierLogo from '../../svg/UniTrierLogo.js'
-import UniLogos from '../../svg/UniLogo.js'
-import KompetenzzentrumLogo from '../../svg/KompetenzzentrumLogo.js'
 import ButtonDhd from '../../ui/ButtonDhd.js'
 import { LocationRoute } from '../../../constants'
-import CultureAndComputationLogo from '../../svg/CultureAndComputationLabLogo'
 import './Footer.scss'
 
 const { Container, Row, Col } = require('react-bootstrap')
@@ -33,7 +29,7 @@ const Footer = () => {
   return (
     <footer id="section-contact" className="footer flex-center">
       <div className="footer-content-wrapper flex-grow-1" ref={ref}>
-        <Container className="contact">
+        <Container className="contact mb-30">
           <Row>
             <Col sm={12} md={6}>
               <h2>Kontakt</h2>
@@ -57,7 +53,7 @@ const Footer = () => {
             </Col>
           </Row>
         </Container>
-        <Container className="logos d-flex flex-wrap justify-content-center mb-15">
+        {/* <Container className="logos d-flex flex-wrap justify-content-center mb-15">
           <i>
             <UniTrierLogo />
           </i>
@@ -70,7 +66,7 @@ const Footer = () => {
           <i>
             <CultureAndComputationLogo />
           </i>
-        </Container>
+        </Container> */}
       </div>
       <Container className="mt-4">
         <Row>

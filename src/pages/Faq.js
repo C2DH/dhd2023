@@ -1,5 +1,4 @@
 import { Col, Container, Row } from 'react-bootstrap'
-import './Zeitschiene.scss'
 import './Page.scss'
 
 const Faq = ({ data }) => {

@@ -16,10 +16,6 @@ const Menu = () => {
     setDropdown(!dropdown)
   }
 
-  // const togglePanel = () => {
-  //   setIsCollapsed((prevState) => !prevState)
-  // }
-
   if (menuStatus === MenuOpen) {
     document.body.style.overflow = 'hidden'
   }
@@ -35,12 +31,12 @@ const Menu = () => {
   }
 
   useLayoutEffect(() => {
-    console.debug(
-      '[Menu] @useLayoutEffect \n - pathname:',
-      pathname,
-      '\n - menuStatus:',
-      menuStatus,
-    )
+    // console.debug(
+    //   '[Menu] @useLayoutEffect \n - pathname:',
+    //   pathname,
+    //   '\n - menuStatus:',
+    //   menuStatus,
+    // )
     if (menuStatus === MenuOpen) {
       setMenuStatus(MenuClosed)
     }
@@ -67,7 +63,6 @@ const Menu = () => {
         </li>
         <li>
           <NavLink
-            // to="/team"
             to={KomiteeAndTeamRoute.to}
             tabIndex={1}
             onClick={() => {
