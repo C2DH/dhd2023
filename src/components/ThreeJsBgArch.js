@@ -71,7 +71,7 @@ const SceneSteps = [
   },
   {
     scale: 0.14,
-    position: [0.13, -5.3],
+    position: [0, -5.3],
     positionTwo: [16.2, 0, 0],
     positionThree: [-16.2, 0, 0],
     rotation: [-0.3, -0.45, -0.132],

@@ -91,7 +91,7 @@ h4 {
 
 h1 {
   font-weight: 400;
-  font-stretch: 85%;
+  font-stretch: 100%;
   font-variation-settings: 'ital' 10, 'wdth' 130;
   font-size: min(10vw, 4.5rem);
   line-height: min(10vw, 4.4rem);
@@ -286,5 +286,10 @@ footer {
   }
   main {
     padding: 0.5rem var(--main-container-padding);
+  }
+  h1 b {
+    font-size: min(12vw, 6rem);
+    color: var(--black);
+    text-shadow: none;
   }
 }

@@ -20,7 +20,7 @@ const Intro = () => {
                 <b>Open</b>
                 <br></br> Humanities
               </h1>
-              <h1 className="mt-4">
+              <h1 className="mt-xs-1 mt-lg-3">
                 <b>Open</b>
                 <br></br> Culture
               </h1>
