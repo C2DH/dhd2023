@@ -47,7 +47,7 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
     if (timeoutIdRef.current) {
       clearTimeout(timeoutIdRef.current)
     }
-    if (['/contact', '/team'].includes(pathname)) {
+    if (['/team'].includes(pathname)) {
       console.debug('[Home] scrollToSection:', pathname.substring(1))
       timeoutIdRef.current = setTimeout(() => scrollToSection(pathname.substring(1)), 1)
       // document.elementFromPoint. section-team

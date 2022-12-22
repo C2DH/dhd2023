@@ -9,6 +9,8 @@
 
 .dropdown-menu a {
   color: var(--white);
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-menu-row-one,
@@ -34,7 +36,8 @@ li.active .dropdown-menu {
 
 .dropdown-menu i {
   display: inline-block;
-  transform: scale(0.8) translateX(-3px) translateY(-1px);
+  position: relative;
+  transform: scale(0.8) translateX(-3px);
   opacity: 0;
   transition: transform 0.2s ease-in-out;
   padding-left: 0.3rem;
@@ -44,7 +47,7 @@ li.active .dropdown-menu {
 .dropdown-menu a:focus i,
 .dropdown-menu a.active i {
   opacity: 1;
-  transform: scale(0.8) translateX(0px) translateY(-1px);
+  transform: scale(0.8) translateX(0px);
 }
 
 .full-screen-menu-wrapper .dropdown-menu {

@@ -126,7 +126,7 @@
   h4,
   hr,
   div,
-  a {
+  a:not(.btn) {
     color: var(--white);
     &::before {
       background-color: var(--black);

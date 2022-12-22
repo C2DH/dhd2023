@@ -27,7 +27,7 @@ export const dataSecondaryMenu = [
   // { title: 'Postersession', to: '#/' },
   // { title: 'Behind the Scenes', to: '#/' },
   // { title: 'BLOG', to: '#/' },
-  { title: 'Kontakt', to: '/contact' },
+  { title: 'Kontakt' },
 ]
 
 export const dataFooterMenu = [
