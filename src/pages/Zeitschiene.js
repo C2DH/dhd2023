@@ -17,7 +17,7 @@ const Zeitschiene = ({ data }) => {
       <section>
         <Container>
           <Row>
-            <Col sm={12} md={{ span: 8, offset: 2 }}>
+            <Col md={{ span: 12, offset: 0 }} lg={{ span: 8, offset: 2 }}>
               <h1 dangerouslySetInnerHTML={{ __html: title }} className="mb-5"></h1>
               <section dangerouslySetInnerHTML={{ __html: content }}></section>
             </Col>

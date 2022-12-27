@@ -3,6 +3,7 @@ import './Page.scss'
 import PageMune from '../components/pageMenu/PageMenu'
 import ButtonDhd from '../components/ui/ButtonDhd'
 import { useState, useMemo } from 'react'
+import { dataPageMenu } from '../Data'
 
 const Programmubersicht = ({ data }) => {
   const [displayDay, setDisplayDay] = useState(0)
@@ -14,14 +15,13 @@ const Programmubersicht = ({ data }) => {
   const content = data ? String(data.content.rendered) : ''
   const splitterHTML = useMemo(() => content.split('<pre>Split days</pre>'), [content])
 
-  console.log('displayDay', displayDay)
   if (!data) {
     return <div className="Programmubersicht" />
   }
 
   return (
     <div className="Programmubersicht mt-30">
-      <PageMune onChange={onChangeDayHandler} displayDay={displayDay} />
+      <PageMune menuData={dataPageMenu} onChange={onChangeDayHandler} displayDay={displayDay} />
       <section>
         <Container>
           <Row>
@@ -34,7 +34,6 @@ const Programmubersicht = ({ data }) => {
               <div className="d-flex flex-wrap">
                 <ButtonDhd
                   // href={''}
-                  className={'mt-0 mt-sm-4'}
                   variant={'primary'}
                   title={'Download pdf'}
                   iconType={'FileDown'}
@@ -47,7 +46,11 @@ const Programmubersicht = ({ data }) => {
       <section className="programm-content mt-5 mb-30">
         <Container>
           <Row>
-            <PageMune onChange={onChangeDayHandler} displayDay={displayDay} />
+            <PageMune
+              menuData={dataPageMenu}
+              onChange={onChangeDayHandler}
+              displayDay={displayDay}
+            />
           </Row>
 
           <Row>

@@ -18,6 +18,7 @@ import {
   LocationRoute,
   ProgrammubersichtRoute,
   FaqRoute,
+  RegisterRoute,
 } from './constants'
 import ScrollToTop from './components/ScrollToTop'
 import { isMobile } from 'react-device-detect'
@@ -133,6 +134,14 @@ function App() {
               element={
                 <React.Suspense>
                   <Page height={height} url={FaqRoute.contentUrl} />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/page/register"
+              element={
+                <React.Suspense>
+                  <Page height={height} url={RegisterRoute.contentUrl} />
                 </React.Suspense>
               }
             />

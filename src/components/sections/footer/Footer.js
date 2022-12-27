@@ -37,9 +37,9 @@ const Footer = () => {
             <Col sm={12} md={6}>
               <p>
                 Bei Fragen, Anregungen oder Wünschen schreiben Sie eine E-Mail an die Lokalen
-                Organisatoren in Potsdam unter{' '}
+                Organisatoren in Trier und Luxemburg unter{' '}
                 <strong>
-                  <a href="mailto:info@dhd2022.de">info[at]dhd2022.de</a>
+                  <a href="mailto:dhd2023uni-trier.de">dhd2023uni-trier.de</a>
                 </strong>{' '}
                 oder füllen Sie dieses Formular aus.
               </p>

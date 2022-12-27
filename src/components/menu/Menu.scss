@@ -39,6 +39,10 @@
 .menu-full-screen {
   .programm-events {
     color: var(--white) !important;
+
+    svg {
+      transform: translateY(2px);
+    }
   }
 }
 

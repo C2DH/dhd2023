@@ -103,11 +103,24 @@ $border: 3px solid var(--white);
   margin-left: 0.4rem;
 }
 
-.bg-blue ~ main .btn,
-.bg-blue ~ footer .btn {
+.bg-blue ~ main .btn {
   &.btn-primary,
   &.btn-secondary {
     color: var(--white);
+  }
+}
+
+footer .btn.btn-secondary,
+.bg-blue ~ main .btn.btn-secondary {
+  color: var(--black);
+  border: none !important;
+  &::before {
+    border-left: 3px solid var(--black) !important;
+    border-right: 3px solid var(--black) !important;
+  }
+  &::after {
+    border-top: 3px solid var(--black) !important;
+    border-bottom: 3px solid var(--black) !important;
   }
 }
 

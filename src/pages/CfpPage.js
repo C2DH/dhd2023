@@ -20,7 +20,7 @@ const CfpPage = ({ data }) => {
     from: { height: 800 },
     to: {
       // opacity: isCollapsed ? 1 : 0,
-      height: isCollapsed ? bbox.height : 800,
+      height: isCollapsed ? bbox.height + 100 : 800,
     },
   })
 
@@ -29,17 +29,14 @@ const CfpPage = ({ data }) => {
   }
 
   if (!data) {
-    return null
+    return <div className="CfpPage" />
   }
 
   console.log('Dropdown availableHeight', bbox.height)
 
-  const SrcSetRegexp = new RegExp('(?<=<h2>)(.*?)(?=</h2>)', 'i')
-  const title = data.title?.rendered
-  const content = data.content?.rendered
-  // const excerpt = String(data.excerpt?.rendered)
-  const hTwoExtracter = content.match(SrcSetRegexp)
-  console.log('ZZZOPNE', hTwoExtracter)
+  const title = data ? data.title.rendered : ''
+  const content = data ? String(data.content.rendered) : ''
+
   return (
     <div>
       <Helmet>
@@ -51,7 +48,7 @@ const CfpPage = ({ data }) => {
           <Row>
             <Col className="col col-sm-12 col-md-9 col-lg-7">
               <h1 className="mb-3" dangerouslySetInnerHTML={{ __html: title }}></h1>
-              <h4 dangerouslySetInnerHTML={{ __html: hTwoExtracter[0] }}></h4>
+              {/* <h4 dangerouslySetInnerHTML={{ __html: hTwoExtracter[0] }}></h4> */}
             </Col>
             <div className="d-flex flex-wrap">
               <ButtonDhd
@@ -75,10 +72,12 @@ const CfpPage = ({ data }) => {
       <Container>
         <Row>
           <Col xs={12}>
-            {/* <section dangerouslySetInnerHTML={{ __html: excerpt }}></section> */}
-            {/* className={`contentToggle ${showContent === true ? 'open' : 'close'}`} */}
             <animated.div style={{ ...slideInStyles, overflow: 'hidden' }}>
-              <section ref={ref} dangerouslySetInnerHTML={{ __html: content }}></section>
+              <section
+                className="CfpPage"
+                ref={ref}
+                dangerouslySetInnerHTML={{ __html: content }}
+              ></section>
             </animated.div>
             <ButtonDhd
               onClick={togglePanel}

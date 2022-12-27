@@ -70,6 +70,12 @@ export const FaqRoute = {
   contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_FAQ_URL].join(''),
 }
 
+export const RegisterRoute = {
+  to: `${StaticPageRoutePrefix}/register`,
+  label: 'Register',
+  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_REGISTER_URL].join(''),
+}
+
 export const ProgrammubersichtRoute = {
   to: `${StaticPageRoutePrefix}/programmubersich`,
   label: 'programmubersich',
@@ -92,5 +98,6 @@ export const StaticPagesRoutes = [
   KeynoteRoute,
   ImpressumRoute,
   LocationRoute,
+  RegisterRoute,
 ]
 export const StaticPagesRoutesPathnames = StaticPagesRoutes.map((route) => route.to)

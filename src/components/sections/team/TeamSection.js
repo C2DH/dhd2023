@@ -16,10 +16,7 @@ const TeamSection = () => {
         <Container>
           <Row>
             <Col sm={12} md={9} lg={7}>
-              <h2>
-                TEQM A unique experience of inspiration, meeting and networking for the ANY WORD
-                industry
-              </h2>
+              <h2>Komitee & Team</h2>
             </Col>
           </Row>
         </Container>
@@ -37,7 +34,7 @@ const TeamSection = () => {
                 to={KomiteeAndTeamRoute.to}
                 className={'mt-4'}
                 variant={'primary'}
-                title={'VIEW ALL'}
+                title={'Alles anzeigen'}
                 iconType={'ArrowRight'}
               />
             </Col>

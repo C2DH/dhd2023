@@ -5,7 +5,7 @@ import {
   ImpressumRoute,
   LocationRoute,
   ProgrammubersichtRoute,
-  FaqRoute,
+  // FaqRoute,
 } from './constants'
 
 export const dataDropdown = [
@@ -19,7 +19,7 @@ export const dataDropdown = [
     to: 'https://dh-convalidator.dhd2023.dig-hum.de/',
     reloadDocument: true,
   },
-  { title: 'FAQ', to: FaqRoute.to },
+  // { title: 'FAQ', to: FaqRoute.to },
   { title: 'Location', to: LocationRoute.to },
 ]
 
@@ -36,11 +36,16 @@ export const dataFooterMenu = [
 ]
 
 export const dataPageMenu = [
-  { day: 'Montag', date: '13/03', to: ProgrammubersichtRoute + '/monday' },
-  { day: 'Dienstag', date: '14/03', to: '/monday' },
-  { day: 'Mittwoch', date: '15/03', to: '/monday' },
-  { day: 'Donnerstag', date: '16/03', to: '/monday' },
-  { day: 'Freitag', date: '17/03', to: '/monday' },
+  { title: 'Montag', subTitle: '13/03' },
+  { title: 'Dienstag', subTitle: '14/03' },
+  { title: 'Mittwoch', subTitle: '15/03' },
+  { title: 'Donnerstag', subTitle: '16/03' },
+  { title: 'Freitag', subTitle: '17/03' },
+]
+
+export const dataLocationMenu = [
+  { title: 'German', subTitle: 'version' },
+  { title: 'English', subTitle: 'version' },
 ]
 
 export const dataLocation = [

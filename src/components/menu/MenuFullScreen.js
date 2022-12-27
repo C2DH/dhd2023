@@ -11,6 +11,7 @@ import { OrbitControls, Sparkles } from '@react-three/drei'
 import SecondaryMenu from './SecondaryMenu'
 import MenuFooter from './MenuFooter'
 import ButtonDhd from '../ui/ButtonDhd.js'
+import { RegisterRoute } from '../../constants.js'
 
 const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
   const menuStatus = useMenuStore((state) => state.menuStatus)
@@ -42,7 +43,13 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
               <SecondaryMenu />
             </Col>
           </Row>
-          <ButtonDhd className={'mt-4 align-self-start'} variant={'primary'} title={'Register'} />
+          <ButtonDhd
+            to={RegisterRoute.to}
+            className={'mt-4 align-self-start'}
+            variant={'primary'}
+            title={'Registrieren'}
+            iconType={'ArrowRight'}
+          />
         </Container>
         <Container className="footer-menu-wrapper p-0 position-relative d-flex">
           <Row className="w-100">

@@ -22,12 +22,10 @@ const GuidelinesSection = ({ data, status }) => {
     return null
   }
 
-  const SrcSetRegexp = new RegExp('(?<=<strong>)(.*?)(?=</strong>)', 'i')
-  const title = data.title?.rendered
-  const content = data.content?.rendered
-  const hTwoExtracter = content.match(SrcSetRegexp)
+  const title = data ? data.title.rendered : ''
+  const content = data ? String(data.content.rendered) : ''
 
-  console.log('DATA', data)
+  console.log('SrcSetRegexp', data)
 
   return (
     <div id="guidelines">
@@ -35,8 +33,8 @@ const GuidelinesSection = ({ data, status }) => {
         <Container id="guidelines-section" className="my-5 h-100">
           <Row>
             <Col className="col col-sm-12 col-md-9 col-lg-7">
-              <h1>{title}</h1>
-              <h4 className="my-3">{hTwoExtracter}</h4>
+              <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
+              <h4 className="my-3" dangerouslySetInnerHTML={{ __html: content }}></h4>
             </Col>
             <div className="d-flex flex-wrap">
               <ButtonDhd

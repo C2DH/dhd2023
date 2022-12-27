@@ -2,13 +2,13 @@
 import { Link } from 'react-router-dom'
 import './PageMenu.scss'
 import { ArrowRight } from 'lucide-react'
-import { dataPageMenu } from '../../Data'
 
-const PageMune = ({ onChange, displayDay }) => {
+const PageMune = ({ onChange, displayDay, menuData }) => {
   return (
     <nav class="PageMenu">
       <ul className="flex-wrap">
-        {dataPageMenu.map(({ day, date }, index) => {
+        {menuData.map(({ title, subTitle }, index) => {
+          console.log('displayDay', menuData)
           return (
             <li key={index}>
               <Link
@@ -21,8 +21,8 @@ const PageMune = ({ onChange, displayDay }) => {
                 }}
               >
                 <div className="nav-group">
-                  <b>{day}</b>
-                  <span>{date}</span>
+                  <b>{title}</b>
+                  <span>{subTitle}</span>
                 </div>
                 <i>
                   <ArrowRight />

@@ -2,6 +2,7 @@ import './IntroHomePage.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import DateOfConference from './DateOfConference'
 import ButtonDhd from '../../ui/ButtonDhd.js'
+import { RegisterRoute } from '../../../constants'
 
 const Intro = () => {
   // const [click, setClick] = useState(true)
@@ -28,9 +29,10 @@ const Intro = () => {
             <DateOfConference />
           </Row>
           <ButtonDhd
+            to={RegisterRoute.to}
             className={'mt-2 mt-sm-4'}
             variant={'primary'}
-            title={'Register'}
+            title={'Registrieren'}
             iconType={'ArrowRight'}
           />
         </Container>

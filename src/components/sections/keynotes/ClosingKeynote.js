@@ -44,7 +44,7 @@ const ClosingKeynote = ({ data }) => {
   // console.debug('[Keynote] content', content)
 
   return (
-    <section className="keynote closing flex-center mt-15" ref={ref}>
+    <section className="keynote closing flex-center mb-30" ref={ref}>
       <div className="flex-grow-1">
         <Container>
           <Row className="mb-4">
@@ -93,7 +93,7 @@ const ClosingKeynote = ({ data }) => {
               <ButtonDhd
                 className={'mt-4'}
                 variant={'primary'}
-                title={'Read More'}
+                title={'Weiterlesen'}
                 iconType={'ArrowRight'}
                 to={KeynoteRoute.to}
               />
@@ -109,10 +109,9 @@ const ClosingKeynote = ({ data }) => {
                 <h4 className="my-4">
                   <b dangerouslySetInnerHTML={{ __html: splitter[9] }}></b>
                 </h4>
-                <p dangerouslySetInnerHTML={{ __html: splitter[10] }}></p>
+                <p dangerouslySetInnerHTML={{ __html: splitter[(10, 11)] }}></p>
               </Col>
-              <Col className="col-12 col-lg-6 mt-4 align-self-start">
-                <p dangerouslySetInnerHTML={{ __html: splitter[11] }}></p>
+              <Col className="col-12 col-lg-6 mt-4 align-self-start pt-xs-0 pt-lg-5">
                 <p dangerouslySetInnerHTML={{ __html: splitter[12] }}></p>
                 <p dangerouslySetInnerHTML={{ __html: splitter[13] }}></p>
               </Col>

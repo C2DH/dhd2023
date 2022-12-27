@@ -86,7 +86,7 @@ const OpeningKeynote = ({ data }) => {
               <ButtonDhd
                 className={'mt-4'}
                 variant={'primary'}
-                title={'Read More'}
+                title={'Weiterlesen'}
                 iconType={'ArrowRight'}
                 to={KeynoteRoute.to}
               />

@@ -2,6 +2,7 @@ import ButtonDhd from '../../ui/ButtonDhd.js'
 import ConferenceHighlightsBlocks from '../conferenceHighlights/ConferenceHighlightsBlocks.js'
 import StaticPageLoader from '../../StaticPageLoader.js'
 import { ConferenceHighlightsRoute } from '../../../constants.js'
+import { RegisterRoute } from '../../../constants'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -13,10 +14,7 @@ const ConferenceHighlights = () => {
           <Row>
             <Col className="col col-sm-12 col-md-9 col-lg-7 offset-lg-5 offset-md-3 offset-sm-0 text-end">
               <div className="d-flex flex-column align-items-end">
-                <h2>
-                  A unique experience of inspiration, meeting and networking for the ANY WORD
-                  industry
-                </h2>
+                <h2>Rahmenprogramm</h2>
               </div>
             </Col>
           </Row>
@@ -27,10 +25,11 @@ const ConferenceHighlights = () => {
             Component={ConferenceHighlightsBlocks}
           ></StaticPageLoader>
           <ButtonDhd
+            to={RegisterRoute.to}
             className={'mt-4'}
             variant={'primary'}
-            title={'Register'}
-            // iconType={ArrowRight}
+            title={'Registrieren'}
+            iconType={'ArrowRight'}
           />
         </Container>
       </div>

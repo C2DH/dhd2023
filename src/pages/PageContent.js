@@ -9,6 +9,7 @@ import Impressum from './Impressum.js'
 import Location from './Location.js'
 import Programmubersicht from './Programmubersicht.js'
 import Faq from './Faq.js'
+import Register from './Register.js'
 import './Page.scss'
 
 const PageContent = ({ data }) => {
@@ -36,6 +37,9 @@ const PageContent = ({ data }) => {
   }
   if (location.pathname === '/page/faq') {
     return <Faq data={data}></Faq>
+  }
+  if (location.pathname === '/page/register') {
+    return <Register data={data}></Register>
   }
   if (location.pathname === '/page/keynotes') {
     return <Keynotes data={data}></Keynotes>
