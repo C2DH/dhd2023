@@ -1,22 +1,11 @@
 import React, { Suspense, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Environment, Float, Sparkles } from '@react-three/drei'
+import { OrbitControls, Float, Sparkles } from '@react-three/drei'
 import './ThreeJsBgArch.css'
 import { useSpring, config } from '@react-spring/core'
 import { a } from '@react-spring/three'
 import Arch from './Arch'
 import { useMenuStore } from '../store'
-// import { isMobile } from 'react-device-detect'
-// import { useCurrentWindowDimensions } from './hooks/viewport'
-
-//   const { width, height } = useCurrentWindowDimensions(isMobile)
-// useEffect(() => {
-//   if (isMobile) {
-//     return 2
-//   }
-//   return 0
-
-// }, [scene, api])
 
 const SceneSteps = [
   {
@@ -145,27 +134,34 @@ const ThreeJsBgArch = () => {
             </Float>
           </a.group>
 
-          <ambientLight intensity={0.6} />
+          <ambientLight intensity={0.9} />
           {/* <directionalLight intensity={0.5} position={[5, 10, 10]} color="#d2e9fe" /> */}
           <spotLight
             intensity={1}
-            position={[0, 15, 10]}
+            position={[-1, 17, 7]}
             angle={0.2}
             penumbra={0.5}
             shadow-mapSize={[1024, 1024]}
             castShadow
             shadow-normalBias={0.04}
-            color={'#d9eaff'}
+            color={'#fffed9'}
           />
           <spotLight
             intensity={0.9}
             position={[-10, 8, -15]}
             angle={0.2}
             penumbra={0.5}
-            color={'#e6bbff'}
+            color={'#dbbbff'}
           />
 
-          {/* <spotLight position={[0, 3, -3]} angle={0.2} penumbra={1} intensity={1} /> */}
+          <spotLight
+            intensity={0.9}
+            position={[10, 3, 3]}
+            angle={0.2}
+            penumbra={1}
+            color={'#9cd6ff'}
+          />
+
           <OrbitControls autoRotate={false} enableZoom={false} makeDefault enableRotate={false} />
           <Sparkles
             size={[7, 5, 20]}
@@ -174,7 +170,7 @@ const ThreeJsBgArch = () => {
             opacity={scene.sparklesOpacity ?? 0.5}
             color={scene.sparklesColor ?? 'white'}
           />
-          <Environment rotation={[Math.PI / 2, 0, 5]} preset="sunset" color="black" />
+          {/* <Environment rotation={[Math.PI / 2, 0, 5]} preset="sunset" color="black" /> */}
         </Canvas>
       </Suspense>
     </div>

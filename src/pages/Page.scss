@@ -45,7 +45,8 @@
   }
 }
 
-.Location a:not(.btn) {
+.Location a:not(.btn),
+.Programmubersicht a:not(.btn) {
   color: var(--primary);
   font-weight: 600;
   &:hover {
