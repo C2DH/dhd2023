@@ -149,8 +149,23 @@
   }
 }
 
-.CfpPage h2 {
-  margin: 4rem 0;
+.CfpPage {
+  h2 {
+    margin: 4rem 0;
+  }
+  ul {
+    list-style-position: outside !important;
+    list-style-image: none !important;
+    list-style-type: '→' !important;
+    li {
+      display: flex;
+      position: relative;
+
+      p {
+        padding-left: 0.5rem;
+      }
+    }
+  }
 }
 
 @media (max-width: 1200px) {
