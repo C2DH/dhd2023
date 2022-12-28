@@ -22,9 +22,9 @@ const About = ({ data }) => {
       <section className="d-flex mt-30">
         <Container>
           <Row>
-            <Col sm={12} md={9} lg={7}>
+            <Col md={{ span: 12, offset: 0 }} lg={{ span: 8, offset: 2 }}>
               <h1 className="mb-3" dangerouslySetInnerHTML={{ __html: title }}></h1>
-              <h4 className="mb-5" dangerouslySetInnerHTML={{ __html: splitter[1] }}></h4>
+              <h2 className="mb-5" dangerouslySetInnerHTML={{ __html: splitter[1] }}></h2>
             </Col>
           </Row>
         </Container>
@@ -32,7 +32,7 @@ const About = ({ data }) => {
       <section>
         <Container>
           <Row>
-            <Col sm={12} md={9} lg={7}>
+            <Col md={{ span: 12, offset: 0 }} lg={{ span: 8, offset: 2 }}>
               <p dangerouslySetInnerHTML={{ __html: splitter[13] }}></p>
               <p dangerouslySetInnerHTML={{ __html: splitter[17] }}></p>
             </Col>

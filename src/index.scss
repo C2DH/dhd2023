@@ -99,11 +99,23 @@ h1 {
   color: var(--black);
 }
 
-h1 b {
-  font-size: min(12vw, 6rem);
-  color: #dbe5f3;
-  text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
-    -2px -2px 0 #000;
+.intro h1 {
+  // margin-top: 2rem;
+  position: relative;
+  b {
+    font-size: min(11vw, 5.5rem);
+    opacity: 0.9;
+    font-weight: 500;
+  }
+  & > span {
+    position: relative;
+    top: 0.8rem;
+    font-size: min(5.5vw, 2rem);
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: none;
+    z-index: 1;
+  }
 }
 
 h2 {
@@ -263,6 +275,7 @@ footer {
   --primary: rgb(29, 167, 224);
   --black: #172429;
   --white: #eef1f2;
+  --alret: #cd5082;
   --body-light-bg: #cadeed;
   --fixed-menu-rm: 8rem;
   --main-container-padding: 4rem;
@@ -289,7 +302,5 @@ footer {
   }
   h1 b {
     font-size: min(12vw, 6rem);
-    color: var(--black);
-    text-shadow: none;
   }
 }

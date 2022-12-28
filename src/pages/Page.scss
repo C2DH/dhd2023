@@ -87,13 +87,29 @@
     margin-top: 4vh;
   }
 
-  h3 {
-    margin-top: 2rem;
+  .programm-content h3 {
+    margin-top: 3rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    &::after {
+      content: '';
+      height: 2px;
+      width: 70%;
+      box-sizing: content-box;
+      background-color: var(--black);
+    }
   }
   h4 {
     text-align: right;
     font-weight: bold;
-    margin-top: 2rem;
+    margin-top: 3rem;
+  }
+  h5 {
+    color: var(--alret);
   }
 }
 
@@ -120,6 +136,7 @@
   h2,
   h3,
   h4,
+  h5,
   hr,
   div,
   a:not(.btn) {

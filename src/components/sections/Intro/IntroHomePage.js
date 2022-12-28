@@ -1,4 +1,3 @@
-import './IntroHomePage.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import DateOfConference from './DateOfConference'
 import ButtonDhd from '../../ui/ButtonDhd.js'
@@ -12,18 +11,17 @@ const Intro = () => {
   // }
   console.log('title', ButtonDhd)
   return (
-    <section className="intro flex-center h-100">
+    <section className="intro align-items-center d-flex h-100">
       <div className="intro-content-wrapper">
         <Container>
           <Row>
             <Col sm={12} md={9} lg={7}>
               <h1>
-                <b>Open</b>
-                <br></br> Humanities
-              </h1>
-              <h1 className="mt-xs-1 mt-lg-3">
-                <b>Open</b>
-                <br></br> Culture
+                <span>#DHd2023</span>
+                <b className="d-block mb-xs-2 mb-md-2">Open</b>
+                Humanities
+                <b className="d-block my-xs-2 my-md-2">Open</b>
+                Culture
               </h1>
             </Col>
             <DateOfConference />

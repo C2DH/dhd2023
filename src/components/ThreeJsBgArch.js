@@ -63,7 +63,7 @@ const SceneSteps = [
     position: [0, -5.3],
     positionTwo: [16.2, 0, 0],
     positionThree: [-16.2, 0, 0],
-    rotation: [-0.3, -0.45, -0.132],
+    rotation: [-0.22, -0.45, -0.095],
     color: '#c5def5',
     fog: ['#e8f4fd', 0, 20],
   },
@@ -137,14 +137,14 @@ const ThreeJsBgArch = () => {
           <ambientLight intensity={0.9} />
           {/* <directionalLight intensity={0.5} position={[5, 10, 10]} color="#d2e9fe" /> */}
           <spotLight
-            intensity={1}
+            intensity={1.1}
             position={[-1, 17, 7]}
             angle={0.2}
             penumbra={0.5}
             shadow-mapSize={[1024, 1024]}
             castShadow
             shadow-normalBias={0.04}
-            color={'#fffed9'}
+            color={'#f9fcc6'}
           />
           <spotLight
             intensity={0.9}
@@ -155,9 +155,9 @@ const ThreeJsBgArch = () => {
           />
 
           <spotLight
-            intensity={0.9}
-            position={[10, 3, 3]}
-            angle={0.2}
+            intensity={0.5}
+            position={[10, 2, 3]}
+            angle={0.3}
             penumbra={1}
             color={'#9cd6ff'}
           />

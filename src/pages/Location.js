@@ -6,7 +6,7 @@ import { useState, useMemo } from 'react'
 import { dataLocationMenu } from '../Data.js'
 
 const Location = ({ data }) => {
-  const [displayDay, setDisplayDay] = useState(0)
+  const [displayDay, setDisplayDay] = useState(1)
   const onChangeDayHandler = (index) => {
     setDisplayDay(index)
   }
@@ -58,7 +58,7 @@ const Location = ({ data }) => {
                 displayDay={displayDay}
               />
               <div
-                className={displayDay === 0 ? 'de-ver mb-5' : 'eng-ver mb-5'}
+                className={displayDay === 1 ? 'de-ver mb-5' : 'eng-ver mb-5'}
                 dangerouslySetInnerHTML={{ __html: splitterHTML[displayDay] }}
               ></div>
             </Col>

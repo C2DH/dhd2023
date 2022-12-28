@@ -6,7 +6,7 @@ import { useState, useMemo } from 'react'
 import { dataPageMenu } from '../Data'
 
 const Programmubersicht = ({ data }) => {
-  const [displayDay, setDisplayDay] = useState(0)
+  const [displayDay, setDisplayDay] = useState(1)
   const onChangeDayHandler = (index) => {
     setDisplayDay(index)
   }
@@ -31,9 +31,10 @@ const Programmubersicht = ({ data }) => {
               xl={{ span: 10, offset: 1 }}
             >
               <h1 dangerouslySetInnerHTML={{ __html: title }} className="mb-5"></h1>
+              <h3 dangerouslySetInnerHTML={{ __html: splitterHTML[0] }} className="mb-5"></h3>
               <div className="d-flex flex-wrap">
                 <ButtonDhd
-                  // href={''}
+                  href={'/doc/browseSessions.pdf'}
                   variant={'primary'}
                   title={'Download pdf'}
                   iconType={'FileDown'}

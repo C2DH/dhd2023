@@ -55,7 +55,7 @@ const Menu = () => {
           <div className="programm-events-wrapper">
             <div className="programm-events">
               Programm & Events
-              {dropdown === false ? <Minus className="icon" /> : <Plus className="icon" />}
+              <i>{dropdown === false ? <Minus className="icon" /> : <Plus className="icon" />}</i>
             </div>
 
             <DropDownMenu dropdown={dropdown} menuStatus={menuStatus} />

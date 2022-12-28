@@ -39,9 +39,8 @@ const Footer = () => {
                 Bei Fragen, Anregungen oder Wünschen schreiben Sie eine E-Mail an die Lokalen
                 Organisatoren in Trier und Luxemburg unter{' '}
                 <strong>
-                  <a href="mailto:dhd2023uni-trier.de">dhd2023uni-trier.de</a>
-                </strong>{' '}
-                oder füllen Sie dieses Formular aus.
+                  <a href="mailto:dhd2023@uni-trier.de">dhd2023@uni-trier.de</a>
+                </strong>
               </p>
               <ButtonDhd
                 className={'mt-0 mt-sm-4'}
