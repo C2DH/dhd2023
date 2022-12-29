@@ -55,6 +55,8 @@ const ButtonDhd = ({
       className={`ButtonDhd ${className}`}
       variant={variant}
       size="lg"
+      target="_blank"
+      rel="noopener noreferrer"
       aria-controls={ariaControls}
       aria-expanded={ariaExpanded}
     >
