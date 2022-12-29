@@ -8,6 +8,7 @@ const PageMune = ({ onChange, displayDay, menuData }) => {
     <nav class="PageMenu">
       <ul className="flex-wrap">
         {menuData.map(({ title, subTitle }, index) => {
+          index = index + 1
           console.log('displayDay', menuData)
           return (
             <li key={index}>
