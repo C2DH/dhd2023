@@ -17,7 +17,7 @@ const PageMune = ({ onChange, displayDay, menuData }) => {
                 onClick={(e) => {
                   if (typeof onChange === 'function') {
                     onChange(index)
-                    window.scrollTo(0, 0)
+                    window.scrollTo(0, 500)
                   }
                   e.preventDefault()
                 }}
