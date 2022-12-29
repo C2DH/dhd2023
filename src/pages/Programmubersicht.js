@@ -44,7 +44,7 @@ const Programmubersicht = ({ data }) => {
                   href={'https://www.conftool.net/dhd2023/'}
                   traget={'_blank'}
                   rel={'noopener noreferrer'}
-                  className={'mt-sm-4 mt-md-0'}
+                  className={'mt-3 mt-sm-4 mt-md-0'}
                   variant={'secondary'}
                   title={'Anmeldung Conftool'}
                   iconType={'ArrowRight'}
