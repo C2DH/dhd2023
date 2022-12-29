@@ -35,9 +35,19 @@ const Programmubersicht = ({ data }) => {
               <div className="d-flex flex-wrap">
                 <ButtonDhd
                   href={'/doc/browseSessions.pdf'}
+                  className={'me-sm-3 me-xs-0'}
                   variant={'primary'}
                   title={'Download pdf'}
                   iconType={'FileDown'}
+                />
+                <ButtonDhd
+                  href={'https://www.conftool.net/dhd2023/'}
+                  traget={'_blank'}
+                  rel={'noopener noreferrer'}
+                  className={'mt-sm-4 mt-md-0'}
+                  variant={'secondary'}
+                  title={'Anmeldung Conftool'}
+                  iconType={'ArrowRight'}
                 />
               </div>
             </Col>

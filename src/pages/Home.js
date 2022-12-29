@@ -27,7 +27,7 @@ function scrollToSection(section) {
     console.debug('[Home] scrollToSection:', section, el)
     el.scrollIntoView()
   } else {
-    console.debug('[Home] scrollToSection not zorking:', section, el)
+    console.debug('[Home] scrollToSection not working:', section, el)
   }
 }
 

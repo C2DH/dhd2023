@@ -39,6 +39,13 @@ $grid-gutter-width: 24px;
 
 html {
   font-family: 'Mona Sans';
+  font-variation-settings: 'ital' 10, 'wdth' 120;
+}
+
+#root:has(.App) ~ #Loading {
+  transform: scale(2);
+  animation: hideLoading 1s ease-out forwards;
+  opacity: 0;
 }
 
 body {
@@ -194,9 +201,14 @@ footer a:not(.logo, .btn) {
 
 span,
 p,
-li {
+li,
+h6 {
   font-variation-settings: 'ital' 10, 'wdth' 120;
   color: var(--black);
+}
+
+h5 {
+  font-variation-settings: 'ital' 10, 'wdth' 120;
 }
 
 li {
