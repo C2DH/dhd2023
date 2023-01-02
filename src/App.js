@@ -22,6 +22,7 @@ import {
 } from './constants'
 import ScrollToTop from './components/ScrollToTop'
 import { isMobile } from 'react-device-detect'
+import AnimatedCursor from 'react-animated-cursor'
 
 // Create a client
 const queryClient = new QueryClient({
@@ -59,6 +60,38 @@ function App() {
   return (
     <div className="App">
       {/* <React.Suspense> */}
+      {!isMobile ? (
+        <AnimatedCursor
+          color="#fff"
+          innerSize={8}
+          outerSize={35}
+          innerScale={1.5}
+          outerScale={2}
+          hasBlendMode={true}
+          outerAlpha={0}
+          outerStyle={{
+            border: '1px solid var(--white)',
+            mixBlendMode: 'exclusion',
+          }}
+          innerStyle={{
+            backgroundColor: 'var(--white)',
+            mixBlendMode: 'exclusion',
+          }}
+          clickables={[
+            'a',
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            'label[for]',
+            'select',
+            'textarea',
+            'button',
+            '.link',
+          ]}
+        />
+      ) : null}
       <QueryClientProvider client={queryClient}>
         <Background></Background>
         <main style={{ minHeight: height * 1.5 }}>
