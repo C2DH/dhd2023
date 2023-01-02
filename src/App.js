@@ -181,7 +181,7 @@ function App() {
             <Route
               path="*"
               element={
-                <React.Suspense fallback={'loading....'}>
+                <React.Suspense>
                   <Home availableWidth={width} availableHeight={height}></Home>
                 </React.Suspense>
               }
