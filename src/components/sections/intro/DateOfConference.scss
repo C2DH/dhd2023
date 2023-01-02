@@ -11,8 +11,25 @@
   white-space: nowrap;
 }
 
-.date-of-conference-wrapper .box:nth-child(1) {
+.date-of-conference-wrapper .box.location {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-right: 1rem;
+  span {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -19px;
+    background-color: seashell;
+    transform: scale(0.7);
+    padding: 0.4rem 0.8rem;
+    font-weight: 700;
+    i svg {
+      stroke-width: 3;
+    }
+  }
 }
 
 .date-of-conference-wrapper h3 {
@@ -29,11 +46,12 @@
 @media (max-width: 540px) {
   .date-of-conference-wrapper .box {
     padding: 1rem 1.7rem;
+    width: 100%;
   }
   .date-of-conference-wrapper h3 {
     font-size: min(5.55vw, 2.2rem);
   }
-  .date-of-conference-wrapper .box:nth-child(1) {
-    margin-right: 0.5rem;
+  .date-of-conference-wrapper .box.location {
+    margin-right: 0;
   }
 }

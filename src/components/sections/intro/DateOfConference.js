@@ -1,3 +1,4 @@
+import { Plus } from 'lucide-react'
 import './DateOfConference.scss'
 
 const DateOfConference = () => {
@@ -8,8 +9,14 @@ const DateOfConference = () => {
         <p>Mar 2023</p>
       </div>
       <div className="box location my-2">
-        <h3>Trier / Belval</h3>
-        <p>Germany / Luxembourg</p>
+        <span>
+          <i className="me-1">
+            <Plus />
+          </i>
+          <p>Online</p>
+        </span>
+        <h3>Trier | Belval</h3>
+        <p>Germany | Luxembourg</p>
       </div>
     </div>
   )

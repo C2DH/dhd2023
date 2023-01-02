@@ -34,7 +34,7 @@ const Programmubersicht = ({ data }) => {
               <h3 dangerouslySetInnerHTML={{ __html: splitterHTML[0] }} className="mb-5"></h3>
               <div className="d-flex flex-wrap">
                 <ButtonDhd
-                  href={'/doc/browseSessions.pdf'}
+                  href={'/doc/Programm_DHd2023_Stand_02012023.pdf'}
                   className={'me-sm-3 me-xs-0'}
                   variant={'primary'}
                   title={'Download pdf'}

@@ -9,7 +9,7 @@
 .dhd-logo-wrapper {
   display: flex;
   width: 10rem;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .dhd-logo-wrapper svg path {

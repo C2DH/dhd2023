@@ -161,7 +161,7 @@ a:not(.logo, .btn) {
   text-transform: uppercase;
   transform-origin: center;
   z-index: 1;
-  cursor: pointer;
+  // cursor: pointer;
 
   &::before {
     content: '';
@@ -228,6 +228,12 @@ data {
 li {
   position: relative;
   list-style-type: none;
+}
+
+i {
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 hr {

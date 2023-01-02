@@ -28,7 +28,7 @@ const Intro = () => {
           </Row>
           <ButtonDhd
             to={RegisterRoute.to}
-            className={'mt-2 mt-sm-4'}
+            className={'mt-4'}
             variant={'primary'}
             title={'Registrieren'}
             iconType={'ArrowRight'}

@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   z-index: 4;
-  cursor: pointer;
+  /* cursor: pointer; */
   position: relative;
 }
 
@@ -34,7 +34,7 @@
   width: 27px;
   background-color: var(--black);
   transition: transform 0.2s ease-in-out;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .menu-icon-wrapper i.menu-white-color span {
