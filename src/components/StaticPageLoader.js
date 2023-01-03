@@ -28,21 +28,6 @@ const StaticPageLoader = ({
   const { data, error, status } = useQuery([url], () => {
     return axiosInstance.get(url, options).then(({ data }) => data)
   })
-  // const { data, error, status } = useGetJSON({
-  //   url,
-  //   delay,
-  //   raw,
-  //   onDownloadProgress: (e) => {
-  //     console.debug('[StaticPageLoader] onDownloadProgress url', url, e.total, e.loaded)
-  //     if (!e.total && e.loaded > 0) {
-  //       apiAnimatedLine.start({ width: Math.min(100, (100 * e.loaded) / 23810103) })
-  //     } else if (e.total && e.loaded) {
-  //       if (e.loaded < e.total) {
-  //         apiAnimatedLine.start({ width: (100 * e.loaded) / e.total })
-  //       }
-  //     }
-  //   },
-  // })
 
   useEffect(() => {
     if (status === 'loading') {
@@ -85,9 +70,7 @@ const StaticPageLoader = ({
           style={{
             opacity: animatedLine.opacity,
           }}
-        >
-          {/* {animatedLine.width.to((x) => `${Math.round(x * 10000) / 10000}%`)} */}
-        </a.span>
+        ></a.span>
       </div>
 
       {status === 'error' && <ErrorViewer error={error} errorCode={error.code} />}

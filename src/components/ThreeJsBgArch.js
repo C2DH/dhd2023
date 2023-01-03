@@ -83,7 +83,6 @@ const ThreeJsBgArch = () => {
   const currentStepIndex = useMenuStore((state) => state.currentStepIndex)
   const scene = SceneSteps[currentStepIndex ?? 0]
   const SceneStepsValidation = currentStepIndex ?? 0
-  console.log('SceneSteps', currentStepIndex, scene)
   const [styles, api] = useSpring(() => ({
     // scale: 1,
     // rotation: [0, 0, 0],
@@ -92,8 +91,6 @@ const ThreeJsBgArch = () => {
     ...scene,
     config: config.slow,
   }))
-
-  // console.log('isMobile', MyComponent.v)
 
   useEffect(() => {
     api.start({

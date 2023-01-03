@@ -4,12 +4,6 @@ import ButtonDhd from '../../ui/ButtonDhd.js'
 import { RegisterRoute } from '../../../constants'
 
 const Intro = () => {
-  // const [click, setClick] = useState(true)
-  // console.log(click)
-  // const setClickStatus = () => {
-  //   setClick(!click)
-  // }
-  console.log('title', ButtonDhd)
   return (
     <section className="intro align-items-center d-flex h-100">
       <div className="intro-content-wrapper">

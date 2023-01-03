@@ -15,7 +15,6 @@ const Menu = () => {
     setActive()
   }, [pathname, menuStatus])
 
-  console.log('menustus', MenuOpen)
   const toggleMenu = () => {
     setDropdown(!dropdown)
   }
@@ -38,20 +37,12 @@ const Menu = () => {
     const elem = document.getElementById('top-menu')
     if (document.querySelectorAll('#top-menu .programm-events-wrapper .active').length > 0) {
       elem.classList.add('active')
-      console.log(elem, '#main has .myclass inside')
     } else {
       elem.classList.remove('active')
-      console.log('#main has no .myclass inside')
     }
   }
 
   useLayoutEffect(() => {
-    // console.debug(
-    //   '[Menu] @useLayoutEffect \n - pathname:',
-    //   pathname,
-    //   '\n - menuStatus:',
-    //   menuStatus,
-    // )
     if (menuStatus === MenuOpen) {
       setMenuStatus(MenuClosed)
     }

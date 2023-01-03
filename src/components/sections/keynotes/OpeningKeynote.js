@@ -8,24 +8,10 @@ import './Keynotes.scss'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
-// const ClosingKeynote = ({ data }) => {
-//   console.debug('[Keynote] srcset', data)
-// }
-
 const OpeningKeynote = ({ data }) => {
-  // const setCurrentStepIndex = useMenuStore((state) => state.setCurrentStepIndex)
   const location = useLocation()
   const [{ isIntersecting = false } = {}, ref] = useOnScreen()
-  useLayoutEffect(() => {
-    console.debug('[ClosingKeynote] isIntersecting:', isIntersecting)
-    //   if (isIntersecting) {
-    //     setCurrentStepIndex(6)
-    //   } else {
-    //     if (location.pathname !== '/') {
-    //       setCurrentStepIndex(0)
-    //     }
-    //   }
-  }, [isIntersecting])
+  useLayoutEffect(() => {}, [isIntersecting])
 
   if (!data) {
     return null

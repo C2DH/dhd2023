@@ -6,18 +6,12 @@ const Impressum = ({ data }) => {
     return null
   }
 
-  // const SrcSetRegexp = new RegExp('((?<=>)(.*?)(?=<.h2>))', 'i')
-
   const title = data.title?.rendered
   const content = String(data.content?.rendered)
   const removeHtml = content.replace(/<[^>]*>?/gm, '')
-
   const splitter = removeHtml.split('\n')
   const splitterHtml = content.split('\n')
 
-  // const hTwoExtracter = data.content?.rendered.match(SrcSetRegexp)
-
-  console.log('[XXXXXXXXXX]', splitter)
   return (
     <div className="About">
       <section className="d-flex mt-30">
@@ -44,7 +38,6 @@ const Impressum = ({ data }) => {
             </Col>
           </Row>
         </Container>
-        {/* <h2 className="my-5">Programmkomitee</h2> */}
       </section>
     </div>
   )

@@ -8,23 +8,11 @@ import './Keynotes.scss'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
-// const ClosingKeynote = ({ data }) => {
-//   console.debug('[Keynote] srcset', data)
-// }
-
 const ClosingKeynote = ({ data }) => {
-  // const setCurrentStepIndex = useMenuStore((state) => state.setCurrentStepIndex)
   const location = useLocation()
   const [{ isIntersecting = false } = {}, ref] = useOnScreen()
   useLayoutEffect(() => {
     console.debug('[ClosingKeynote] isIntersecting:', isIntersecting)
-    //   if (isIntersecting) {
-    //     setCurrentStepIndex(6)
-    //   } else {
-    //     if (location.pathname !== '/') {
-    //       setCurrentStepIndex(0)
-    //     }
-    //   }
   }, [isIntersecting])
 
   if (!data) {
@@ -39,9 +27,6 @@ const ClosingKeynote = ({ data }) => {
   const srcset = content.match(SrcSetRegexp)
   const removeHtml = content.replace(/<[^>]*>?/gm, '')
   const splitter = removeHtml.split('\n')
-  // const textBlockGroupper = splitter.slice(4, 7)
-
-  // console.debug('[Keynote] content', content)
 
   return (
     <section className="keynote closing flex-center mb-30" ref={ref}>

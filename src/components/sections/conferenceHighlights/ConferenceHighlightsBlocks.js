@@ -11,11 +11,9 @@ const ConferenceHighlightsBlocks = ({ data }) => {
       {data.map((data) => {
         const title = data ? data.title.rendered : ''
         const content = data ? String(data.content.rendered) : ''
-
         const removeHtml = content.replace(/<[^>]*>?/gm, '')
-
         const splitter = removeHtml.split('\n')
-        console.debug('[ConferenceHighlightsBlocks]', removeHtml)
+
         return (
           <Col md={{ span: 6 }} sm={{ span: 6 }} lg={{ span: 4 }} key={data.id}>
             <div className="conference-text-block-w my-4">

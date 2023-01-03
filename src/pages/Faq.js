@@ -2,7 +2,6 @@ import { Col, Container, Row } from 'react-bootstrap'
 import './Page.scss'
 
 const Faq = ({ data }) => {
-  console.log('[Faq]', data)
   if (!data) {
     return <div className="Faq" />
   }
