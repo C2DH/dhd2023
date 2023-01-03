@@ -18,7 +18,6 @@ const Location = ({ data }) => {
     return <div className="Location" />
   }
 
-  console.log('[LOCATION]', splitterHTML)
   return (
     <div className="Location mt-30">
       <PageMune menuData={dataLocationMenu} onChange={onChangeDayHandler} displayDay={displayDay} />

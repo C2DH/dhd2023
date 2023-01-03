@@ -25,9 +25,6 @@ const OpeningKeynote = ({ data }) => {
   const srcset = content.match(SrcSetRegexp)
   const removeHtml = content.replace(/<[^>]*>?/gm, '')
   const splitter = removeHtml.split('\n')
-  // const textBlockGroupper = splitter.slice(4, 7)
-
-  console.debug('[Keynote] content', splitter)
 
   return (
     <section className="keynote flex-center" ref={ref}>

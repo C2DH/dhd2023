@@ -46,16 +46,6 @@ const Page = React.lazy(() => import('./pages/Page'))
 const Home = React.lazy(() => import('./pages/Home'))
 
 function App() {
-  // console.log('useQuery', useQuery.status)
-
-  // const { status } = useQuery(() => {
-  //   if (status === 'loading') {
-  //     return <Loading />
-  //   } else if (status === 'success') {
-  //     return null
-  //   }
-  // })
-
   const { width, height } = useCurrentWindowDimensions(isMobile)
   return (
     <div className="App">
@@ -196,14 +186,5 @@ function App() {
     </div>
   )
 }
-
-console.info(
-  'version',
-  process.env.REACT_APP_GIT_TAG,
-  process.env.REACT_APP_GIT_BRANCH,
-  `\nhttps://github.com/C2DH/dhd2023/commit/${process.env.REACT_APP_GIT_REVISION}`,
-  '\n -page CFP:',
-  process.env.REACT_APP_PAGES_CFP_URL,
-)
 
 export default App

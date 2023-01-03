@@ -4,18 +4,6 @@ import './GuidelinesSection.scss'
 import { useScrollToHash } from '../../../hooks/scrolling.js'
 
 const GuidelinesSection = ({ data, status }) => {
-  // const { hash } = useLocation()
-
-  // useEffect(() => {
-  //   if (status === 'success' && typeof hash === 'string' && hash.indexOf('#') === 0) {
-  //     // console.debug('[GuidelinesSection] @useEffect location.hash:', hash, status)
-  //     const el = document.getElementById(hash.substring(1))
-  //     if (el) {
-  //       el.scrollIntoView()
-  //     }
-  //   }
-  // }, [hash, status])
-
   useScrollToHash({ status })
 
   if (!data) {
@@ -24,8 +12,6 @@ const GuidelinesSection = ({ data, status }) => {
 
   const title = data ? data.title.rendered : ''
   const content = data ? String(data.content.rendered) : ''
-
-  console.log('SrcSetRegexp', data)
 
   return (
     <div id="guidelines">

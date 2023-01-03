@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom'
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation()
-  console.info('ScrollToTop pathname', pathname, 'hash', hash)
   useEffect(() => {
     let timer
     if (pathname.indexOf('/page') === -1) {
@@ -18,7 +17,6 @@ const ScrollToTop = () => {
         // window.dispatchEvent(new Event('resize'))
         const id = hash.replace('#', '')
         const element = document.getElementById(id)
-        console.info('ScrollToTop: reaching id =', id)
         if (element) {
           element.scrollIntoView()
           // window.scrollTo(0, element.offsetTop + 100) // window.innerHeight * 0.01)

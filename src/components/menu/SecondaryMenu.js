@@ -14,7 +14,6 @@ const SecondaryMenu = () => {
   return (
     <ul className="secondery-menu px-0">
       {dataSecondaryMenu.map(({ title, to, reloadDocument }, index) => {
-        console.log('YES', index)
         if (title === 'Kontakt') {
           return (
             <li key={index}>

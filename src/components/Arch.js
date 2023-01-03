@@ -46,8 +46,6 @@ const Arch = ({ color = '#b5d6ff', menuStatus, wireframe, ...props }) => {
   acrhTextures.roughnessMap.repeat.x = textWrapper
   acrhTextures.roughnessMap.repeat.y = textWrapper
 
-  console.log('HELLO', nodes.Arch.geometry)
-
   useEffect(() => {
     api.start({ color })
   }, [color, api])
@@ -63,23 +61,11 @@ const Arch = ({ color = '#b5d6ff', menuStatus, wireframe, ...props }) => {
     }
   })
 
-  // const wireColor = () => {
-  //   if (menuStatus === "open") {
-  //     color = "#FFFFFF";
-  //   } else {
-  //     color = styles.color;
-  //   }
-  // };
-
-  console.log('menuStatus', menuStatus)
-
   useFrame(() => {
     if (menuStatus === 'open') {
       meshRef.current.rotation.y += 0.001
     }
   })
-
-  console.log('color', color)
 
   return (
     <group {...props} dispose={null}>

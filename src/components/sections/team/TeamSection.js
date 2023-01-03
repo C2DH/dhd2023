@@ -7,8 +7,6 @@ import { KomiteeAndTeamRoute } from '../../../constants'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
-console.log('StaticPageLoader XXX', TeamRoute.contentUrl)
-
 const TeamSection = () => {
   return (
     <section id="section-team" className="view-conference flex-center">

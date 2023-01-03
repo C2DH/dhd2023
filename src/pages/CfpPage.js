@@ -32,8 +32,6 @@ const CfpPage = ({ data }) => {
     return <div className="CfpPage" />
   }
 
-  console.log('Dropdown availableHeight', bbox.height)
-
   const title = data ? data.title.rendered : ''
   const content = data ? String(data.content.rendered) : ''
 

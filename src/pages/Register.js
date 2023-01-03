@@ -4,7 +4,6 @@ import ButtonDhd from '../components/ui/ButtonDhd'
 import { ProgrammubersichtRoute } from '../constants'
 
 const Register = ({ data }) => {
-  console.log('Register', data)
   if (!data) {
     return <div className="Register" />
   }

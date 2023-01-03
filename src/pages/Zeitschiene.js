@@ -2,7 +2,6 @@ import { Col, Container, Row } from 'react-bootstrap'
 import './Page.scss'
 
 const Zeitschiene = ({ data }) => {
-  // console.log('[XXXXXXXXXX]', data)
   if (!data) {
     return <div className="Zeitschiene" />
   }

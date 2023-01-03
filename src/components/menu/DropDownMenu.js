@@ -20,8 +20,6 @@ const DropDownMenu = ({ dropdown }) => {
     },
   })
 
-  console.log('dropdown-menu', dropdown, bbox.height)
-
   return (
     <ul className="dropdown-menu">
       <animated.div style={{ ...slideInStyles, overflow: 'hidden' }}>

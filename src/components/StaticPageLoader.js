@@ -47,7 +47,7 @@ const StaticPageLoader = ({
       })
     }
   }, [apiAnimatedLine, status])
-  console.debug('[StaticPageLoader] status:', status, url)
+
   return (
     <>
       <div

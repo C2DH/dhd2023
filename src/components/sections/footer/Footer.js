@@ -16,8 +16,6 @@ const Footer = () => {
 
   const [{ isIntersecting = false } = {}, ref] = useOnScreen()
   useLayoutEffect(() => {
-    console.debug('[Footer] isIntersecting:', isIntersecting)
-
     if (ref.current && isIntersecting) {
       setCurrentStepIndex(5)
     } else {

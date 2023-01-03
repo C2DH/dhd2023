@@ -33,7 +33,6 @@ const SimpleImageGrid = ({ data }) => {
 }
 
 const KomiteeAndTeam = ({ data }) => {
-  console.log('[XXXXXXXXXX]', data)
   if (!data) {
     return null
   }

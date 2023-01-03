@@ -23,7 +23,6 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
   }))
 
   useEffect(() => {
-    // console.debug("[MenuFullScreen] @useEffect menuStatus:", width);
     api.start({
       x: menuStatus === MenuClosed ? width : 0,
     })

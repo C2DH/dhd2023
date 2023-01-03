@@ -24,10 +24,9 @@ function scrollToSection(section) {
   const el = document.getElementById(`section-${section}`)
 
   if (el) {
-    console.debug('[Home] scrollToSection:', section, el)
     el.scrollIntoView()
   } else {
-    console.debug('[Home] scrollToSection not working:', section, el)
+    // console.debug('[Home] scrollToSection not working:', section, el)
   }
 }
 
@@ -43,14 +42,11 @@ const Home = ({ hideWhenPathIs = [], availableWidth, availableHeight }) => {
   }
   //Scroll to section
   useLayoutEffect(() => {
-    console.debug('[Home] @useEffect location.pathname:', pathname)
     if (timeoutIdRef.current) {
       clearTimeout(timeoutIdRef.current)
     }
     if (['/team'].includes(pathname)) {
-      console.debug('[Home] scrollToSection:', pathname.substring(1))
       timeoutIdRef.current = setTimeout(() => scrollToSection(pathname.substring(1)), 1)
-      // document.elementFromPoint. section-team
     } else {
       window.scrollTo(0, 0)
     }

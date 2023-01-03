@@ -11,9 +11,7 @@ const { Container, Row, Col } = require('react-bootstrap')
 const ClosingKeynote = ({ data }) => {
   const location = useLocation()
   const [{ isIntersecting = false } = {}, ref] = useOnScreen()
-  useLayoutEffect(() => {
-    console.debug('[ClosingKeynote] isIntersecting:', isIntersecting)
-  }, [isIntersecting])
+  useLayoutEffect(() => {}, [isIntersecting])
 
   if (!data) {
     return null
