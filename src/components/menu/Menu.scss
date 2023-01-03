@@ -21,6 +21,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.9rem;
+  white-space: nowrap;
   // cursor: pointer;
 }
 
@@ -74,6 +75,14 @@
     &::before {
       transform: scaleX(100%);
     }
+    color: var(--white);
+  }
+}
+
+.menu-wrapper.active .programm-events-wrapper .programm-events {
+  color: var(--white);
+  &::before {
+    transform: scaleX(100%);
   }
 }
 
@@ -81,7 +90,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 925px) {
+@media (max-width: 990px) {
   .menu-fixed ~ .menu-wrapper {
     display: none;
   }

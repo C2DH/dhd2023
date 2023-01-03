@@ -1,5 +1,5 @@
 import './Menu.scss'
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useState, useEffect } from 'react'
 import { Plus, Minus } from 'lucide-react'
 import DropDownMenu from './DropDownMenu'
 import { MenuOpen, MenuClosed, useMenuStore } from '../../store'
@@ -11,6 +11,10 @@ const Menu = () => {
   const { pathname } = useLocation()
   const menuStatus = useMenuStore((state) => state.menuStatus)
   const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
+  useEffect(() => {
+    setActive()
+  }, [pathname])
+
   console.log('menustus', MenuOpen)
   const toggleMenu = () => {
     setDropdown(!dropdown)
@@ -30,6 +34,17 @@ const Menu = () => {
     }
   }
 
+  const setActive = () => {
+    const elem = document.getElementById('top-menu')
+    if (document.querySelectorAll('#top-menu .dropdown-wrapper .active').length > 0) {
+      elem.classList.add('active')
+      console.log(elem, '#main has .myclass inside')
+    } else {
+      elem.classList.remove('active')
+      console.log('#main has no .myclass inside')
+    }
+  }
+
   useLayoutEffect(() => {
     // console.debug(
     //   '[Menu] @useLayoutEffect \n - pathname:',
@@ -44,8 +59,19 @@ const Menu = () => {
   }, [pathname])
 
   return (
-    <nav className="menu-wrapper">
+    <nav id="top-menu" className="menu-wrapper">
       <ul className={menuStatus === MenuOpen ? 'd-none' : 'z-index-4'}>
+        <li>
+          <NavLink
+            to="/"
+            tabIndex={1}
+            onClick={() => {
+              menuClickEvent()
+            }}
+          >
+            Home
+          </NavLink>
+        </li>
         <li
           className={dropdown === false ? `active` : null}
           onClick={toggleMenu}

@@ -22,10 +22,15 @@
     align-items: center;
     position: absolute;
     bottom: -19px;
-    background-color: seashell;
+    background-color: var(--black);
     transform: scale(0.7);
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 1rem;
     font-weight: 700;
+    color: aquamarine;
+    border-radius: 2rem;
+    p {
+      color: aquamarine;
+    }
     i {
       display: inline-flex;
       align-content: center;

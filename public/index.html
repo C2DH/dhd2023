@@ -57,6 +57,11 @@
     -->
     <title>DHd2023</title>
     <style>
+      #root:has(.App) ~ #Loading {
+        transform: scale(2);
+        animation: hideLoading 1s ease-out forwards;
+        opacity: 0;
+      }
       #Loading {
         pointer-events: none;
         background-color: var(--primary);

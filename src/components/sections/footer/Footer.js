@@ -5,6 +5,7 @@ import MenuFooter from '../../menu/MenuFooter'
 import { useLocation } from 'react-router-dom'
 import ButtonDhd from '../../ui/ButtonDhd.js'
 import { LocationRoute } from '../../../constants'
+import GoUpButton from '../../ui/GoUpButton'
 import './Footer.scss'
 
 const { Container, Row, Col } = require('react-bootstrap')
@@ -28,7 +29,7 @@ const Footer = () => {
   }, [isIntersecting, pathname])
   return (
     <footer id="section-contact" className="footer flex-center">
-      <div className="footer-content-wrapper flex-grow-1" ref={ref}>
+      <div className="footer-content-wrapper flex-grow-1 d-flex align-item-center" ref={ref}>
         <Container className="contact mb-30">
           <Row>
             <Col sm={12} md={6}>
@@ -52,20 +53,7 @@ const Footer = () => {
             </Col>
           </Row>
         </Container>
-        {/* <Container className="logos d-flex flex-wrap justify-content-center mb-15">
-          <i>
-            <UniTrierLogo />
-          </i>
-          <i>
-            <UniLogos />
-          </i>
-          <i>
-            <KompetenzzentrumLogo />
-          </i>
-          <i>
-            <CultureAndComputationLogo />
-          </i>
-        </Container> */}
+        <GoUpButton />
       </div>
       <Container className="mt-4">
         <Row>

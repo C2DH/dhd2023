@@ -7,7 +7,6 @@ import './Background.css'
 const Background = () => {
   const currentStepIndex = useMenuStore((state) => state.currentStepIndex)
   const location = useLocation()
-  // const [locationState, location] = useState(true)
 
   let classColor = 'bg-light'
 
@@ -16,8 +15,6 @@ const Background = () => {
       return location.pathname === dataLocation.location + '||'
     })
   }
-
-  // console.log('getLocation', getLocation)
 
   if (getLocation) {
     if ([0, 2].includes(currentStepIndex)) {
@@ -33,14 +30,7 @@ const Background = () => {
     classColor = 'bg-light'
   }
 
-  // console.debug('[Background] classColor:', classColor)
-
-  return (
-    <div
-      className={`Background position-fixed w-100 h-100 ${classColor}`}
-      // style={{ backgroundColor: 'red' }}
-    />
-  )
+  return <div className={`Background position-fixed w-100 h-100 ${classColor}`} />
 }
 
 export default Background

@@ -18,4 +18,8 @@ footer {
   .contact {
     margin-bottom: 35vh;
   }
+  .footer-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -1,0 +1,26 @@
+.GoUpButton {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+  i {
+    position: relative;
+    width: auto;
+    margin: 0;
+    animation: arrowAnimation 2s ease-in-out infinite both;
+  }
+
+  @keyframes arrowAnimation {
+    0% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(-5px);
+    }
+  }
+}
