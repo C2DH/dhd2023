@@ -36,7 +36,7 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
           <Row>
             <Col lg={7} md={12}>
               <div className="full-screen-menu-wrapper">
-                <Menu />
+                <Menu classMenu={'fs'} />
               </div>
             </Col>
             <Col lg={5} md={12}>

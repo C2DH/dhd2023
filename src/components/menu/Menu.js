@@ -13,7 +13,7 @@ const Menu = () => {
   const setMenuStatus = useMenuStore((state) => state.setMenuStatus)
   useEffect(() => {
     setActive()
-  }, [pathname])
+  }, [pathname, menuStatus])
 
   console.log('menustus', MenuOpen)
   const toggleMenu = () => {
@@ -36,7 +36,7 @@ const Menu = () => {
 
   const setActive = () => {
     const elem = document.getElementById('top-menu')
-    if (document.querySelectorAll('#top-menu .dropdown-wrapper .active').length > 0) {
+    if (document.querySelectorAll('#top-menu .programm-events-wrapper .active').length > 0) {
       elem.classList.add('active')
       console.log(elem, '#main has .myclass inside')
     } else {
