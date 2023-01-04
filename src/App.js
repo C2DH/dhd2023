@@ -46,7 +46,7 @@ const Page = React.lazy(() => import('./pages/Page'))
 const Home = React.lazy(() => import('./pages/Home'))
 
 function App() {
-  const { width, height } = useCurrentWindowDimensions(isMobile)
+  const { width, height } = useCurrentWindowDimensions(isMobile, 'app')
   return (
     <div className="App">
       {/* <React.Suspense> */}
