@@ -83,7 +83,10 @@ function App() {
         />
       ) : null}
       <QueryClientProvider client={queryClient}>
-        <Background></Background>
+        <Background
+          availableWidth={width}
+          availableHeight={isMobile ? height * 1.1 : height}
+        ></Background>
         <main style={{ minHeight: height * 1.5 }}>
           <Header></Header>
           <MenuFullScreen availableWidth={width} availableHeight={height} />
@@ -178,7 +181,7 @@ function App() {
             />
           </Routes>
         </main>
-        <ThreeJsBgArch availableWidth={width} availableHeight={height} />
+        <ThreeJsBgArch availableWidth={width} availableHeight={isMobile ? height * 1.1 : height} />
         <Footer />
         <ScrollToTop />
       </QueryClientProvider>
