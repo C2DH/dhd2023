@@ -53,6 +53,25 @@
   margin: 0;
 }
 
+.intro h1 {
+  // margin-top: 2rem;
+  position: relative;
+  b {
+    font-size: min(11vw, 5.5rem);
+    opacity: 0.9;
+    font-weight: 500;
+  }
+  & > span {
+    position: relative;
+    top: 0.8rem;
+    font-size: min(5.5vw, 2rem);
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: none;
+    z-index: 1;
+  }
+}
+
 @media (max-width: 540px) {
   .date-of-conference-wrapper .box {
     padding: 1rem 1.7rem;
@@ -63,5 +82,8 @@
   }
   .date-of-conference-wrapper .box.location {
     margin-right: 0;
+  }
+  .intro h1 > span {
+    top: 0.5rem;
   }
 }
