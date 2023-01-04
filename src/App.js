@@ -53,33 +53,19 @@ function App() {
       {!isMobile ? (
         <AnimatedCursor
           color="#fff"
-          innerSize={8}
+          // innerSize={8}
           outerSize={35}
-          innerScale={1.5}
-          outerScale={2}
+          // innerScale={1.5}
+          outerScale={1.5}
           hasBlendMode={true}
           outerAlpha={0}
           outerStyle={{
-            border: '1px solid var(--white)',
-            mixBlendMode: 'exclusion',
+            backgroundColor: 'var(--primary)',
+            mixBlendMode: 'screen',
           }}
           innerStyle={{
-            backgroundColor: 'var(--white)',
-            mixBlendMode: 'exclusion',
+            diplay: 'none',
           }}
-          clickables={[
-            'a',
-            'input[type="text"]',
-            'input[type="email"]',
-            'input[type="number"]',
-            'input[type="submit"]',
-            'input[type="image"]',
-            'label[for]',
-            'select',
-            'textarea',
-            'button',
-            '.link',
-          ]}
         />
       ) : null}
       <QueryClientProvider client={queryClient}>
