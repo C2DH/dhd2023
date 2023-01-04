@@ -3,7 +3,6 @@ import './MenuFullScreen.css'
 import { MenuClosed, useMenuStore } from '../../store'
 import { a, useSpring } from 'react-spring'
 import { useEffect } from 'react'
-import { useCurrentWindowDimensions } from '../../hooks/viewport'
 import Menu from '../menu/Menu.js'
 import Arch from '../Arch.js'
 import { Canvas } from '@react-three/fiber'
@@ -17,16 +16,15 @@ const MenuFullScreen = ({ isMobile, availableWidth, availableHeight }) => {
   const menuStatus = useMenuStore((state) => state.menuStatus)
 
   //MENU ANIMATION
-  const { width } = useCurrentWindowDimensions(isMobile)
   const [styles, api] = useSpring(() => ({
-    x: width,
+    x: availableWidth,
   }))
 
   useEffect(() => {
     api.start({
-      x: menuStatus === MenuClosed ? width : 0,
+      x: menuStatus === MenuClosed ? availableWidth : 0,
     })
-  }, [menuStatus, api, width])
+  }, [menuStatus, api, availableWidth])
 
   return (
     <a.div style={styles} className="menu-full-screen p-4 flex-center">

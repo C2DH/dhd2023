@@ -79,7 +79,7 @@ const SceneSteps = [
   },
 ]
 
-const ThreeJsBgArch = () => {
+const ThreeJsBgArch = ({ availableHeight, availableWidth }) => {
   const currentStepIndex = useMenuStore((state) => state.currentStepIndex)
   const scene = SceneSteps[currentStepIndex ?? 0]
   const SceneStepsValidation = currentStepIndex ?? 0
@@ -103,8 +103,8 @@ const ThreeJsBgArch = () => {
   return (
     <div
       id="canvas-container-menu-fullscreen"
-      style={{ zIndex: 0 }}
-      className="position-fixed top-0 bottom-0 w-100 h-100"
+      className="position-fixed top-0 bottom-0"
+      style={{ zIndex: 0, width: availableWidth, height: availableHeight }}
     >
       <Suspense>
         <Canvas flat shadows camera={{ position: [-4, 1.5, 8], fov: 25 }}>

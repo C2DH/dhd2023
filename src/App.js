@@ -46,7 +46,7 @@ const Page = React.lazy(() => import('./pages/Page'))
 const Home = React.lazy(() => import('./pages/Home'))
 
 function App() {
-  const { width, height } = useCurrentWindowDimensions(isMobile)
+  const { width, height } = useCurrentWindowDimensions(isMobile, 'app')
   return (
     <div className="App">
       {/* <React.Suspense> */}
@@ -69,7 +69,10 @@ function App() {
         />
       ) : null}
       <QueryClientProvider client={queryClient}>
-        <Background></Background>
+        <Background
+          availableWidth={width}
+          availableHeight={isMobile ? height * 1.1 : height}
+        ></Background>
         <main style={{ minHeight: height * 1.5 }}>
           <Header></Header>
           <MenuFullScreen availableWidth={width} availableHeight={height} />
@@ -164,7 +167,7 @@ function App() {
             />
           </Routes>
         </main>
-        <ThreeJsBgArch availableWidth={width} availableHeight={height} />
+        <ThreeJsBgArch availableWidth={width} availableHeight={isMobile ? height * 1.1 : height} />
         <Footer />
         <ScrollToTop />
       </QueryClientProvider>

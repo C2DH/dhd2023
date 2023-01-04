@@ -42,12 +42,6 @@ html {
   font-variation-settings: 'ital' 10, 'wdth' 120;
 }
 
-#root:has(.App) ~ #Loading {
-  transform: scale(2);
-  animation: hideLoading 1s ease-out forwards;
-  opacity: 0;
-}
-
 body {
   cursor: default !important;
   margin: 0;

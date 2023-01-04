@@ -16,7 +16,7 @@ const getWindowDimensions = () => ({
   https://dev.to/vitaliemaldur/resize-event-listener-using-react-hooks-1k0c
   consulted on 2021-02-26
 */
-export const useCurrentWindowDimensions = (isMobile) => {
+export const useCurrentWindowDimensions = (isMobile, namespace = '') => {
   let [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
 
   useEffect(() => {
@@ -25,13 +25,24 @@ export const useCurrentWindowDimensions = (isMobile) => {
       clearTimeout(timeoutId)
       const dims = getWindowDimensions()
       if (isMobile) {
-        console.debug('[useCurrentWindowDimensions] in mobile.', dims.width, windowDimensions.width)
+        console.debug(
+          '[useCurrentWindowDimensions] in mobile.',
+          dims.width,
+          windowDimensions.width,
+          '\n - namespace:',
+          namespace,
+        )
 
         if (dims.width !== windowDimensions.width) {
           setWindowDimensions(dims)
         }
       } else {
-        console.debug('[useCurrentWindowDimensions] Dimension changed to', dims, isMobile)
+        console.debug(
+          '[useCurrentWindowDimensions] Dimension changed to',
+          dims,
+          isMobile,
+          namespace,
+        )
         timeoutId = setTimeout(() => setWindowDimensions(dims), 150)
       }
       // console.info('setWindowDimensions', dims)
@@ -44,7 +55,7 @@ export const useCurrentWindowDimensions = (isMobile) => {
       clearTimeout(timeoutId)
       window.removeEventListener('resize', resizeListener)
     }
-  }, [isMobile, windowDimensions.width])
+  }, [isMobile, windowDimensions.width, namespace])
   return windowDimensions
 }
 

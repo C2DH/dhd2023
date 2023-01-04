@@ -4,7 +4,7 @@ import { useMenuStore } from '../store'
 import { dataLocation } from '../Data'
 import './Background.css'
 
-const Background = () => {
+const Background = ({ availableWidth, availableHeight }) => {
   const currentStepIndex = useMenuStore((state) => state.currentStepIndex)
   const location = useLocation()
 
@@ -30,7 +30,12 @@ const Background = () => {
     classColor = 'bg-light'
   }
 
-  return <div className={`Background position-fixed w-100 h-100 ${classColor}`} />
+  return (
+    <div
+      className={`Background position-fixed ${classColor}`}
+      style={{ width: availableWidth, height: availableHeight }}
+    />
+  )
 }
 
 export default Background

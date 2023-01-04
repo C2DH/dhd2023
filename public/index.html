@@ -20,7 +20,10 @@
     <meta name="apple-mobile-web-app-title" content="My App" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, interactive-widget=overlays-content"
+    />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="DHd2023 Luxemburg / Trier - Open Humanities Open Culture" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
@@ -60,11 +63,6 @@
     -->
     <title>DHd2023</title>
     <style>
-      #root:has(.App) ~ #Loading {
-        transform: scale(2);
-        animation: hideLoading 1s ease-out forwards;
-        opacity: 0;
-      }
       #Loading {
         pointer-events: none;
         background-color: var(--primary);
@@ -80,6 +78,14 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        will-change: transform, opacity;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        transition-delay: 0.2s;
+        opacity: 1;
+      }
+      #Loading.success {
+        transform: scale(2);
+        opacity: 0;
       }
       #Loading span {
         width: 156px;
@@ -137,30 +143,6 @@
       }
       body {
         background-color: var(--primary);
-      }
-
-      #Loading {
-        /* display: block; */
-        transform: scale(1);
-        /* transition: all 1s ease-out; */
-        /* overflow: hidden; */
-      }
-
-      #root:has(.App) ~ #Loading {
-        transform: scale(2);
-        animation: hideLoading 1s ease-out forwards;
-        opacity: 0;
-      }
-
-      @keyframes hideLoading {
-        0% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(2);
-          opacity: 0;
-        }
       }
 
       :root {
