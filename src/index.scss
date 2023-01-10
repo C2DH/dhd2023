@@ -113,8 +113,8 @@ h2 {
 }
 
 .bg-dark ~ main h2,
-.bg-dark ~ main h3:not(.blue),
-.bg-dark ~ main h4:not(.blue),
+.bg-dark ~ main h3,
+.bg-dark ~ main h4,
 .bg-dark ~ main h5,
 .bg-dark ~ main h6,
 .bg-dark ~ main p,
@@ -130,7 +130,7 @@ h2 {
   font-weight: 700;
 }
 
-a:not(.logo, .btn) {
+a {
   position: relative;
   display: inline-flex;
   color: var(--black);
@@ -165,7 +165,7 @@ a:not(.logo, .btn) {
   }
 }
 
-footer a:not(.logo, .btn) {
+footer a {
   &::before {
     background-color: var(--black);
   }

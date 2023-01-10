@@ -45,8 +45,8 @@
   }
 }
 
-.Location a:not(.btn),
-.Programmubersicht a:not(.btn) {
+.Location nav a,
+.Programmubersicht nav a {
   color: var(--primary);
   font-weight: 600;
   &:hover {
@@ -150,7 +150,7 @@
   h5,
   hr,
   div,
-  a:not(.btn) {
+  a {
     color: var(--white);
     &::before {
       background-color: var(--black);
