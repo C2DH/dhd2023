@@ -31,6 +31,12 @@
   align-content: center;
 }
 
+.logo {
+  &:hover::before {
+    content: none;
+  }
+}
+
 @media (max-width: 720px) {
   .dhd-logo-wrapper {
     width: 8rem;

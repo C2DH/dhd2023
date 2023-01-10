@@ -12,9 +12,16 @@ footer .footer-menu-wrapper {
   margin: 0;
 }
 
-.footer-menu-wrapper ul li a {
+footer .footer-menu-wrapper ul {
   color: var(--black);
   font-size: 0.8rem;
+  li a {
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--primary);
+    }
+  }
 }
 
 .footer-line {

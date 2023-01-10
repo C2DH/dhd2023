@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import './MenuFullScreen.css'
+import './MenuFullScreen.scss'
 import { MenuClosed, useMenuStore } from '../../store'
 import { a, useSpring } from 'react-spring'
 import { useEffect } from 'react'

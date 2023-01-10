@@ -1,6 +1,6 @@
 $border: 3px solid var(--white);
 
-.btn:not(.btn-none) {
+.btn {
   text-decoration: none;
   border-radius: 0 !important;
   padding: 1rem 2rem !important;
@@ -20,38 +20,40 @@ $border: 3px solid var(--white);
   }
 }
 
-.btn:not(.btn-none) {
+.btn {
   &::after {
     content: '';
-    box-sizing: content-box;
+    box-sizing: border-box;
     position: absolute;
-    left: -3px;
-    bottom: -3px;
-    width: calc(100% + 6px);
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
     height: 100%;
     display: block;
-    border-top: $border;
-    border-bottom: $border;
+    border-top: 3px solid var(--white);
+    border-bottom: 3px solid var(--white);
     transform-origin: center;
     transform: scaleX(0%);
     transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 2;
+    background: transparent !important;
   }
   &::before {
     content: '';
-    box-sizing: content-box;
+    box-sizing: border-box;
     position: absolute;
-    top: -3px;
-    right: -3px;
+    top: 0;
+    left: 0px;
     width: 100%;
-    height: calc(100% + 6px);
+    height: 100%;
     display: block;
-    border-left: $border;
-    border-right: $border;
+    border-left: 3px solid var(--white);
+    border-right: 3px solid var(--white);
     transform-origin: center;
     transform: scaleY(0%);
     transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 2;
+    background: transparent !important;
   }
 }
 
@@ -68,14 +70,16 @@ $border: 3px solid var(--white);
 .bg-blue ~ main .btn:hover::after,
 .bg-blue ~ main .btn:focus::after,
 .bg-blue ~ footer .btn:hover::after,
-.bg-blue ~ footer .btn:focus::after {
-  transform: scaleX(0%);
+.bg-blue ~ footer .btn:focus::after,
+.btn-secondary:hover::after {
+  transform: scaleX(0%) !important;
 }
 .bg-blue ~ main .btn:hover::before,
 .bg-blue ~ main .btn:focus::before,
 .bg-blue ~ footer .btn:hover::before,
-.bg-blue ~ footer .btn:focus::before {
-  transform: scaleY(0%);
+.bg-blue ~ footer .btn:focus::before,
+.btn-secondary:hover::before {
+  transform: scaleY(0%) !important;
 }
 
 .btn:hover::after,
@@ -95,8 +99,19 @@ $border: 3px solid var(--white);
 
 .btn-secondary {
   background-color: transparent !important;
-  border: 3px var(--primary) solid !important;
   color: var(--primary);
+  &::before {
+    border-left: 3px solid var(--primary) !important;
+    border-right: 3px solid var(--primary) !important;
+    background: transparent !important;
+    transform: scaleY(100%);
+  }
+  &::after {
+    border-top: 3px solid var(--primary) !important;
+    border-bottom: 3px solid var(--primary) !important;
+    background: transparent !important;
+    transform: scaleX(100%);
+  }
 }
 
 .btn svg {
@@ -117,15 +132,22 @@ footer .btn.btn-secondary,
   &::before {
     border-left: 3px solid var(--black) !important;
     border-right: 3px solid var(--black) !important;
+    background: transparent !important;
   }
   &::after {
     border-top: 3px solid var(--black) !important;
     border-bottom: 3px solid var(--black) !important;
+    background: transparent !important;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--white);
   }
 }
 
 @media (max-width: 540px) {
-  .btn:not(.btn-none) {
+  .btn {
     width: 100%;
     justify-content: center;
   }

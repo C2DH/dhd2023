@@ -54,7 +54,7 @@ a.active b {
   pointer-events: none;
 }
 
-.bg-blue ~ main .PageMenu a:not(.logo, .btn).active::before {
+.bg-blue ~ main .PageMenu a.active::before {
   background-color: var(--primary) !important;
 }
 

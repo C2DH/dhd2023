@@ -3,7 +3,7 @@ import SandwichMenuIcon from './SandwichMenuIcon'
 import Dhd2023Logo from '../svg/dhd2023Logo'
 import { MenuClosed, MenuOpen, useMenuStore } from '../../store'
 import { Link } from 'react-router-dom'
-import './MenuFixed.css'
+import './MenuFixed.scss'
 
 const MenuFixed = ({ currentStepIndex }) => {
   const menuStatus = useMenuStore((state) => state.menuStatus)
