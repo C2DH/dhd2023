@@ -32,7 +32,8 @@
 }
 
 .logo {
-  &:hover::before {
+  &:hover::before,
+  &:focus::before {
     content: none;
   }
 }
