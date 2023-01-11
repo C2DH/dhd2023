@@ -2,11 +2,12 @@ const UniLogos = () => {
   return (
     <div className="u-lux-logo-wrapper">
       <svg
-        id="Layer_1"
-        data-name="Layer 1"
+        id="c2dh"
+        data-name="University of Luxembourg | Centre for Contemporary and Digital History C²DH"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 185.35 57.08"
       >
+        <title>University of Luxembourg | Centre for Contemporary and Digital History C²DH</title>
         <rect x="159.5" y="17.91" width="5.49" height="5.49" fill="#0098c5" />
         <rect x="168.42" y="26.48" width="5.49" height="5.49" fill="#ff140b" />
         <rect x="163.07" y="9.9" width="5.49" height="5.49" fill="#29bdef" />

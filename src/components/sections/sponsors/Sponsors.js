@@ -5,6 +5,7 @@ import CultureAndComputationLogo from '../../svg/CultureAndComputationLabLogo'
 import KompetenzzentrumLogo from '../../svg/KompetenzzentrumLogo.js'
 import UniTrierLogo from '../../svg/UniTrierLogo.js'
 import UniLogos from '../../svg/UniLogo.js'
+import DigitalHumanitiesImDeutschsprachigenRaumLogo from '../../svg/DigitalHumanitiesImDeutschsprachigenRaumLogo'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -57,6 +58,11 @@ const Sponsors = () => {
           <Col sm={6} lg={4}>
             <i className="w-100 m-0 p-sm-3 p-lg-3 p-xxl-5 p-5">
               <CultureAndComputationLogo />
+            </i>
+          </Col>
+          <Col sm={6} lg={4}>
+            <i className="w-100 m-0 p-sm-3 p-lg-3 p-xxl-5 p-5">
+              <DigitalHumanitiesImDeutschsprachigenRaumLogo />
             </i>
           </Col>
         </Row>

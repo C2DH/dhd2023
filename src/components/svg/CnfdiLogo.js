@@ -8,8 +8,10 @@ const CnfdiLogo = () => {
         x="0px"
         y="0px"
         viewBox="0 0 763 372"
+        data-name="CnFdI national Forschungsdaten Infrastruktur for Culture"
         enableBackground="new 0 0 763 372"
       >
+        <title>CnFdI national Forschungsdaten Infrastruktur for Culture</title>
         <g id="Dyptich_B_W">
           <path
             fill="#1D1D1B"

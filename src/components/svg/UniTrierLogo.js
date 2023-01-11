@@ -6,8 +6,10 @@ const UniTrierLogo = () => {
         version="1.1"
         x="0px"
         y="0px"
+        data-name="Logo der Universität Trier"
         viewBox="0 0 1851 466.6"
       >
+        <title>Logo der Universität Trier</title>
         <g>
           <g>
             <g>

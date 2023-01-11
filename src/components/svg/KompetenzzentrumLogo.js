@@ -7,8 +7,10 @@ const KompetenzzentrumLogo = () => {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
+        data-name="Kompetenzzentrum"
         viewBox="0 0 310.8 69.3"
       >
+        <title>Kompetenzzentrum Logotype</title>
         <g>
           <path
             fill="#C6C7C8"

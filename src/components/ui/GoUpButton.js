@@ -13,7 +13,7 @@ const GoUpButton = () => {
       <i>
         <ArrowUp />
       </i>
-      <span>UP</span>
+      <span>TOP</span>
     </a>
   )
 }

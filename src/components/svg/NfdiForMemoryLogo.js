@@ -8,8 +8,10 @@ const NfdiForMemoryLogo = () => {
         x="0px"
         y="0px"
         viewBox="0 0 342.9 116.1"
+        data-name="NFDI for memory logo"
         enableBackground="new 0 0 342.9 116.1"
       >
+        <title>NFDI for memory logo</title>
         <path
           fill="#502C1E"
           d="M4.4,106.3h2.9V78.4h10.7v-2.7H7.4v-2.9c0-5.2,2-7.7,6.2-7.7c1.6,0,2.8,0.2,4.6,0.8v-2.8

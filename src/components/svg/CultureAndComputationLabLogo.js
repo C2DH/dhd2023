@@ -7,8 +7,10 @@ const CultureAndComputationLogo = () => {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
+        data-name="Culture & Computation Logo"
         viewBox="0 0 1087.2 321.4"
       >
+        <title>Culture & Computation Logo</title>
         <path
           fill="#333333"
           d="M657.7,28.9h6.6v36c0,10,1.3,19.1,13.8,19.1c14,0,23.3-12.1,23.3-25.7V28.9h6.7v60h-6.5l-0.1-10
