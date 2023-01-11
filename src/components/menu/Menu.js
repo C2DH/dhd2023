@@ -55,7 +55,6 @@ const Menu = () => {
         <li>
           <NavLink
             to="/"
-            tabIndex={1}
             onClick={() => {
               menuClickEvent()
             }}
@@ -74,14 +73,12 @@ const Menu = () => {
               Programm & Events
               <i>{dropdown === false ? <Minus className="icon" /> : <Plus className="icon" />}</i>
             </div>
-
             <DropDownMenu dropdown={dropdown} menuStatus={menuStatus} />
           </div>
         </li>
         <li>
           <NavLink
             to={KomiteeAndTeamRoute.to}
-            tabIndex={1}
             onClick={() => {
               menuClickEvent()
             }}
@@ -92,7 +89,6 @@ const Menu = () => {
         <li>
           <NavLink
             to={CfpRoute.to}
-            tabIndex={1}
             onClick={() => {
               menuClickEvent()
             }}

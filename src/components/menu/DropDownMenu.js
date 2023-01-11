@@ -25,50 +25,54 @@ const DropDownMenu = ({ dropdown }) => {
       <animated.div style={{ ...slideInStyles, overflow: 'hidden' }}>
         <div className="d-flex dropdown-wrapper" ref={ref}>
           <div className="dropdown-menu-row-one">
-            {dataDropdown.slice(0, 4).map(({ title, to, reloadDocument }, index) => {
-              return (
-                <li key={index}>
-                  {reloadDocument ? (
-                    <a href={to} target="_blank" rel="noreferrer">
-                      {title}
-                      <i>
-                        <ArrowRight />
-                      </i>
-                    </a>
-                  ) : (
-                    <NavLink to={to}>
-                      {title}{' '}
-                      <i>
-                        <ArrowRight />
-                      </i>
-                    </NavLink>
-                  )}
-                </li>
-              )
-            })}
+            <ul>
+              {dataDropdown.slice(0, 4).map(({ title, to, reloadDocument }, index) => {
+                return (
+                  <li key={index}>
+                    {reloadDocument ? (
+                      <a href={to} target="_blank" rel="noreferrer">
+                        {title}
+                        <i>
+                          <ArrowRight />
+                        </i>
+                      </a>
+                    ) : (
+                      <NavLink to={to}>
+                        {title}{' '}
+                        <i>
+                          <ArrowRight />
+                        </i>
+                      </NavLink>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
           </div>
           <div className="dropdown-menu-row-two">
-            {dataDropdown.slice(4, 8).map(({ title, to, reloadDocument }, index) => {
-              return (
-                <li key={index}>
-                  {reloadDocument ? (
-                    <a href={to} target="_blank" rel="noreferrer">
-                      {title}
-                      <i>
-                        <ArrowRight />
-                      </i>
-                    </a>
-                  ) : (
-                    <NavLink to={to}>
-                      {title}{' '}
-                      <i>
-                        <ArrowRight />
-                      </i>
-                    </NavLink>
-                  )}
-                </li>
-              )
-            })}
+            <ul>
+              {dataDropdown.slice(4, 8).map(({ title, to, reloadDocument }, index) => {
+                return (
+                  <li key={index}>
+                    {reloadDocument ? (
+                      <a href={to} target="_blank" rel="noreferrer">
+                        {title}
+                        <i>
+                          <ArrowRight />
+                        </i>
+                      </a>
+                    ) : (
+                      <NavLink to={to}>
+                        {title}{' '}
+                        <i>
+                          <ArrowRight />
+                        </i>
+                      </NavLink>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
           </div>
         </div>
       </animated.div>

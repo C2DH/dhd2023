@@ -20,7 +20,6 @@ const MenuFixed = ({ currentStepIndex }) => {
       <Link
         className="logo"
         to="/"
-        tabIndex={1}
         onClick={() => {
           menuClickEvent()
         }}

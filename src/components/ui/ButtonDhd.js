@@ -37,11 +37,7 @@ const ButtonDhd = ({
 
   if (to) {
     return (
-      <Link
-        className={`ButtonDhd btn btn-${variant} btn-lg  with-to ${className}`}
-        to={to}
-        tabIndex={1}
-      >
+      <Link className={`ButtonDhd btn btn-${variant} btn-lg  with-to ${className}`} to={to}>
         {title}
         {<Icon />}
       </Link>
