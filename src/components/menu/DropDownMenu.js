@@ -25,7 +25,7 @@ const DropDownMenu = ({ dropdown }) => {
       <animated.div style={{ ...slideInStyles, overflow: 'hidden' }}>
         <div className="d-flex dropdown-wrapper" ref={ref}>
           <div className="dropdown-menu-row-one">
-            <ul>
+            <ul className="p-0">
               {dataDropdown.slice(0, 4).map(({ title, to, reloadDocument }, index) => {
                 return (
                   <li key={index}>
@@ -50,7 +50,7 @@ const DropDownMenu = ({ dropdown }) => {
             </ul>
           </div>
           <div className="dropdown-menu-row-two">
-            <ul>
+            <ul className="p-0">
               {dataDropdown.slice(4, 8).map(({ title, to, reloadDocument }, index) => {
                 return (
                   <li key={index}>

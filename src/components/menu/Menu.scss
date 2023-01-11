@@ -9,27 +9,26 @@
   z-index: 4;
   margin-right: calc(var(--main-container-padding) + 4rem);
 }
-.menu-wrapper ul {
+.menu-wrapper > ul {
   display: flex;
   margin: 0;
   align-self: center;
 }
 
-.menu-wrapper ul li {
+.menu-wrapper > ul li {
   display: flex;
   margin: 0 1rem;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.9rem;
   white-space: nowrap;
-  // cursor: pointer;
 }
 
 .menu-wrapper > ul > li {
   padding-bottom: 0.7rem;
 }
 
-.menu-wrapper ul li .icon {
+.menu-wrapper > ul li .icon {
   transform: translateY(-1px);
   margin-left: 3px;
   width: 18px;
