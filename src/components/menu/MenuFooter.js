@@ -24,6 +24,8 @@ const MenuFooter = () => {
         })}
         <li className="ms-3">
           <a
+            aria-label="go to github repository for this version"
+            title="go to github repository for this version"
             href={`${process.env.REACT_APP_GITHUB_REPO}/commit/${process.env.REACT_APP_GIT_REVISION}`}
           >
             <Github size={12} />

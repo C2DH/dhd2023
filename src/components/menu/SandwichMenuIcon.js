@@ -23,7 +23,12 @@ const SandwichMenuIcon = ({ menuStatus, currentStepIndex }) => {
   }
 
   return (
-    <Button className="menu-icon-wrapper" variant="none">
+    <Button
+      className="menu-icon-wrapper"
+      variant="none"
+      aria-label="menu button"
+      title="menu button"
+    >
       <i className={`flex-center ${classColor}`}>
         <span></span>
         <span></span>
