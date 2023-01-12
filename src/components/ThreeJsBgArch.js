@@ -11,8 +11,8 @@ const SceneSteps = [
   {
     scale: 0.14,
     position: [1.6, -3.1],
-    positionTwo: [-100, 50, -100],
-    positionThree: [-100, 50, -100],
+    positionTwo: [-300, 50, -100],
+    positionThree: [-300, 50, -100],
     rotation: [0.02, -1.2, 0.04],
     color: '#d9ebfe',
     fog: ['#e5f4ff', -15, 40],

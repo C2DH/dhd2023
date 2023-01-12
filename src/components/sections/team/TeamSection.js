@@ -27,7 +27,7 @@ const TeamSection = () => {
         </Container>
         <Container>
           <Row>
-            <Col className=" col-7 align-self-start">
+            <Col className="align-self-start">
               <ButtonDhd
                 to={KomiteeAndTeamRoute.to}
                 className={'mt-4'}
