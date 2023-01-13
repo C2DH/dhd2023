@@ -83,7 +83,7 @@ const CfpPage = ({ data }) => {
               // ariaExpanded={open}
               className={'mt-4'}
               variant={'secondary'}
-              title={'Show more'}
+              title={isCollapsed === true ? 'Weniger anzeigen' : 'Mehr anzeigen'}
               iconType={isCollapsed === true ? 'Minus' : 'Plus'}
             />
           </Col>
