@@ -83,22 +83,28 @@ const ClosingKeynote = ({ data }) => {
             </>
           ) : null}
           {location.pathname === '/page/keynotes' ? (
-            <Row>
-              <Col className="col-12 col-lg-6 align-self-start">
-                <h4 className="my-4">
-                  <b dangerouslySetInnerHTML={{ __html: splitter[7] }}></b>
-                </h4>
-                <p dangerouslySetInnerHTML={{ __html: splitter[8] }}></p>
-                <h4 className="my-4">
-                  <b dangerouslySetInnerHTML={{ __html: splitter[9] }}></b>
-                </h4>
-                <p dangerouslySetInnerHTML={{ __html: splitter[(10, 11)] }}></p>
-              </Col>
-              <Col className="col-12 col-lg-6 mt-4 align-self-start pt-xs-0 pt-lg-5">
-                <p dangerouslySetInnerHTML={{ __html: splitter[12] }}></p>
-                <p dangerouslySetInnerHTML={{ __html: splitter[13] }}></p>
-              </Col>
-            </Row>
+            <>
+              <Row>
+                <Col className="col-12 col-lg-10 align-self-start">
+                  <h4 className="my-4">
+                    <b dangerouslySetInnerHTML={{ __html: splitter[7] }}></b>
+                  </h4>
+                  <p dangerouslySetInnerHTML={{ __html: splitter[8] }}></p>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-12 col-lg-6 align-self-start">
+                  <h4 className="my-4">
+                    <b dangerouslySetInnerHTML={{ __html: splitter[9] }}></b>
+                  </h4>
+                  <p dangerouslySetInnerHTML={{ __html: splitter[(10, 11)] }}></p>
+                  <p dangerouslySetInnerHTML={{ __html: splitter[12] }}></p>
+                </Col>
+                <Col className="col-12 col-lg-6 mt-4 align-self-start pt-xs-0 pt-lg-5">
+                  <p dangerouslySetInnerHTML={{ __html: splitter[13] }}></p>
+                </Col>
+              </Row>
+            </>
           ) : null}
         </Container>
       </div>

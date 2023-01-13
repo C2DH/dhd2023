@@ -54,7 +54,10 @@ const OpeningKeynote = ({ data }) => {
               <figure>
                 <img alt={splitter[1]} srcSet={srcset[1]} />
                 <figcaption className="figcaption">
-                  <h4 className="d-flex justify-content-end mb-3">{splitter[1]}</h4>
+                  <h4
+                    className="d-flex justify-content-end mb-3"
+                    dangerouslySetInnerHTML={{ __html: splitter[1] }}
+                  ></h4>
                 </figcaption>
               </figure>
             </Col>
@@ -76,23 +79,31 @@ const OpeningKeynote = ({ data }) => {
             </>
           ) : null}
           {location.pathname === '/page/keynotes' ? (
-            <Row>
-              <Col className="col-12 col-lg-6 align-self-start">
-                <h4 className="my-4">
-                  <b dangerouslySetInnerHTML={{ __html: splitter[7] }}></b>
-                </h4>
-                <p dangerouslySetInnerHTML={{ __html: splitter[8] }}></p>
-                <h4 className="my-4">
-                  <b dangerouslySetInnerHTML={{ __html: splitter[9] }}></b>
-                </h4>
-                <p dangerouslySetInnerHTML={{ __html: splitter[10] }}></p>
-              </Col>
-              <Col className="col-12 col-lg-6 mt-4 align-self-start">
-                <p dangerouslySetInnerHTML={{ __html: splitter[11] }}></p>
-                <p dangerouslySetInnerHTML={{ __html: splitter[12] }}></p>
-                <p dangerouslySetInnerHTML={{ __html: splitter[13] }}></p>
-              </Col>
-            </Row>
+            <>
+              <Row>
+                <Col className="col-12 col-lg-10 align-self-start">
+                  <h4 className="my-4">
+                    <b dangerouslySetInnerHTML={{ __html: splitter[7] }}></b>
+                  </h4>
+                  <p dangerouslySetInnerHTML={{ __html: splitter[8] }}></p>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-12 col-lg-6 mt-4 align-self-start">
+                  <h4 className="my-4">
+                    <b dangerouslySetInnerHTML={{ __html: splitter[9] }}></b>
+                  </h4>
+                  <p dangerouslySetInnerHTML={{ __html: splitter[10] }}></p>
+                </Col>
+                <Col className="col-12 col-lg-6 mt-4 align-self-start">
+                  <h4 className="my-4">
+                    <b dangerouslySetInnerHTML={{ __html: splitter[11] }}></b>
+                  </h4>
+                  <div dangerouslySetInnerHTML={{ __html: splitter[12] }}></div>
+                  <div dangerouslySetInnerHTML={{ __html: splitter[13] }}></div>
+                </Col>
+              </Row>
+            </>
           ) : null}
         </Container>
       </div>
