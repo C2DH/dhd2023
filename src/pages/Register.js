@@ -9,7 +9,7 @@ const Register = ({ data }) => {
   }
 
   const title = data ? data.title.rendered : ''
-  const content = data ? String(data.content.rendered) : ''
+  // const content = data ? String(data.content.rendered) : ''
 
   return (
     <div className="Register">
