@@ -13,7 +13,7 @@ const Register = ({ data }) => {
 
   return (
     <div className="Register">
-      <section className="d-flex mt-30">
+      <section className="d-flex mt-30 mb-15">
         <Container>
           <Row>
             <Col xs={12} md={{ span: 8 }}>
