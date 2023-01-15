@@ -197,6 +197,26 @@
   }
 }
 
+.Register .price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  span:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  span:nth-child(2) {
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+.Register hr {
+  margin: 0;
+}
+
 @media (max-width: 1200px) {
   .Programmubersicht h1 {
     font-size: min(6vw, 3.6rem);
@@ -209,5 +229,10 @@
   .Zeitschiene h4 {
     flex-direction: column;
     text-align: left;
+  }
+  .Register .price {
+    span:first-child {
+      font-size: 1.6rem;
+    }
   }
 }
