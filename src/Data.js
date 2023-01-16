@@ -1,15 +1,16 @@
 import {
   ZeitschieneRoute,
-  AboutRoute,
+  // AboutRoute,
   KeynoteRoute,
   ImpressumRoute,
   LocationRoute,
   ProgrammubersichtRoute,
+  RegisterRoute,
   // FaqRoute,
 } from './constants'
 
 export const dataDropdown = [
-  { title: 'About', to: AboutRoute.to },
+  { title: 'REGISTRIEREN', to: RegisterRoute.to },
   { title: 'Zeitschiene', to: ZeitschieneRoute.to },
   { title: 'Keynotes', to: KeynoteRoute.to },
   { title: 'Programmübersicht', to: ProgrammubersichtRoute.to },
