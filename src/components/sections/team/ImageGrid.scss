@@ -65,3 +65,17 @@
   margin: 0;
   font-weight: 500;
 }
+
+figcaption i {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    color: var(--white);
+  }
+}

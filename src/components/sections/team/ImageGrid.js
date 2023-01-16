@@ -1,5 +1,6 @@
 import { Col, Row } from 'react-bootstrap'
 import './ImageGrid.scss'
+import { Twitter, Link } from 'lucide-react'
 
 const SrcSetRegexp = new RegExp('srcset="([^"]+)"', 'i')
 
@@ -12,20 +13,6 @@ const ImageGrid = ({ data }) => {
   if (!Array.isArray(data)) {
     return null
   }
-
-  // const groups = data.reduce((acc, d) => {
-  //   if (!d.categories.length) {
-  //     acc.untagged = (acc.untagged ?? []).concat([d])
-  //     return acc
-  //   }
-  //   const categories = d.categories.map((category) => (Tags[category] ? Tags[category] : category))
-  //   categories.forEach((category) => {
-  //     acc[category] = (acc[category] ?? []).concat([d])
-  //   })
-
-  //   return acc
-  // }, {})
-
   return (
     <Row className="ImageGrid">
       {Object.keys(Tags).map((k) => (
@@ -37,6 +24,8 @@ const ImageGrid = ({ data }) => {
         const content = String(person.content?.rendered)
         const srcset = content.match(SrcSetRegexp)
         const title = person.title?.rendered
+        const link = person.acf?.social_link
+        const linkTwitterValidation = link.includes('twitter')
 
         return (
           <Col
@@ -53,6 +42,13 @@ const ImageGrid = ({ data }) => {
                 <figcaption className="figcaption">
                   <h4 dangerouslySetInnerHTML={{ __html: title }}></h4>
                   <div dangerouslySetInnerHTML={{ __html: person.excerpt?.rendered }}></div>
+                  {link ? (
+                    <i>
+                      <a href={`${link}`} target="_blank" rel="noreferrer">
+                        {linkTwitterValidation === true ? <Twitter size={24} /> : <Link />}
+                      </a>
+                    </i>
+                  ) : null}
                 </figcaption>
               </figure>
             ) : null}

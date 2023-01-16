@@ -15,7 +15,9 @@ const SimpleImageGrid = ({ data }) => {
         const srcset = content.match(SrcSetRegexp)
         const title = person.title?.rendered
         const excerpt = person.excerpt?.rendered
+        const link = person.acf?.social_link
 
+        console.log('XXXXX', link)
         return (
           <Col
             xs={{ span: 12 }}
@@ -24,7 +26,7 @@ const SimpleImageGrid = ({ data }) => {
             lg={{ span: 4 }}
             xxl={{ span: 3 }}
           >
-            <Figure key={person.id} srcset={srcset} title={title} excerpt={excerpt} />
+            <Figure key={person.id} srcset={srcset} title={title} excerpt={excerpt} link={link} />
           </Col>
         )
       })}
