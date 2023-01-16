@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 import { useOnScreen } from '../../../hooks/viewport'
-import { CalendarDays, MapPin } from 'lucide-react'
+import { CalendarDays, MapPin, Twitter } from 'lucide-react'
 import { KeynoteRoute } from '../../../constants'
 import { useLocation } from 'react-router-dom'
 import ButtonDhd from '../../ui/ButtonDhd'
@@ -23,6 +23,7 @@ const OpeningKeynote = ({ data }) => {
   const content = String(data[0].content?.rendered)
   const excerpt = String(data[0].excerpt?.rendered)
   const srcset = content.match(SrcSetRegexp)
+  const link = data[0].acf?.social_link
   const removeHtml = content.replace(/<[^>]*>?/gm, '')
   const splitter = removeHtml.split('\n')
 
@@ -58,6 +59,20 @@ const OpeningKeynote = ({ data }) => {
                     className="d-flex justify-content-end mb-3"
                     dangerouslySetInnerHTML={{ __html: splitter[1] }}
                   ></h4>
+                  {link ? (
+                    <>
+                      <i className="icon-left">
+                        <a href={`${link}`} target="_blank" rel="noreferrer">
+                          <Twitter size={24} />
+                        </a>
+                      </i>
+                      <i className="icon-right">
+                        <a href="https://twitter.com/storytracer" target="_blank" rel="noreferrer">
+                          <Twitter size={24} />
+                        </a>
+                      </i>
+                    </>
+                  ) : null}
                 </figcaption>
               </figure>
             </Col>

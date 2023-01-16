@@ -10,6 +10,30 @@
   color: var(--primary) !important;
 }
 
+.keynote {
+  figcaption i {
+    position: absolute;
+    right: 1.8rem;
+    top: -1.2rem;
+    > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 36px;
+      height: 36px;
+      color: var(--white);
+    }
+  }
+  figcaption > i.icon-left {
+    left: 1.8rem;
+    top: -1.2rem;
+  }
+  figcaption > i.icon-right {
+    right: 1.8rem;
+    top: -1.2rem;
+  }
+}
+
 .keynote .place {
   font-weight: 800;
 }
