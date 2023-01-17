@@ -6,13 +6,20 @@
     fill: var(--white);
   }
 
-  i svg line {
-    stroke: var(--white);
+  i > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      max-height: 200px;
+      line {
+        stroke: var(--white);
+      }
+    }
   }
 
   i {
     display: inline-block;
-    width: 250px;
     align-self: center;
     margin: 1rem;
   }

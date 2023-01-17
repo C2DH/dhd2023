@@ -6,6 +6,7 @@ import KompetenzzentrumLogo from '../../svg/KompetenzzentrumLogo.js'
 import UniTrierLogo from '../../svg/UniTrierLogo.js'
 import UniLogos from '../../svg/UniLogo.js'
 import DigitalHumanitiesImDeutschsprachigenRaumLogo from '../../svg/DigitalHumanitiesImDeutschsprachigenRaumLogo'
+import GeistesUndKFEVLogo from '../../svg/Geistes-Und_KF_E_V-Logo'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -24,7 +25,7 @@ const Sponsors = () => {
           <h4 className="blue mt-5">Förderer und Sponsoren</h4>
         </Row>
 
-        <Row className="justify-content-center mt-4">
+        <Row className="justify-content-center align-items-center mt-4">
           <Col sm={6} lg={4}>
             <i className="w-100 m-0 p-sm-3 p-lg-3 p-xxl-5 p-5">
               <NfdiForMemoryLogo />
@@ -35,11 +36,16 @@ const Sponsors = () => {
               <CnfdiLogo />
             </i>
           </Col>
+          <Col sm={6} lg={4}>
+            <i className="w-100 m-0 p-sm-3 p-lg-3 p-xxl-5 p-5">
+              <GeistesUndKFEVLogo />
+            </i>
+          </Col>
         </Row>
         <Row>
           <h4 className="blue mt-5">Organisatoren</h4>
         </Row>
-        <Row className="justify-content-center  mt-4">
+        <Row className="justify-content-center align-items-center mt-4">
           <Col sm={6} lg={4}>
             <i className="w-100 m-0 p-sm-3 p-lg-3 p-xxl-5 p-5">
               <UniTrierLogo />
