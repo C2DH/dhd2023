@@ -4,9 +4,11 @@ import './MenuFooter.scss'
 import { Github } from 'lucide-react'
 
 const MenuFooter = () => {
+  const currentTime = new Date()
+  const year = currentTime.getFullYear()
   return (
     <div className="footer-menu-wrapper d-flex align-items-center">
-      <p>© 2022</p>
+      <p>© {year}</p>
       <span className="footer-line ms-3"></span>
       <ul className="d-flex align-content-flex-end align-items-center">
         {dataFooterMenu.map(({ title, to, reloadDocument }, index) => {
