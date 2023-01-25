@@ -49,7 +49,9 @@ const Register = ({ data }) => {
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
               <div className="price mb-4">
                 <span>45,00 €</span>
-                <span>Mitglieder, ermäßigt</span>
+                <span>
+                  Mitglieder, ermäßigt<b>*</b>
+                </span>
               </div>
             </Col>
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
@@ -61,7 +63,9 @@ const Register = ({ data }) => {
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
               <div className="price mb-4">
                 <span>85,00 €</span>
-                <span>Nicht-Mitglied, ermäßigt</span>
+                <span>
+                  Nicht-Mitglied, ermäßigt<b>*</b>
+                </span>
               </div>
             </Col>
             <Col lg={{ span: 12 }}>
@@ -81,7 +85,9 @@ const Register = ({ data }) => {
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
               <div className="price mb-4">
                 <span>65,00 €</span>
-                <span>Mitglieder, ermäßigt</span>
+                <span>
+                  Mitglieder, ermäßigt<b>*</b>
+                </span>
               </div>
             </Col>
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
@@ -93,7 +99,9 @@ const Register = ({ data }) => {
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
               <div className="price mb-4">
                 <span>105,00 €</span>
-                <span>Nicht-Mitglied, ermäßigt</span>
+                <span>
+                  Nicht-Mitglied, ermäßigt<b>*</b>
+                </span>
               </div>
             </Col>
             <Col lg={{ span: 12 }}>
@@ -113,7 +121,9 @@ const Register = ({ data }) => {
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
               <div className="price mb-4">
                 <span>20,00 €</span>
-                <span>Mitglieder, ermäßigt</span>
+                <span>
+                  Mitglieder, ermäßigt<b>*</b>
+                </span>
               </div>
             </Col>
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
@@ -125,7 +135,9 @@ const Register = ({ data }) => {
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
               <div className="price mb-4">
                 <span>30,00 €</span>
-                <span>Nicht-Mitglied, ermäßigt</span>
+                <span>
+                  Nicht-Mitglied, ermäßigt<b>*</b>
+                </span>
               </div>
             </Col>
             <Col lg={{ span: 12 }}>
@@ -145,7 +157,9 @@ const Register = ({ data }) => {
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
               <div className="price mb-4">
                 <span>30,00 €</span>
-                <span>Mitglieder, ermäßigt</span>
+                <span>
+                  Mitglieder, ermäßigt<b>*</b>
+                </span>
               </div>
             </Col>
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
@@ -157,14 +171,30 @@ const Register = ({ data }) => {
             <Col xs={{ span: 6 }} md={{ span: 3 }} xl={{ span: 3 }} xxl={{ span: 2 }}>
               <div className="price mb-4">
                 <span>50,00 €</span>
-                <span>Nicht-Mitglied, ermäßigt</span>
+                <span>
+                  Nicht-Mitglied, ermäßigt<b>*</b>
+                </span>
               </div>
             </Col>
             <Col lg={{ span: 12 }}>
               <hr></hr>
+            </Col>
+          </Row>
+          <Row className="mt-4">
+            <Col lg={{ span: 12 }}>
+              <span>
+                <em className="d-block text-end">
+                  <b>*</b> Ermäßigungsberechtigt sind Studierende, Promovierende ohne Anstellung,
+                  Arbeitslose sowie Menschen mit Behinderung.
+                </em>
+              </span>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={{ span: 12 }}>
               <ButtonDhd
                 to={ProgrammubersichtRoute.to}
-                className={'mt-4'}
+                className={'mt-5'}
                 variant={'primary'}
                 title={'Programmubersicht'}
                 iconType={'ArrowRight'}
