@@ -71,7 +71,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Background
           availableWidth={width}
-          availableHeight={isMobile ? height * 1.1 : height}
+          availableHeight={isMobile ? height * 1.15 : height}
         ></Background>
         <main style={{ minHeight: height * 1.5 }}>
           <Header></Header>
