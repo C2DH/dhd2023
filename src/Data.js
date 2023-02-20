@@ -6,6 +6,7 @@ import {
   LocationRoute,
   ProgrammubersichtRoute,
   RegisterRoute,
+  RaDiHum20Route,
   // FaqRoute,
 } from './constants'
 
@@ -14,6 +15,7 @@ export const dataDropdown = [
   { title: 'Zeitschiene', to: ZeitschieneRoute.to },
   { title: 'Keynotes', to: KeynoteRoute.to },
   { title: 'Programmübersicht', to: ProgrammubersichtRoute.to },
+  { title: 'RaDiHum20', to: RaDiHum20Route.to },
   { title: 'Anmeldung Conftool', to: 'https://www.conftool.net/dhd2023/', reloadDocument: true },
   {
     title: 'DHConvalidator',

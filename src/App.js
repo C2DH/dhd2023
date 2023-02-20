@@ -8,8 +8,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Footer from './components/sections/footer/Footer'
 import ThreeJsBgArch from './components/ThreeJsBgArch'
 import React from 'react'
-import { CfpRoute } from './constants'
 import {
+  CfpRoute,
   KomiteeAndTeamRoute,
   ZeitschieneRoute,
   AboutRoute,
@@ -19,6 +19,7 @@ import {
   ProgrammubersichtRoute,
   FaqRoute,
   RegisterRoute,
+  RaDiHum20Route,
 } from './constants'
 import ScrollToTop from './components/ScrollToTop'
 import { isMobile } from 'react-device-detect'
@@ -162,6 +163,14 @@ function App() {
               element={
                 <React.Suspense>
                   <Home availableWidth={width} availableHeight={height}></Home>
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/page/radihum20"
+              element={
+                <React.Suspense>
+                  <Page height={height} url={RaDiHum20Route.contentUrl} />
                 </React.Suspense>
               }
             />

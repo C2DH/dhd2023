@@ -10,6 +10,7 @@ import Location from './Location.js'
 import Programmubersicht from './Programmubersicht.js'
 import Faq from './Faq.js'
 import Register from './Register.js'
+import RaDiHum20Route from './Radihum20Podcast.js'
 import './Page.scss'
 
 const PageContent = ({ data }) => {
@@ -40,6 +41,9 @@ const PageContent = ({ data }) => {
   }
   if (location.pathname === '/page/register') {
     return <Register data={data}></Register>
+  }
+  if (location.pathname === '/page/radihum20') {
+    return <RaDiHum20Route data={data}></RaDiHum20Route>
   }
   if (location.pathname === '/page/keynotes') {
     return <Keynotes data={data}></Keynotes>

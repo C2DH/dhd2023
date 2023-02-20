@@ -85,6 +85,20 @@ export const ProgrammubersichtRoute = {
   ].join(''),
 }
 
+export const RaDiHum20Route = {
+  to: `${StaticPageRoutePrefix}/radihum20`,
+  label: 'RaDiHum20',
+  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_PAGES_PODCAST_URL].join(''),
+}
+
+export const PodcastTeam = {
+  to: `${StaticPageRoutePrefix}/podcastteam`,
+  label: 'PodcastTeam',
+  contentUrl: [process.env.REACT_APP_API_ROOT, process.env.REACT_APP_POSTS_PODCAST_TEAM_URL].join(
+    '',
+  ),
+}
+
 export const StaticPagesRoutes = [
   FaqRoute,
   ProgrammubersichtRoute,
@@ -99,5 +113,7 @@ export const StaticPagesRoutes = [
   ImpressumRoute,
   LocationRoute,
   RegisterRoute,
+  RaDiHum20Route,
+  PodcastTeam,
 ]
 export const StaticPagesRoutesPathnames = StaticPagesRoutes.map((route) => route.to)
