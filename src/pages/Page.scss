@@ -225,6 +225,12 @@
   }
 }
 
+@media (max-width: 960px) {
+  .RaDiHum20 h2 {
+    font-size: min(5.5vw, 3.6rem);
+  }
+}
+
 @media (max-width: 540px) {
   .Zeitschiene p,
   .Zeitschiene h3,

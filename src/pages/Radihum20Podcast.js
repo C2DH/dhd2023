@@ -18,11 +18,7 @@ const RaDiHum20Route = ({ data }) => {
       <section>
         <Container>
           <Row>
-            <Col
-              md={{ span: 12, offset: 0 }}
-              lg={{ span: 10, offset: 2 }}
-              xl={{ span: 10, offset: 1 }}
-            >
+            <Col md={{ span: 12, offset: 0 }} xl={{ span: 10, offset: 1 }}>
               <h1 className="mb-5" dangerouslySetInnerHTML={{ __html: title }}></h1>
               <ButtonDhd
                 href={'https://radihum20.de/'}
@@ -49,11 +45,7 @@ const RaDiHum20Route = ({ data }) => {
       <section className="mt-5">
         <Container>
           <Row>
-            <Col
-              md={{ span: 12, offset: 0 }}
-              lg={{ span: 10, offset: 2 }}
-              xl={{ span: 10, offset: 1 }}
-            >
+            <Col md={{ span: 12, offset: 0 }} xl={{ span: 10, offset: 1 }}>
               <div className="mb-5" dangerouslySetInnerHTML={{ __html: content }}></div>
             </Col>
           </Row>
