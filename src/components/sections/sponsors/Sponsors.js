@@ -8,6 +8,7 @@ import UniLogos from '../../svg/UniLogo.js'
 import DigitalHumanitiesImDeutschsprachigenRaumLogo from '../../svg/DigitalHumanitiesImDeutschsprachigenRaumLogo'
 import GeistesUndKFEVLogo from '../../svg/Geistes-Und_KF_E_V-Logo'
 import GerdaHenkelStiftungLogo from '../../svg/GerdaHenkelStiftungLogo'
+import FondationDeLuxembourgLogo from '../../svg/FondationDeLuxembourgLogo'
 
 const { Container, Row, Col } = require('react-bootstrap')
 
@@ -45,6 +46,11 @@ const Sponsors = () => {
           <Col sm={6} lg={4}>
             <i className="w-100 m-0 p-sm-3 p-lg-3 p-xxl-5 p-5">
               <GerdaHenkelStiftungLogo />
+            </i>
+          </Col>
+          <Col sm={6} lg={4}>
+            <i className="w-100 m-0 p-sm-3 p-lg-3 p-xxl-5 p-5">
+              <FondationDeLuxembourgLogo />
             </i>
           </Col>
         </Row>
