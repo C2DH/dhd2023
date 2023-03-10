@@ -5,6 +5,10 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 
+console.info(
+  'version',
+  `${process.env.REACT_APP_GITHUB_REPO}/commit/${process.env.REACT_APP_GIT_REVISION}`,
+)
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
