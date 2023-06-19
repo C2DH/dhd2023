@@ -3,9 +3,15 @@ import ErrorViewer from './ErrorViewer'
 import { useSpring, a, config } from '@react-spring/web'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
+import { getApiUrlHash } from '../utils/api'
 
 export const axiosInstance = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROXY : '',
+  baseURL:
+    process.env.NODE_ENV === 'production'
+      ? process.env.REACT_APP_IS_STATICIZED
+        ? ''
+        : process.env.REACT_APP_PROXY
+      : '',
   timeout: 15000,
   contentType: 'application/json',
 })
@@ -26,7 +32,9 @@ const StaticPageLoader = ({
   }))
 
   const { data, error, status } = useQuery([url], () => {
-    return axiosInstance.get(url, options).then(({ data }) => data)
+    const apiUrl = process.env.REACT_APP_IS_STATICIZED ? getApiUrlHash(url) : url
+    console.info('[StaticPageLoader] url:', apiUrl)
+    return axiosInstance.get(apiUrl, options).then(({ data }) => data)
   })
 
   useEffect(() => {

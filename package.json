@@ -38,7 +38,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "netlify deploy"
+    "deploy": "netlify deploy",
+    "staticize": "npm run staticizeApi && npm run staticizeAssets",
+    "staticizeApi": "node src/staticizeApi.js",
+    "staticizeAssets": "node src/staticizeAssets.js"
   },
   "eslintConfig": {
     "extends": [
@@ -59,6 +62,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^16.3.1",
     "http-proxy-middleware": "^2.0.6",
     "netlify-cli": "^12.5.0"
   }
