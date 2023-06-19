@@ -64,8 +64,7 @@ const KomiteeAndTeam = ({ data }) => {
           </Row>
 
           <StaticPageLoader
-            url={getApiUrl('/posts?categories=14')}
-            options={{ params: { per_page: 50 } }}
+            url={getApiUrl('/posts?categories=14&per_page=50')}
             Component={SimpleImageGrid}
           ></StaticPageLoader>
         </Container>
@@ -79,8 +78,7 @@ const KomiteeAndTeam = ({ data }) => {
           </Row>
 
           <StaticPageLoader
-            url={getApiUrl('/posts?categories=13')}
-            options={{ params: { per_page: 50 } }}
+            url={getApiUrl('/posts?categories=13&per_page=50')}
             Component={SimpleImageGrid}
           ></StaticPageLoader>
         </Container>
