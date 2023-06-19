@@ -6,7 +6,12 @@ import axios from 'axios'
 import { getApiUrlHash } from '../utils/api'
 
 export const axiosInstance = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROXY : '',
+  baseURL:
+    process.env.NODE_ENV === 'production'
+      ? process.env.REACT_APP_IS_STATICIZED
+        ? ''
+        : process.env.REACT_APP_PROXY
+      : '',
   timeout: 15000,
   contentType: 'application/json',
 })
@@ -27,7 +32,7 @@ const StaticPageLoader = ({
   }))
 
   const { data, error, status } = useQuery([url], () => {
-    const apiUrl = process.env.REACT_APP_IS_STATICIZED === 'true' ? getApiUrlHash(url) : url
+    const apiUrl = process.env.REACT_APP_IS_STATICIZED ? getApiUrlHash(url) : url
     console.info('[StaticPageLoader] url:', apiUrl)
     return axiosInstance.get(apiUrl, options).then(({ data }) => data)
   })
